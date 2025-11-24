@@ -51,11 +51,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        neon: {
-          cyan: "hsl(var(--neon-cyan))",
-          purple: "hsl(var(--neon-purple))",
-          blue: "hsl(var(--neon-blue))",
-          green: "hsl(var(--neon-green))",
+        automotive: {
+          red: "hsl(var(--ferrari-red))",
+          energy: "hsl(var(--energy-red))",
+          bronze: "hsl(var(--bronze-metallic))",
+          carbon: "hsl(var(--carbon-black))",
+          steel: "hsl(var(--steel-gray))",
+          white: "hsl(var(--polished-white))",
         },
       },
       borderRadius: {
@@ -90,20 +92,30 @@ export default {
             transform: "translateY(0)",
           },
         },
-        "neon-pulse": {
+        "power-pulse": {
           "0%, 100%": {
-            textShadow: "0 0 10px hsl(var(--neon-cyan) / 0.8), 0 0 20px hsl(var(--neon-cyan) / 0.6)",
+            textShadow: "0 0 20px hsla(0, 85%, 55%, 0.8), 0 0 40px hsla(0, 85%, 55%, 0.6)",
           },
           "50%": {
-            textShadow: "0 0 20px hsl(var(--neon-cyan) / 1), 0 0 30px hsl(var(--neon-cyan) / 0.8)",
+            textShadow: "0 0 40px hsla(0, 85%, 55%, 1), 0 0 60px hsla(0, 85%, 55%, 0.8)",
           },
+        },
+        "energy-run": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" },
+        },
+        "metal-shine": {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
-        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "fade-in-up": "fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "power-pulse": "power-pulse 2s ease-in-out infinite",
+        "energy-run": "energy-run 2s linear infinite",
+        "metal-shine": "metal-shine 3s linear infinite",
       },
     },
   },

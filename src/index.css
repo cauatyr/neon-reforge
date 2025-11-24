@@ -8,54 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Neon Tech Dark Theme */
-    --background: 0 0% 3%;
+    /* Automotive Premium Theme - Ferrari Inspired */
+    --background: 0 0% 6%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 8%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 8%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 189 100% 50%;
-    --primary-foreground: 0 0% 3%;
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 271 81% 56%;
+    --secondary: 30 45% 50%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 70%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 15%;
-    --input: 240 10% 15%;
-    --ring: 189 100% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 85% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Neon colors */
-    --neon-cyan: 189 100% 50%;
-    --neon-purple: 271 81% 56%;
-    --neon-blue: 217 91% 60%;
-    --neon-green: 142 76% 36%;
+    /* Automotive Colors */
+    --ferrari-red: 0 85% 55%;
+    --energy-red: 5 90% 60%;
+    --bronze-metallic: 30 45% 50%;
+    --carbon-black: 0 0% 8%;
+    --steel-gray: 200 10% 50%;
+    --polished-white: 0 0% 98%;
     
-    /* Glow effects */
-    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3);
-    --glow-purple: 0 0 20px hsl(var(--neon-purple) / 0.5), 0 0 40px hsl(var(--neon-purple) / 0.3);
-    --glow-blue: 0 0 20px hsl(var(--neon-blue) / 0.5), 0 0 40px hsl(var(--neon-blue) / 0.3);
+    /* Metallic Glow effects */
+    --glow-red: 0 0 30px hsla(0, 85%, 55%, 0.6), 0 0 60px hsla(0, 85%, 55%, 0.4), 0 0 90px hsla(0, 85%, 55%, 0.2);
+    --glow-bronze: 0 0 20px hsla(30, 45%, 50%, 0.5), 0 0 40px hsla(30, 45%, 50%, 0.3);
+    --glow-white: 0 0 15px hsla(0, 0%, 98%, 0.8), 0 0 30px hsla(0, 0%, 98%, 0.5);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-power: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 0 0% 3%;
+    --background: 0 0% 6%;
     --foreground: 0 0% 98%;
   }
 }
@@ -68,45 +71,75 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-body antialiased;
     background-image: 
-      radial-gradient(circle at 20% 50%, hsl(var(--neon-purple) / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, hsl(var(--neon-cyan) / 0.05) 0%, transparent 50%),
-      repeating-linear-gradient(0deg, hsl(var(--neon-cyan) / 0.03) 0px, transparent 1px, transparent 40px, hsl(var(--neon-cyan) / 0.03) 41px),
-      repeating-linear-gradient(90deg, hsl(var(--neon-cyan) / 0.03) 0px, transparent 1px, transparent 40px, hsl(var(--neon-cyan) / 0.03) 41px);
+      radial-gradient(circle at 20% 50%, hsla(0, 85%, 55%, 0.03) 0%, transparent 60%),
+      radial-gradient(circle at 80% 80%, hsla(30, 45%, 50%, 0.04) 0%, transparent 60%),
+      repeating-linear-gradient(0deg, hsla(0, 0%, 100%, 0.02) 0px, transparent 1px, transparent 50px, hsla(0, 0%, 100%, 0.02) 51px),
+      repeating-linear-gradient(90deg, hsla(0, 85%, 55%, 0.02) 0px, transparent 1px, transparent 50px, hsla(0, 85%, 55%, 0.02) 51px),
+      linear-gradient(180deg, hsl(0, 0%, 6%) 0%, hsl(0, 0%, 4%) 100%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    letter-spacing: 0.02em;
   }
 }
 
 @layer utilities {
-  .text-glow-cyan {
-    text-shadow: var(--glow-cyan);
+  .text-glow-red {
+    text-shadow: var(--glow-red);
   }
   
-  .text-glow-purple {
-    text-shadow: var(--glow-purple);
+  .text-glow-bronze {
+    text-shadow: var(--glow-bronze);
   }
   
-  .text-glow-blue {
-    text-shadow: var(--glow-blue);
+  .text-glow-white {
+    text-shadow: var(--glow-white);
   }
 
   .glass-card {
-    @apply bg-card/40 backdrop-blur-xl border border-border/50;
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 relative;
+    background: linear-gradient(135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 6%, 0.9));
   }
 
-  .neon-border {
-    @apply border border-primary/50;
-    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.3), inset 0 0 10px hsl(var(--neon-cyan) / 0.1);
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsla(0, 85%, 55%, 0.3), transparent, hsla(30, 45%, 50%, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .metallic-border {
+    @apply border-2;
+    border-image: linear-gradient(135deg, 
+      hsla(0, 85%, 55%, 0.6), 
+      hsla(30, 45%, 50%, 0.4),
+      hsla(0, 85%, 55%, 0.6)
+    ) 1;
+    box-shadow: 
+      0 0 20px hsla(0, 85%, 55%, 0.4),
+      inset 0 0 20px hsla(0, 85%, 55%, 0.1);
+  }
+
+  .carbon-texture {
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 2px, hsla(0, 0%, 0%, 0.3) 2px, hsla(0, 0%, 0%, 0.3) 4px),
+      repeating-linear-gradient(-45deg, transparent, transparent 2px, hsla(0, 0%, 0%, 0.2) 2px, hsla(0, 0%, 0%, 0.2) 4px);
   }
 }
 
-/* Animations */
+/* Automotive Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -114,34 +147,23 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes neonPulse {
+@keyframes powerPulse {
   0%, 100% {
     text-shadow: 
-      0 0 10px hsl(var(--neon-cyan) / 0.8),
-      0 0 20px hsl(var(--neon-cyan) / 0.6),
-      0 0 30px hsl(var(--neon-cyan) / 0.4);
+      0 0 10px hsla(0, 85%, 55%, 0.8),
+      0 0 20px hsla(0, 85%, 55%, 0.6),
+      0 0 40px hsla(0, 85%, 55%, 0.4);
   }
   50% {
     text-shadow: 
-      0 0 20px hsl(var(--neon-cyan) / 1),
-      0 0 30px hsl(var(--neon-cyan) / 0.8),
-      0 0 40px hsl(var(--neon-cyan) / 0.6);
+      0 0 20px hsla(0, 85%, 55%, 1),
+      0 0 40px hsla(0, 85%, 55%, 0.8),
+      0 0 60px hsla(0, 85%, 55%, 0.6),
+      0 0 80px hsla(0, 85%, 55%, 0.4);
   }
 }
 
-@keyframes borderGlow {
-  0% {
-    box-shadow: 0 0 5px hsl(var(--neon-cyan) / 0.5), 0 0 10px hsl(var(--neon-cyan) / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.8), 0 0 30px hsl(var(--neon-cyan) / 0.5);
-  }
-  100% {
-    box-shadow: 0 0 5px hsl(var(--neon-cyan) / 0.5), 0 0 10px hsl(var(--neon-cyan) / 0.3);
-  }
-}
-
-@keyframes slideGlow {
+@keyframes energyRun {
   0% {
     background-position: 0% 50%;
   }
@@ -150,14 +172,89 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes metalShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes ignition {
+  0% {
+    box-shadow: 0 0 0px hsla(0, 85%, 55%, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px hsla(0, 85%, 55%, 0.8), 0 0 60px hsla(0, 85%, 55%, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0px hsla(0, 85%, 55%, 0);
+  }
+}
+
+@keyframes slideInPower {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revEngine {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-neon-pulse {
-  animation: neonPulse 2s ease-in-out infinite;
+.animate-power-pulse {
+  animation: powerPulse 2s ease-in-out infinite;
 }
 
-.animate-border-glow {
-  animation: borderGlow 2s ease-in-out infinite;
+.animate-energy-run {
+  animation: energyRun 2s linear infinite;
+}
+
+.animate-scan {
+  animation: scanLine 3s ease-in-out infinite;
+}
+
+.animate-metal-shine {
+  animation: metalShine 3s linear infinite;
+}
+
+.animate-ignition {
+  animation: ignition 0.6s ease-out;
+}
+
+.animate-slide-power {
+  animation: slideInPower 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-rev {
+  animation: revEngine 2s ease-in-out infinite;
 }

@@ -16,21 +16,21 @@ const WhatYouLearn = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
-          Veja o que você vai <span className="text-neon-purple">aprender:</span>
+          Veja o que você vai <span className="text-automotive-bronze text-glow-bronze">aprender:</span>
         </h2>
 
-        <div className="glass-card p-8 md:p-12 rounded-2xl">
+        <div className="glass-card p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(220,38,38,0.2)]">
           <div className="grid gap-6">
             {topics.map((topic, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-4 group animate-fade-in-up"
+                className="flex items-start gap-4 group animate-slide-power hover:translate-x-2 transition-transform duration-300"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-neon-cyan/20 flex items-center justify-center border border-neon-cyan group-hover:bg-neon-cyan/40 transition-colors">
-                  <Check className="w-5 h-5 text-neon-cyan" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red group-hover:bg-automotive-red group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+                  <Check className="w-5 h-5 text-automotive-red group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-lg md:text-xl text-foreground group-hover:text-neon-cyan transition-colors pt-1">
+                <p className="text-lg md:text-xl text-foreground group-hover:text-automotive-red transition-colors pt-2 font-medium">
                   {topic}
                 </p>
               </div>
