@@ -44,23 +44,25 @@ const WhyDifferent = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
-          Por Que Este Curso é <span className="text-neon-cyan">Diferente</span>
+          Por Que Este Curso é <span className="text-automotive-red text-glow-red">Diferente</span>
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group hover:scale-105 hover:border-neon-cyan transition-all duration-300 animate-fade-in-up"
+              className="glass-card p-8 rounded-xl group hover:scale-105 hover:-translate-y-2 hover:border-automotive-red transition-all duration-500 animate-slide-power shadow-[0_0_20px_rgba(220,38,38,0.15)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)]"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              <div className="text-5xl mb-4">{feature.emoji}</div>
-              <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-neon-cyan transition-colors">
+              <div className="text-5xl mb-5 animate-rev">{feature.emoji}</div>
+              <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-red transition-colors duration-300">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
+              {/* Animated underline */}
+              <div className="mt-4 h-1 w-0 bg-gradient-to-r from-automotive-red to-automotive-bronze group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>

@@ -28,22 +28,22 @@ const WhoIsFor = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
-          Para Quem é <span className="text-neon-purple">Este Curso</span>
+          Para Quem é <span className="text-automotive-bronze text-glow-bronze">Este Curso</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {audience.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group hover:scale-105 transition-all duration-300 animate-fade-in-up border-l-4 border-l-neon-purple"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              className="glass-card p-8 rounded-xl group hover:scale-105 hover:-translate-y-2 transition-all duration-500 animate-slide-power border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
+              style={{ animationDelay: `${idx * 0.15}s` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-neon-purple/20 flex items-center justify-center border border-neon-purple group-hover:bg-neon-purple/40 transition-colors">
-                  <item.icon className="w-7 h-7 text-neon-purple" />
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-automotive-bronze/20 flex items-center justify-center border-2 border-automotive-bronze group-hover:bg-automotive-bronze/40 group-hover:scale-110 transition-all duration-500 shadow-[0_0_15px_rgba(139,92,46,0.3)]">
+                  <item.icon className="w-8 h-8 text-automotive-bronze" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-neon-purple transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

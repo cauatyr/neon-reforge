@@ -45,28 +45,28 @@ const FAQ = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
-          Perguntas <span className="text-neon-cyan">Frequentes</span>
+          Perguntas <span className="text-automotive-red text-glow-red">Frequentes</span>
         </h2>
 
-        <div className="glass-card p-8 md:p-12 rounded-2xl animate-fade-in-up">
+        <div className="glass-card p-8 md:p-12 rounded-2xl animate-fade-in-up shadow-[0_0_40px_rgba(220,38,38,0.2)]">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, idx) => (
               <AccordionItem 
                 key={idx} 
                 value={`item-${idx}`}
-                className="border border-border/50 rounded-lg px-6 hover:border-neon-cyan transition-colors"
+                className="border-2 border-border/50 rounded-lg px-6 hover:border-automotive-red transition-all duration-300 shadow-[0_0_10px_rgba(220,38,38,0.1)] hover:shadow-[0_0_20px_rgba(220,38,38,0.3)]"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:text-neon-cyan transition-colors py-4">
+                <AccordionTrigger className="text-left text-lg font-semibold hover:text-automotive-red transition-colors py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <p className="text-center text-xl text-neon-purple font-semibold mt-12">
+          <p className="text-center text-xl text-automotive-bronze font-semibold mt-12">
             Ainda tem dúvidas? Aproveite a garantia de 30 dias e teste o curso sem riscos!
           </p>
         </div>

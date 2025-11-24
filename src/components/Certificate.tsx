@@ -12,27 +12,27 @@ const Certificate = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl">
-        <div className="glass-card p-8 md:p-12 rounded-2xl animate-fade-in-up">
+        <div className="glass-card p-8 md:p-12 rounded-2xl animate-fade-in-up shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-neon-cyan/20 flex items-center justify-center border-2 border-neon-cyan">
-                  <Award className="w-8 h-8 text-neon-cyan" />
+                <div className="w-20 h-20 rounded-full bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red shadow-[0_0_25px_rgba(220,38,38,0.4)] animate-rev">
+                  <Award className="w-10 h-10 text-automotive-red" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  CERTIFICADO DE <span className="text-neon-cyan">CONCLUSÃO</span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                  CERTIFICADO DE <span className="text-automotive-red text-glow-red">CONCLUSÃO</span>
                 </h2>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-semibold text-neon-purple">
+              <h3 className="text-2xl md:text-3xl font-semibold text-automotive-bronze">
                 Comprove sua qualificação técnica
               </h3>
 
               <div className="space-y-4">
                 {benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-3 group">
-                    <CheckCircle className="w-6 h-6 text-neon-cyan flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                    <p className="text-lg text-foreground group-hover:text-neon-cyan transition-colors">
+                  <div key={idx} className="flex items-start gap-3 group animate-slide-power" style={{ animationDelay: `${idx * 0.1}s` }}>
+                    <CheckCircle className="w-6 h-6 text-automotive-red flex-shrink-0 mt-1 group-hover:scale-125 transition-transform duration-300" />
+                    <p className="text-lg text-foreground group-hover:text-automotive-red transition-colors duration-300">
                       {benefit}
                     </p>
                   </div>
@@ -41,11 +41,11 @@ const Certificate = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-purple rounded-xl blur-xl opacity-50"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-automotive-red to-automotive-bronze rounded-xl blur-2xl opacity-40 animate-rev"></div>
               <img
                 src="https://v0-ppf-essencial.vercel.app/images/design-mode/Certificado%20PPF.png"
                 alt="Certificado de Conclusão PPF"
-                className="relative rounded-xl border-2 border-neon-cyan shadow-2xl hover:scale-105 transition-transform duration-300"
+                className="relative rounded-xl border-2 border-automotive-bronze shadow-[0_0_40px_rgba(139,92,46,0.4)] hover:scale-105 hover:border-automotive-red transition-all duration-500"
                 loading="lazy"
               />
             </div>

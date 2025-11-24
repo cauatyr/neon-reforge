@@ -17,23 +17,26 @@ const GallerySection = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
-          Veja na Prática o Que Você Vai <span className="text-neon-cyan">Dominar</span>
+          Veja na Prática o Que Você Vai <span className="text-automotive-red text-glow-red">Dominar</span>
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((image, idx) => (
             <div
               key={idx}
-              className="relative aspect-square overflow-hidden rounded-lg neon-border group animate-fade-in-up hover:scale-105 transition-transform duration-300"
+              className="relative aspect-square overflow-hidden rounded-lg border-2 border-automotive-bronze/40 group animate-fade-in-up hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(139,92,46,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]"
               style={{ animationDelay: `${idx * 0.05}s` }}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Metallic shine overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-automotive-white/0 via-automotive-white/10 to-automotive-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-metal-shine"></div>
+              {/* Bottom gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
