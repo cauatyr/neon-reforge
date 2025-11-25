@@ -16,13 +16,13 @@ const heroImages = [
 ];
 
 const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; idx: number }) => {
-  // Use dual-axis for hero images (GRUPO A)
+  // Use hero-specific cinematic animation (BLOCK 1)
   const { ref, isVisible } = useCinematicImage({ effect: 'dual-axis' });
   
   return (
       <div
         ref={ref}
-        className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic energy-edge ${
+        className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic-hero ${
           isVisible ? 'visible' : ''
         } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
         style={{ transitionDelay: `${idx * 50}ms` }}

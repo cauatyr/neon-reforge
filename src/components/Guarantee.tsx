@@ -36,7 +36,8 @@ const Guarantee = () => {
           <Button
             onClick={scrollToOffer}
             size="lg"
-            className="group relative overflow-hidden bg-gradient-to-r from-automotive-bronze via-automotive-bronze/80 to-automotive-bronze bg-[length:200%_100%] text-white font-bold text-lg px-10 py-7 h-auto hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(168,116,55,0.5)] hover:shadow-[0_0_50px_rgba(168,116,55,0.6)] animate-energy-run"
+            variant="crystal"
+            className="crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
           >
             <span className="relative z-10">QUERO MINHA VAGA AGORA</span>
           </Button>
