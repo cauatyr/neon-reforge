@@ -12,7 +12,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 
 const Index = () => {
   return (
-    <main className="relative">
+    <main className="relative page-wrapper">
       <Hero />
       <ProblemSection />
       <GallerySection />

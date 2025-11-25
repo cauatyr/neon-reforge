@@ -28,27 +28,21 @@ const Pricing = () => {
           ref={ref}
           className={`glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group transition-all duration-1000 shadow-[0_0_60px_rgba(220,38,38,0.3)] hover:shadow-[0_0_100px_rgba(220,38,38,0.6)] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         >
-          {/* Animated border glow */}
-          <div className="absolute inset-0 border-2 border-automotive-red rounded-2xl animate-border-glow"></div>
-          
-          {/* Energy lines background */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-energy-run"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-energy-run" style={{ animationDelay: '1s' }}></div>
-          </div>
+          {/* Subtle border */}
+          <div className="absolute inset-0 border-2 border-automotive-red/40 rounded-2xl"></div>
 
           <div className="relative z-10 space-y-8">
             {/* Badge */}
             <div className="flex justify-center">
               <div className="inline-flex items-center gap-3 bg-automotive-red/20 border-2 border-automotive-red px-8 py-4 rounded-full shadow-[0_0_30px_rgba(220,38,38,0.4)]">
-                <Zap className="w-6 h-6 text-automotive-red animate-rev" />
+                <Zap className="w-6 h-6 text-automotive-red" />
                 <span className="text-xl font-bold text-automotive-red">OFERTA ESPECIAL</span>
               </div>
             </div>
 
             {/* Discount Badge */}
             <div className="text-center">
-              <div className="inline-block bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-4xl px-12 py-4 rounded-xl transform hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(220,38,38,0.6)] animate-energy-run" style={{ transform: 'rotate(-3deg)' }}>
+              <div className="inline-block bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-4xl px-12 py-4 rounded-xl transform hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(220,38,38,0.6)]" style={{ transform: 'rotate(-3deg)' }}>
                 87% OFF
               </div>
             </div>
@@ -69,22 +63,19 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* CTA Button with ignition effect */}
+            {/* CTA Button - Premium Professional */}
             <div className="flex justify-center">
               <Button
                 asChild
                 size="lg"
                 onClick={handleCTAClick}
-                className="touch-feedback group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-xl px-14 py-9 h-auto transition-all duration-300 shadow-[0_0_50px_rgba(220,38,38,0.7)] hover:shadow-[0_0_80px_rgba(220,38,38,1)] animate-light-run border-2 border-automotive-red/70 animate-border-glow"
+                className="premium-button premium-button-entry group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-xl px-14 py-9 h-auto transition-all duration-300 hover:shadow-[0_15px_55px_rgba(220,38,38,0.8)] border-2 border-automotive-red/70"
               >
                 <a href="https://go.wizoomplay.me/checkout/ppf-essencial-67" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">
-                    <Zap className="w-7 h-7 animate-rev" />
+                    <Zap className="w-7 h-7" />
                     GARANTIR MINHA VAGA AGORA
                   </span>
-                  {/* Multiple circulating lights */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/40 to-transparent animate-light-run"></div>
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-automotive-bronze/30 to-transparent animate-light-run" style={{ animationDelay: '1.5s' }}></div>
                 </a>
               </Button>
             </div>

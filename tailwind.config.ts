@@ -154,9 +154,72 @@ export default {
             opacity: "0.5"
           },
         },
-        "rev": {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.1)" },
+        // Premium Button Animations - Professional & Mobile-First
+        "premium-breath": {
+          "0%, 100%": { 
+            transform: "translateY(0)",
+            boxShadow: "0 10px 40px rgba(220, 38, 38, 0.4)"
+          },
+          "50%": { 
+            transform: "translateY(-3px)",
+            boxShadow: "0 12px 45px rgba(220, 38, 38, 0.5)"
+          },
+        },
+        "button-press": {
+          "0%": { transform: "scale(1) translateY(0)" },
+          "50%": { transform: "scale(0.98) translateY(2px)" },
+          "100%": { transform: "scale(1) translateY(0)" },
+        },
+        "button-entry": {
+          "0%": { 
+            opacity: "0",
+            transform: "scale(0.95)",
+            boxShadow: "0 0 0 rgba(220, 38, 38, 0)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "scale(1)",
+            boxShadow: "0 10px 40px rgba(220, 38, 38, 0.4)"
+          },
+        },
+        // Global Interaction Animations
+        "scroll-glow": {
+          "0%": { 
+            opacity: "0",
+            transform: "scaleX(0)"
+          },
+          "50%": { 
+            opacity: "0.3"
+          },
+          "100%": { 
+            opacity: "0",
+            transform: "scaleX(1)"
+          },
+        },
+        "section-slide": {
+          "0%": { 
+            transform: "translateY(8px)",
+            opacity: "0"
+          },
+          "100%": { 
+            transform: "translateY(0)",
+            opacity: "1"
+          },
+        },
+        "card-tilt": {
+          "0%": { transform: "perspective(1000px) rotateX(0deg)" },
+          "50%": { transform: "perspective(1000px) rotateX(1deg)" },
+          "100%": { transform: "perspective(1000px) rotateX(0deg)" },
+        },
+        "page-entry": {
+          "0%": { 
+            opacity: "0",
+            transform: "translateY(10px)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translateY(0)"
+          },
         },
         // Professional Cinematic Animations - No Pixelation
         "subtle-shine": {
@@ -216,13 +279,19 @@ export default {
         "metal-shine": "metal-shine 3s linear infinite",
         "scan": "scan 3s ease-in-out infinite",
         "ignition": "ignition 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "border-glow": "border-glow 2s ease-in-out infinite",
-        "light-run": "light-run 3s linear infinite",
-        "rev": "rev 1s ease-in-out infinite",
         "slide-power": "slide-power 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "digital-flip": "digital-flip 0.6s ease-out forwards",
         "subtle-shine": "subtle-shine 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "edge-light-sweep": "edge-light-sweep 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        // New Premium Button Animations
+        "premium-breath": "premium-breath 5s ease-in-out infinite",
+        "button-press": "button-press 0.2s ease-out",
+        "button-entry": "button-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        // New Global Interactions
+        "scroll-glow": "scroll-glow 1.2s ease-out forwards",
+        "section-slide": "section-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "card-tilt": "card-tilt 0.3s ease-out forwards",
+        "page-entry": "page-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

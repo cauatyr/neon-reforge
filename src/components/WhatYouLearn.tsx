@@ -24,7 +24,7 @@ const WhatYouLearn = () => {
             {topics.map((topic, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-4 group animate-slide-power hover:translate-x-2 transition-transform duration-300"
+                className="flex items-start gap-4 group card-interactive animate-slide-power"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red group-hover:bg-automotive-red group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(220,38,38,0.3)]">

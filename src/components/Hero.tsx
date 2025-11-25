@@ -106,14 +106,12 @@ const Hero = () => {
             <Button 
               onClick={scrollToOffer}
               size="lg"
-              className="touch-feedback group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg px-10 py-7 h-auto transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:shadow-[0_0_50px_rgba(220,38,38,0.8)] animate-light-run border-2 border-automotive-red/50 animate-border-glow"
+              className="premium-button premium-button-entry group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-lg px-10 py-7 h-auto transition-all duration-300 hover:shadow-[0_15px_50px_rgba(220,38,38,0.6)] border-2 border-automotive-red/50"
             >
               <span className="relative z-10 flex items-center gap-2">
-                <Zap className="w-5 h-5 animate-rev" />
+                <Zap className="w-5 h-5" />
                 QUERO APRENDER AGORA
               </span>
-              {/* Circulating light effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/30 to-transparent animate-light-run"></div>
             </Button>
           </div>
 

@@ -146,14 +146,38 @@ All colors MUST be HSL.
     transform: translateY(0);
   }
 
-  /* Touch feedback */
-  .touch-feedback {
-    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  /* Premium Button Styles - No Flicker, Professional */
+  .premium-button {
+    position: relative;
+    will-change: transform, box-shadow;
+    animation: premium-breath 5s ease-in-out infinite;
   }
 
-  .touch-feedback:active {
-    transform: scale(0.97);
-    box-shadow: 0 0 60px rgba(220, 38, 38, 0.9), inset 0 0 20px rgba(220, 38, 38, 0.5);
+  .premium-button:active {
+    animation: button-press 0.2s ease-out;
+  }
+
+  .premium-button-entry {
+    animation: button-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Global Interaction Styles */
+  .card-interactive {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-4px);
+  }
+
+  .section-animated {
+    animation: section-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Page Entry Animation */
+  .page-wrapper {
+    animation: page-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   /* Professional Cinematic Image Animations - No Pixelation */

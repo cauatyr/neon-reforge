@@ -51,10 +51,10 @@ const WhyDifferent = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group hover:scale-105 hover:-translate-y-2 hover:border-automotive-red transition-all duration-500 animate-slide-power shadow-[0_0_20px_rgba(220,38,38,0.15)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)]"
+              className="glass-card p-8 rounded-xl group card-interactive hover:border-automotive-red animate-slide-power shadow-[0_0_20px_rgba(220,38,38,0.15)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)]"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              <div className="text-5xl mb-5 animate-rev">{feature.emoji}</div>
+              <div className="text-5xl mb-5">{feature.emoji}</div>
               <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-red transition-colors duration-300">
                 {feature.title}
               </h3>
