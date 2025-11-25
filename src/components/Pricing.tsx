@@ -13,13 +13,16 @@ const Pricing = () => {
   };
   
   return (
-    <section id="oferta" className="py-20 px-4 relative">
-      <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 space-y-4 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold">
+    <section id="oferta" className="py-20 px-4 relative overflow-hidden">
+      {/* Darkening gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none"></div>
+      
+      <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="cta-title text-4xl md:text-5xl font-bold opacity-0">
             Chegou a Hora de <span className="text-automotive-red text-glow-red">Evoluir</span> Seu Negócio
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground">
+          <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Quanto dinheiro você já perdeu por não saber fazer aplicação de PPF?
           </p>
         </div>
@@ -28,8 +31,22 @@ const Pricing = () => {
           ref={ref}
           className={`glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group transition-all duration-1000 shadow-[0_0_60px_rgba(220,38,38,0.3)] hover:shadow-[0_0_100px_rgba(220,38,38,0.6)] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         >
-          {/* Subtle border */}
-          <div className="absolute inset-0 border-2 border-automotive-red/40 rounded-2xl"></div>
+          {/* LED border animation */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: isVisible ? 1 : 0 }}>
+            <rect 
+              x="2" 
+              y="2" 
+              width="calc(100% - 4px)" 
+              height="calc(100% - 4px)" 
+              rx="16"
+              fill="none" 
+              stroke="hsl(var(--automotive-red))" 
+              strokeWidth="2"
+              strokeDasharray="1000"
+              strokeDashoffset="1000"
+              className={isVisible ? 'animate-led-border-run' : ''}
+            />
+          </svg>
 
           <div className="relative z-10 space-y-8">
             {/* Badge */}
@@ -63,13 +80,14 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* CTA Button - Premium Professional */}
-            <div className="flex justify-center">
+            {/* CTA Button - Crystal Motion Tech */}
+            <div className="flex justify-center" style={{ animationDelay: '0.2s' }}>
               <Button
                 asChild
                 size="lg"
+                variant="crystal"
                 onClick={handleCTAClick}
-                className="premium-button premium-button-entry group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-xl px-14 py-9 h-auto transition-all duration-300 hover:shadow-[0_15px_55px_rgba(220,38,38,0.8)] border-2 border-automotive-red/70"
+                className="crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto"
               >
                 <a href="https://go.wizoomplay.me/checkout/ppf-essencial-67" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">

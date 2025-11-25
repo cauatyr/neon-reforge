@@ -35,7 +35,9 @@ const FloatingCTA = () => {
     >
       <Button
         onClick={scrollToOffer}
-        className="premium-button w-full group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-lg py-7 h-auto transition-all duration-300 border-2 border-automotive-red/60"
+        size="lg"
+        variant="crystal"
+        className="crystal-button w-full rounded-xl font-bold text-lg py-7 h-auto"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           <Zap className="w-5 h-5" />

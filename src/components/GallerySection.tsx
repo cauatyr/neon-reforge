@@ -15,23 +15,13 @@ const images = [
 ];
 
 const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
-  // Distribute effects: edge-light for first few, then slide, parallax, none
-  const effects = ['edge-light', 'edge-light', 'slide', 'parallax', 'none'] as const;
-  const effect = effects[idx % effects.length];
-  
-  const { ref, isVisible } = useCinematicImage({ effect });
-  
-  const effectClasses = {
-    slide: 'img-slide',
-    'edge-light': 'img-edge-light',
-    parallax: 'img-parallax',
-    none: ''
-  };
+  // Use spotlight for gallery images (GRUPO B)
+  const { ref, isVisible } = useCinematicImage({ effect: 'spotlight' });
   
   return (
     <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${effectClasses[effect]} ${
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-spotlight ${
         isVisible ? 'visible' : ''
       } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
       style={{ transitionDelay: `${idx * 40}ms` }}

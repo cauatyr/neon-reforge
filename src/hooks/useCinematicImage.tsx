@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface CinematicImageOptions {
-  effect?: 'slide' | 'parallax' | 'edge-light' | 'none';
+  effect?: 'slide' | 'parallax' | 'edge-light' | 'dual-axis' | 'spotlight' | 'laser-edge' | 'none';
   threshold?: number;
 }
 

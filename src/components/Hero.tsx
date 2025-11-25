@@ -16,23 +16,13 @@ const heroImages = [
 ];
 
 const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; idx: number }) => {
-  // Distribute effects evenly: slide, edge-light, parallax, none
-  const effects = ['slide', 'edge-light', 'parallax', 'none'] as const;
-  const effect = effects[idx % effects.length];
-  
-  const { ref, isVisible } = useCinematicImage({ effect });
-  
-  const effectClasses = {
-    slide: 'img-slide',
-    'edge-light': 'img-edge-light',
-    parallax: 'img-parallax',
-    none: ''
-  };
+  // Use dual-axis for hero images (GRUPO A)
+  const { ref, isVisible } = useCinematicImage({ effect: 'dual-axis' });
   
   return (
     <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${effectClasses[effect]} ${
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-dual-axis ${
         isVisible ? 'visible' : ''
       } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
       style={{ transitionDelay: `${idx * 50}ms` }}
@@ -69,32 +59,32 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
+    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
       {/* Animated background elements with system startup */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-red/10 rounded-full blur-[120px] animate-zoom-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-zoom-pulse" style={{ animationDelay: '1s' }}></div>
-        {/* Vertical scanning lines - system startup effect */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-scan"></div>
-          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-scan" style={{ animationDelay: '1.5s' }}></div>
+        {/* Motion blur horizontal effect */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute w-full h-1 top-1/3 bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-scan"></div>
+          <div className="absolute w-full h-1 top-2/3 bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-scan" style={{ animationDelay: '1.5s' }}></div>
         </div>
-        {/* Diagonal reflection sweep */}
+        {/* Spotlight reveal effect */}
         <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-automotive-white/5 to-transparent transition-opacity duration-1000 ${isLoaded ? 'opacity-100 animate-metal-shine' : 'opacity-0'}`}></div>
       </div>
 
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="space-y-8">
             <div className="inline-block">
-              <h1 className={`text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none ${isLoaded ? 'animate-ignition' : ''}`}>
+              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none">
                 <span className="text-automotive-red animate-power-pulse text-glow-red">PPF</span>
                 <span className="text-automotive-white"> ESSENCIAL</span>
               </h1>
             </div>
             
-            <div className="space-y-4">
+            <div className="hero-subtitle space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white">
                 Aprenda fazer <span className="text-automotive-red font-bold">aplicações de PPF</span> e proteger as partes <span className="text-automotive-bronze font-bold">essenciais</span> do carro.
               </h2>
@@ -106,7 +96,8 @@ const Hero = () => {
             <Button 
               onClick={scrollToOffer}
               size="lg"
-              className="premium-button premium-button-entry group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-lg px-10 py-7 h-auto transition-all duration-300 hover:shadow-[0_15px_50px_rgba(220,38,38,0.6)] border-2 border-automotive-red/50"
+              variant="crystal"
+              className="crystal-button crystal-button-entry rounded-xl font-bold text-lg px-10 py-7 h-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Zap className="w-5 h-5" />
