@@ -486,6 +486,75 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes auto-light-sweep {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) skewX(-8deg);
+    filter: blur(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0px) skewX(0deg);
+    filter: blur(0px);
+  }
+  100% {
+    text-shadow: 0px 0px 18px rgba(255, 255, 255, 0.35);
+  }
+}
+
+@keyframes autospeed-underline {
+  0% { 
+    width: 0%; 
+    opacity: 0; 
+  }
+  30% { 
+    opacity: 1; 
+  }
+  100% { 
+    width: 100%; 
+    opacity: 1; 
+  }
+}
+
+@keyframes hud-drift {
+  0% {
+    opacity: 0;
+    transform: translateX(-25px) translateY(8px) scale(0.96) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) translateY(0px) scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes digital-flick-reveal {
+  0% { 
+    opacity: 0; 
+    letter-spacing: -2px; 
+  }
+  40% { 
+    opacity: 0.4; 
+    letter-spacing: 0px; 
+  }
+  60% { 
+    opacity: 0.7; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes carbon-scan {
+  0% {
+    background-position: -120% 0;
+    opacity: 0;
+  }
+  100% {
+    background-position: 120% 0;
+    opacity: 1;
+  }
+}
+
 @keyframes subtle-shine {
   0% {
     background-position: -200% center;
@@ -541,4 +610,48 @@ All colors MUST be HSL.
 
 .animate-rev {
   animation: revEngine 2s ease-in-out infinite;
+}
+
+/* Automotive Text Animations */
+.text-auto-light-sweep {
+  animation: auto-light-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.text-hud-drift {
+  animation: hud-drift 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.text-digital-flick {
+  animation: digital-flick-reveal 0.65s ease-out forwards;
+}
+
+.text-carbon-scan {
+  position: relative;
+  animation: carbon-scan 1s ease-out forwards;
+}
+
+.text-carbon-scan::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200%;
+  animation: carbon-scan 1s ease-out forwards;
+  pointer-events: none;
+}
+
+.text-with-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.text-with-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, hsl(var(--bronze-metallic)), hsl(var(--carbon-black)));
+  animation: autospeed-underline 0.9s ease-out forwards;
 }

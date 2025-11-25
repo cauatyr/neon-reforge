@@ -44,7 +44,7 @@ const FAQ = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-auto-light-sweep text-with-underline">
           Perguntas <span className="text-automotive-bronze text-glow-bronze">Frequentes</span>
         </h2>
 
@@ -66,7 +66,7 @@ const FAQ = () => {
             ))}
           </Accordion>
 
-          <p className="text-center text-xl text-automotive-bronze font-semibold mt-12">
+          <p className="text-center text-xl text-automotive-bronze font-semibold mt-12 text-hud-drift">
             Ainda tem dúvidas? Aproveite a garantia de 30 dias e teste o curso sem riscos!
           </p>
         </div>

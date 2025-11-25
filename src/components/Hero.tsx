@@ -78,17 +78,17 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="inline-block">
-              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none">
+              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none text-auto-light-sweep">
                 <span className="text-automotive-red animate-power-pulse text-glow-red">PPF</span>
                 <span className="text-automotive-white"> ESSENCIAL</span>
               </h1>
             </div>
             
             <div className="hero-subtitle space-y-4">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white text-hud-drift">
                 Aprenda fazer <span className="text-automotive-red font-bold">aplicações de PPF</span> e proteger as partes <span className="text-automotive-bronze font-bold">essenciais</span> do carro.
               </h2>
-              <p className="text-xl md:text-2xl italic text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-2xl italic text-muted-foreground leading-relaxed text-digital-flick">
                 <span className="text-automotive-bronze font-semibold">Sem risco, sem retrabalho</span> e com resultado que impressiona o cliente.
               </p>
             </div>

@@ -19,10 +19,10 @@ const Pricing = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-12 space-y-4">
-          <h2 className="cta-title text-4xl md:text-5xl font-bold opacity-0">
+          <h2 className="cta-title text-4xl md:text-5xl font-bold opacity-0 text-auto-light-sweep text-with-underline">
             Chegou a Hora de <span className="text-automotive-bronze text-glow-bronze">Evoluir</span> Seu Negócio
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl md:text-2xl text-muted-foreground text-hud-drift" style={{ animationDelay: '0.2s' }}>
             Quanto dinheiro você já perdeu por não saber fazer aplicação de PPF?
           </p>
         </div>
@@ -65,7 +65,7 @@ const Pricing = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-3xl md:text-4xl font-bold text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-center text-hud-drift">
               Garanta sua vaga <span className="text-automotive-bronze">hoje!</span>
             </h3>
 
