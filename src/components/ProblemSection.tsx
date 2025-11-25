@@ -38,10 +38,10 @@ const ProblemSection = () => {
           ref={titleRef}
           className={`text-center mb-16 space-y-6 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-automotive-bronze animate-power-pulse text-glow-bronze">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-automotive-bronze animate-power-pulse text-glow-bronze text-auto-light-sweep text-with-underline">
             Você Está Perdendo Dinheiro TODOS OS DIAS...
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-hud-drift">
             Enquanto seus concorrentes faturam R$ 150 a R$ 600 por serviço com aplicação de PPF, você fica refém de serviços básicos com margens cada vez menores.
           </p>
         </div>
@@ -59,10 +59,10 @@ const ProblemSection = () => {
                 <div className="flex items-start gap-5">
                   <div className="benefits-icon text-5xl">{problem.emoji}</div>
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300 text-hud-drift">
                       {problem.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-digital-flick">
                       {problem.description}
                     </p>
                   </div>

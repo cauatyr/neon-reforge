@@ -43,7 +43,7 @@ const WhyDifferent = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-auto-light-sweep text-with-underline">
           Por Que Este Curso é <span className="text-automotive-bronze text-glow-bronze">Diferente</span>
         </h2>
 
@@ -55,10 +55,10 @@ const WhyDifferent = () => {
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div className="text-5xl mb-5">{feature.emoji}</div>
-              <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
+              <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300 text-hud-drift">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-digital-flick">
                 {feature.description}
               </p>
               {/* Animated underline */}

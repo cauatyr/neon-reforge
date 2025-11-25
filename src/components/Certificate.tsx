@@ -22,12 +22,12 @@ const Certificate = () => {
                 <div className="benefits-icon w-20 h-20 rounded-full bg-automotive-bronze/20 flex items-center justify-center border-2 border-automotive-bronze shadow-[0_0_25px_rgba(168,116,55,0.4)]">
                   <Award className="w-10 h-10 text-automotive-bronze" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-auto-light-sweep">
                   CERTIFICADO DE <span className="text-automotive-bronze text-glow-bronze">CONCLUSÃO</span>
                 </h2>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-semibold text-automotive-bronze">
+              <h3 className="text-2xl md:text-3xl font-semibold text-automotive-bronze text-hud-drift">
                 Comprove sua qualificação técnica
               </h3>
 
@@ -35,7 +35,7 @@ const Certificate = () => {
                 {benefits.map((benefit, idx) => (
                   <div key={idx} className="flex items-start gap-3 group animate-slide-power" style={{ animationDelay: `${idx * 0.1}s` }}>
                     <CheckCircle className="w-6 h-6 text-automotive-bronze flex-shrink-0 mt-1 group-hover:scale-125 transition-transform duration-300" />
-                    <p className="text-lg text-foreground group-hover:text-automotive-bronze transition-colors duration-300">
+                    <p className="text-lg text-foreground group-hover:text-automotive-bronze transition-colors duration-300 text-digital-flick">
                       {benefit}
                     </p>
                   </div>

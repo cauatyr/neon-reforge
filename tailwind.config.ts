@@ -457,6 +457,71 @@ export default {
           "0%": { backgroundPosition: "-150% 0" },
           "100%": { backgroundPosition: "150% 0" }
         },
+        // Automotive Text Animations
+        "auto-light-sweep": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px) skewX(-8deg)",
+            filter: "blur(8px)"
+          },
+          "40%": {
+            opacity: "1",
+            transform: "translateY(0px) skewX(0deg)",
+            filter: "blur(0px)"
+          },
+          "100%": {
+            textShadow: "0px 0px 18px rgba(255, 255, 255, 0.35)"
+          }
+        },
+        "autospeed-underline": {
+          "0%": { 
+            width: "0%", 
+            opacity: "0" 
+          },
+          "30%": { 
+            opacity: "1" 
+          },
+          "100%": { 
+            width: "100%", 
+            opacity: "1" 
+          }
+        },
+        "hud-drift": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-25px) translateY(8px) scale(0.96) rotateX(10deg)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px) translateY(0px) scale(1) rotateX(0deg)"
+          }
+        },
+        "digital-flick-reveal": {
+          "0%": { 
+            opacity: "0", 
+            letterSpacing: "-2px" 
+          },
+          "40%": { 
+            opacity: "0.4", 
+            letterSpacing: "0px" 
+          },
+          "60%": { 
+            opacity: "0.7" 
+          },
+          "100%": { 
+            opacity: "1" 
+          }
+        },
+        "carbon-scan": {
+          "0%": {
+            backgroundPosition: "-120% 0",
+            opacity: "0"
+          },
+          "100%": {
+            backgroundPosition: "120% 0",
+            opacity: "1"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -499,6 +564,12 @@ export default {
         "cta-floating-move": "cta-floating-move 4s ease-in-out infinite",
         "cta-side-shift": "cta-side-shift 6.5s ease-in-out infinite",
         "cta-auto-shine": "cta-auto-shine 5s linear infinite",
+        // Automotive Text Animations
+        "auto-light-sweep": "auto-light-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "autospeed-underline": "autospeed-underline 0.9s ease-out forwards",
+        "hud-drift": "hud-drift 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards",
+        "digital-flick-reveal": "digital-flick-reveal 0.65s ease-out forwards",
+        "carbon-scan": "carbon-scan 1s ease-out forwards",
       },
     },
   },
