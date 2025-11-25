@@ -35,7 +35,7 @@ const WhoIsFor = () => {
           {audience.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group hover:scale-105 hover:-translate-y-2 transition-all duration-500 animate-slide-power border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
+              className="glass-card p-8 rounded-xl group card-interactive animate-slide-power border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
               style={{ animationDelay: `${idx * 0.15}s` }}
             >
               <div className="flex items-start gap-5">

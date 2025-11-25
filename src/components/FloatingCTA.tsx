@@ -35,14 +35,12 @@ const FloatingCTA = () => {
     >
       <Button
         onClick={scrollToOffer}
-        className="touch-feedback w-full group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg py-7 h-auto shadow-[0_0_40px_rgba(220,38,38,0.7)] animate-light-run border-2 border-automotive-red/60 animate-border-glow"
+        className="premium-button w-full group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-lg py-7 h-auto transition-all duration-300 border-2 border-automotive-red/60"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
-          <Zap className="w-5 h-5 animate-rev" />
+          <Zap className="w-5 h-5" />
           GARANTIR VAGA - R$ 67
         </span>
-        {/* Circulating light */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/30 to-transparent animate-light-run"></div>
       </Button>
     </div>
   );
