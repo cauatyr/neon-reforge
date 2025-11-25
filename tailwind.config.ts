@@ -393,6 +393,53 @@ export default {
             clipPath: "inset(100% 0 0 0)"
           },
         },
+        // Premium Button Animations - Continuous Motion
+        "depth-pulse": {
+          "0%, 100%": {
+            transform: "scale(1)"
+          },
+          "50%": {
+            transform: "scale(1.02)"
+          }
+        },
+        "horizontal-oscillation": {
+          "0%, 100%": {
+            transform: "translateX(0)"
+          },
+          "25%": {
+            transform: "translateX(1.5px)"
+          },
+          "75%": {
+            transform: "translateX(-1.5px)"
+          }
+        },
+        "automotive-reflection": {
+          "0%": {
+            backgroundPosition: "-200% center"
+          },
+          "100%": {
+            backgroundPosition: "200% center"
+          }
+        },
+        "metallic-glow": {
+          "0%, 100%": {
+            boxShadow: "0 8px 25px rgba(168, 116, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+          },
+          "50%": {
+            boxShadow: "0 10px 35px rgba(168, 116, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          }
+        },
+        "button-press": {
+          "0%": {
+            transform: "scale(1)"
+          },
+          "50%": {
+            transform: "scale(0.95)"
+          },
+          "100%": {
+            transform: "scale(1)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -425,6 +472,12 @@ export default {
         "section-slide": "section-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "card-tilt": "card-tilt 0.3s ease-out forwards",
         "page-entry": "page-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        // Premium Button Continuous Animations
+        "depth-pulse": "depth-pulse 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "horizontal-oscillation": "horizontal-oscillation 4s ease-in-out infinite",
+        "automotive-reflection": "automotive-reflection 3s linear infinite",
+        "metallic-glow": "metallic-glow 3s ease-in-out infinite",
+        "button-press": "button-press 0.2s ease-out",
       },
     },
   },

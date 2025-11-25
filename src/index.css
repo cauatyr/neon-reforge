@@ -149,7 +149,7 @@ All colors MUST be HSL.
   .crystal-button {
     position: relative;
     will-change: transform, box-shadow;
-    animation: crystal-breath 7s ease-in-out infinite;
+    animation: crystal-breath 7s ease-in-out infinite, horizontal-oscillation 4s ease-in-out infinite;
     overflow: hidden;
   }
 
@@ -173,6 +173,11 @@ All colors MUST be HSL.
 
   .crystal-button-entry {
     animation: crystal-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Premium Button Glow Animation */
+  .crystal-glow-animate {
+    animation: metallic-glow 3s ease-in-out infinite;
   }
 
   /* Global Interaction Styles */
