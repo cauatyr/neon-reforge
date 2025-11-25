@@ -15,7 +15,7 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        crystal: "relative bg-gradient-to-r from-automotive-carbon via-automotive-bronze/80 to-automotive-carbon text-white border-2 border-automotive-steel/60 backdrop-blur-sm overflow-hidden animate-depth-pulse hover:shadow-[0_10px_35px_rgba(168,116,55,0.6)] active:animate-button-press transition-all duration-200 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:animate-automotive-reflection before:pointer-events-none crystal-glow-animate",
+        crystal: "relative bg-gradient-to-r from-[#0D0D0D] via-[#121212] to-[#1A1A1A] text-white border-2 border-automotive-bronze/40 backdrop-blur-sm overflow-hidden animate-cta-float hover:border-automotive-bronze/60 active:scale-95 transition-all duration-200 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:bg-[length:200%] before:animate-cta-metal-shine before:pointer-events-none after:absolute after:inset-0 after:animate-cta-pulse-shadow after:pointer-events-none",
       },
       size: {
         default: "h-10 px-4 py-2",

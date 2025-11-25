@@ -440,6 +440,26 @@ export default {
             transform: "scale(1)"
           }
         },
+        // Real Movement Animations for CTAs
+        "cta-float": {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-4px)" },
+          "100%": { transform: "translateY(0)" }
+        },
+        "cta-drift": {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(3px)" },
+          "100%": { transform: "translateX(0)" }
+        },
+        "cta-metal-shine": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
+        },
+        "cta-pulse-shadow": {
+          "0%": { boxShadow: "0 0 0px rgba(212,160,86,0.0)" },
+          "50%": { boxShadow: "0 0 12px rgba(212,160,86,0.35)" },
+          "100%": { boxShadow: "0 0 0px rgba(212,160,86,0.0)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -478,6 +498,11 @@ export default {
         "automotive-reflection": "automotive-reflection 3s linear infinite",
         "metallic-glow": "metallic-glow 3s ease-in-out infinite",
         "button-press": "button-press 0.2s ease-out",
+        // Real Movement CTA Animations
+        "cta-float": "cta-float 3.5s ease-in-out infinite",
+        "cta-drift": "cta-drift 6s ease-in-out infinite",
+        "cta-metal-shine": "cta-metal-shine 4s linear infinite",
+        "cta-pulse-shadow": "cta-pulse-shadow 5s ease-in-out infinite",
       },
     },
   },
