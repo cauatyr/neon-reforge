@@ -15,24 +15,35 @@ const images = [
 ];
 
 const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
-  const { ref, isVisible, isExiting } = useCinematicImage();
+  // Distribute effects: edge-light for first few, then slide, parallax, none
+  const effects = ['edge-light', 'edge-light', 'slide', 'parallax', 'none'] as const;
+  const effect = effects[idx % effects.length];
+  
+  const { ref, isVisible } = useCinematicImage({ effect });
+  
+  const effectClasses = {
+    slide: 'img-slide',
+    'edge-light': 'img-edge-light',
+    parallax: 'img-parallax',
+    none: ''
+  };
   
   return (
     <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-energy-border img-exit ${
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${effectClasses[effect]} ${
         isVisible ? 'visible' : ''
-      } ${isExiting ? 'exiting' : ''} border-automotive-bronze/40 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(139,92,46,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]`}
-      style={{ animationDelay: `${idx * 0.05}s` }}
+      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
+      style={{ transitionDelay: `${idx * 40}ms` }}
     >
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full h-full object-cover transition-transform duration-300"
+        className="w-full h-full object-cover"
         loading="lazy"
       />
-      {/* Bottom glow effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-automotive-red/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      {/* Subtle bottom glow on hover */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };

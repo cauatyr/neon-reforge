@@ -156,59 +156,74 @@ All colors MUST be HSL.
     box-shadow: 0 0 60px rgba(220, 38, 38, 0.9), inset 0 0 20px rgba(220, 38, 38, 0.5);
   }
 
-  /* Cinematic Image Animations */
+  /* Professional Cinematic Image Animations - No Pixelation */
   .img-cinematic {
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .img-cinematic.visible {
-    animation: cinematic-entry 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 8px 30px hsla(0, 0%, 0%, 0.3);
   }
 
-  .img-cinematic::after {
+  /* Subtle shine effect - runs once */
+  .img-cinematic.visible::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       120deg,
       transparent 0%,
-      hsla(0, 0%, 100%, 0.3) 45%,
-      hsla(0, 85%, 55%, 0.2) 50%,
+      hsla(0, 0%, 100%, 0.15) 50%,
       transparent 100%
     );
-    background-size: 300% 100%;
-    animation: dual-shine 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+    background-size: 200% 100%;
+    animation: subtle-shine 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
     pointer-events: none;
+    opacity: 0;
   }
 
-  .img-energy-border::before {
+  /* Soft Slide Effect */
+  .img-slide {
+    transform: translateX(-8px);
+  }
+
+  .img-slide.visible {
+    transform: translateX(0);
+  }
+
+  /* Premium Edge Light Effect */
+  .img-edge-light::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    background: linear-gradient(90deg, transparent, hsl(var(--ferrari-red)), transparent);
+    inset: -1px;
+    background: linear-gradient(
+      90deg, 
+      transparent 0%, 
+      hsla(0, 0%, 100%, 0.4) 30%,
+      hsla(0, 85%, 55%, 0.3) 50%,
+      transparent 100%
+    );
     border-radius: inherit;
-    animation: energy-border 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+    opacity: 0;
     pointer-events: none;
-    opacity: 0.8;
   }
 
-  .img-depth-parallax {
+  .img-edge-light.visible::before {
+    animation: edge-light-sweep 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+  }
+
+  /* Clean Parallax */
+  .img-parallax {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
-  }
-
-  .img-exit {
-    opacity: 1;
-    transform: scale(1);
-    filter: contrast(1);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .img-exit.exiting {
-    opacity: 0.7;
-    transform: scale(0.97);
-    filter: contrast(0.9) brightness(0.9);
   }
 }
 
@@ -301,6 +316,31 @@ All colors MUST be HSL.
   }
   50% {
     transform: scale(1.02);
+  }
+}
+
+@keyframes subtle-shine {
+  0% {
+    background-position: -200% center;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    background-position: 200% center;
+    opacity: 0;
+  }
+}
+
+@keyframes edge-light-sweep {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 1;
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 0;
   }
 }
 
