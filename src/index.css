@@ -133,6 +133,28 @@ All colors MUST be HSL.
       repeating-linear-gradient(45deg, transparent, transparent 2px, hsla(0, 0%, 0%, 0.3) 2px, hsla(0, 0%, 0%, 0.3) 4px),
       repeating-linear-gradient(-45deg, transparent, transparent 2px, hsla(0, 0%, 0%, 0.2) 2px, hsla(0, 0%, 0%, 0.2) 4px);
   }
+
+  /* Viewport-based animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Touch feedback */
+  .touch-feedback {
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  }
+
+  .touch-feedback:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 60px rgba(220, 38, 38, 0.9), inset 0 0 20px rgba(220, 38, 38, 0.5);
+  }
 }
 
 /* Automotive Animations */

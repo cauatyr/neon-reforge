@@ -108,6 +108,84 @@ export default {
           "0%": { backgroundPosition: "-200% center" },
           "100%": { backgroundPosition: "200% center" },
         },
+        "scan": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100vh)" },
+        },
+        "ignition": {
+          "0%": { 
+            opacity: "0",
+            transform: "scale(0.8)",
+            filter: "brightness(0.5)"
+          },
+          "50%": {
+            filter: "brightness(2)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "brightness(1)"
+          },
+        },
+        "border-glow": {
+          "0%": { 
+            boxShadow: "0 0 10px rgba(220, 38, 38, 0.3)",
+            borderColor: "rgba(220, 38, 38, 0.3)"
+          },
+          "50%": { 
+            boxShadow: "0 0 30px rgba(220, 38, 38, 0.8), 0 0 50px rgba(220, 38, 38, 0.4)",
+            borderColor: "rgba(220, 38, 38, 0.9)"
+          },
+          "100%": { 
+            boxShadow: "0 0 10px rgba(220, 38, 38, 0.3)",
+            borderColor: "rgba(220, 38, 38, 0.3)"
+          },
+        },
+        "light-run": {
+          "0%": { 
+            backgroundPosition: "-200% center",
+            opacity: "0.5"
+          },
+          "50%": {
+            opacity: "1"
+          },
+          "100%": { 
+            backgroundPosition: "200% center",
+            opacity: "0.5"
+          },
+        },
+        "rev": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+        "zoom-pulse": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" },
+        },
+        "slide-power": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-50px) rotateY(-15deg)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0) rotateY(0)"
+          },
+        },
+        "digital-flip": {
+          "0%": { 
+            transform: "rotateX(0deg)",
+            opacity: "0"
+          },
+          "50%": {
+            transform: "rotateX(90deg)",
+            opacity: "0.5"
+          },
+          "100%": {
+            transform: "rotateX(0deg)",
+            opacity: "1"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -116,6 +194,14 @@ export default {
         "power-pulse": "power-pulse 2s ease-in-out infinite",
         "energy-run": "energy-run 2s linear infinite",
         "metal-shine": "metal-shine 3s linear infinite",
+        "scan": "scan 3s ease-in-out infinite",
+        "ignition": "ignition 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "border-glow": "border-glow 2s ease-in-out infinite",
+        "light-run": "light-run 3s linear infinite",
+        "rev": "rev 1s ease-in-out infinite",
+        "zoom-pulse": "zoom-pulse 4s ease-in-out infinite",
+        "slide-power": "slide-power 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "digital-flip": "digital-flip 0.6s ease-out forwards",
       },
     },
   },

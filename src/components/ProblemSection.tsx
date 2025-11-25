@@ -1,4 +1,5 @@
 import { AlertTriangle, DollarSign, Clock, HelpCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const problems = [
   {
@@ -28,10 +29,15 @@ const problems = [
 ];
 
 const ProblemSection = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
-        <div className="text-center mb-16 space-y-6 animate-fade-in-up">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 space-y-6 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-automotive-red animate-power-pulse text-glow-red">
             Você Está Perdendo Dinheiro TODOS OS DIAS...
           </h2>
@@ -41,27 +47,33 @@ const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {problems.map((problem, idx) => (
-            <div
-              key={idx}
-              className="glass-card p-8 rounded-xl group hover:scale-105 hover:-translate-y-2 transition-all duration-500 border-l-4 border-l-automotive-red shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] animate-slide-power"
-              style={{ animationDelay: `${idx * 0.15}s` }}
-            >
-              <div className="flex items-start gap-5">
-                <div className="text-5xl animate-rev">{problem.emoji}</div>
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-red transition-colors duration-300">
-                    {problem.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {problem.description}
-                  </p>
+          {problems.map((problem, idx) => {
+            const { ref, isVisible } = useScrollAnimation();
+            return (
+              <div
+                key={idx}
+                ref={ref}
+                className={`glass-card p-8 rounded-xl group transition-all duration-700 border-l-4 border-l-automotive-red shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] animate-border-glow ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                style={{ transitionDelay: `${idx * 0.15}s` }}
+              >
+                <div className="flex items-start gap-5">
+                  <div className="text-5xl animate-rev">{problem.emoji}</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-red transition-colors duration-300">
+                      {problem.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {problem.description}
+                    </p>
+                  </div>
                 </div>
+                {/* Animated scan line effect */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-light-run"></div>
+                {/* Side glow on hover */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-automotive-red opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(220,38,38,0.8)]"></div>
               </div>
-              {/* Scan line effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
