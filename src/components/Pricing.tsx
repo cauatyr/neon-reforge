@@ -81,7 +81,7 @@ const Pricing = () => {
             </div>
 
             {/* CTA Button - Crystal Motion Tech */}
-            <div className="flex justify-center" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-col items-center gap-3" style={{ animationDelay: '0.2s' }}>
               <Button
                 asChild
                 size="lg"
@@ -96,6 +96,9 @@ const Pricing = () => {
                   </span>
                 </a>
               </Button>
+              <p className="text-sm text-white/80 text-center">
+                Mesmo quem nunca aplicou antes consegue aprender rapidamente.
+              </p>
             </div>
 
             {/* Security badges */}

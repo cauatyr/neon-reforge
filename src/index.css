@@ -149,7 +149,7 @@ All colors MUST be HSL.
   .crystal-button {
     position: relative;
     will-change: transform, box-shadow;
-    animation: cta-float 3.5s ease-in-out infinite, cta-drift 6s ease-in-out infinite;
+    animation: cta-floating-move 4s ease-in-out infinite, cta-side-shift 6.5s ease-in-out infinite;
     overflow: hidden;
   }
 

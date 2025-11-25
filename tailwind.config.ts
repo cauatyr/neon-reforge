@@ -441,24 +441,21 @@ export default {
           }
         },
         // Real Movement Animations for CTAs
-        "cta-float": {
-          "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-4px)" },
-          "100%": { transform: "translateY(0)" }
+        "cta-floating-move": {
+          "0%": { transform: "translateY(0px) scale(1)" },
+          "25%": { transform: "translateY(-6px) scale(1.01)" },
+          "50%": { transform: "translateY(0px) scale(1)" },
+          "75%": { transform: "translateY(6px) scale(0.99)" },
+          "100%": { transform: "translateY(0px) scale(1)" }
         },
-        "cta-drift": {
-          "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translateX(3px)" },
-          "100%": { transform: "translateX(0)" }
+        "cta-side-shift": {
+          "0%": { transform: "translateX(0px)" },
+          "50%": { transform: "translateX(4px)" },
+          "100%": { transform: "translateX(0px)" }
         },
-        "cta-metal-shine": {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" }
-        },
-        "cta-pulse-shadow": {
-          "0%": { boxShadow: "0 0 0px rgba(212,160,86,0.0)" },
-          "50%": { boxShadow: "0 0 12px rgba(212,160,86,0.35)" },
-          "100%": { boxShadow: "0 0 0px rgba(212,160,86,0.0)" }
+        "cta-auto-shine": {
+          "0%": { backgroundPosition: "-150% 0" },
+          "100%": { backgroundPosition: "150% 0" }
         },
       },
       animation: {
@@ -499,10 +496,9 @@ export default {
         "metallic-glow": "metallic-glow 3s ease-in-out infinite",
         "button-press": "button-press 0.2s ease-out",
         // Real Movement CTA Animations
-        "cta-float": "cta-float 3.5s ease-in-out infinite",
-        "cta-drift": "cta-drift 6s ease-in-out infinite",
-        "cta-metal-shine": "cta-metal-shine 4s linear infinite",
-        "cta-pulse-shadow": "cta-pulse-shadow 5s ease-in-out infinite",
+        "cta-floating-move": "cta-floating-move 4s ease-in-out infinite",
+        "cta-side-shift": "cta-side-shift 6.5s ease-in-out infinite",
+        "cta-auto-shine": "cta-auto-shine 5s linear infinite",
       },
     },
   },
