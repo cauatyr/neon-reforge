@@ -54,6 +54,9 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-power: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Cinematic Noise */
+    --cinematic-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
   }
 
   .dark {
@@ -76,6 +79,22 @@ All colors MUST be HSL.
       repeating-linear-gradient(90deg, hsla(30, 45%, 50%, 0.02) 0px, transparent 1px, transparent 50px, hsla(30, 45%, 50%, 0.02) 51px),
       linear-gradient(180deg, hsl(0, 0%, 6%) 0%, hsl(0, 0%, 4%) 100%);
     background-attachment: fixed;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--cinematic-noise);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.015;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -145,33 +164,59 @@ All colors MUST be HSL.
     transform: translateY(0);
   }
 
-  /* Crystal Motion Tech Button - Enhanced Floating Premium */
+  /* Crystal Button with HyperFloat 2.0 Premium Animation */
   .crystal-button {
     position: relative;
-    will-change: transform, box-shadow;
-    animation: cta-floating-premium 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite, 
-               cta-glow-pulse 3s ease-in-out infinite;
     overflow: hidden;
+    background: #0A0A0A;
+    border: 2px solid rgba(205, 127, 50, 0.6);
+    box-shadow: 
+      0 0 20px rgba(205, 127, 50, 0.12), 
+      0 0 40px rgba(205, 127, 50, 0.08),
+      -4px 0 12px rgba(205, 127, 50, 0.06),
+      4px 0 12px rgba(205, 127, 50, 0.06);
+    animation: 
+      cta-hyperfloat 6s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+      cta-glow-pulse 3s ease-in-out infinite,
+      cta-micro-pulse 6s ease-out infinite;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+    transform-style: preserve-3d;
   }
 
   .crystal-button::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -100%;
     background: linear-gradient(
-      120deg,
+      90deg,
       transparent 0%,
-      rgba(205, 127, 50, 0.25) 50%,
+      rgba(255, 255, 255, 0.18) 45%,
+      rgba(205, 127, 50, 0.3) 50%,
+      rgba(255, 255, 255, 0.18) 55%,
       transparent 100%
     );
-    background-size: 200% 100%;
-    animation: cta-auto-shine 4s linear infinite;
-    pointer-events: none;
+    animation: cta-auto-shine 5s linear infinite;
+    transform: skewX(-25deg);
+    opacity: 0.8;
   }
 
   .crystal-button:active {
-    transform: scale(0.96) translateX(0.4px);
-    transition: transform 160ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.94) translateY(1px);
+    box-shadow: 
+      0 0 15px rgba(205, 127, 50, 0.15), 
+      0 0 25px rgba(205, 127, 50, 0.08);
+    transition: all 0.08s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (hover: hover) {
+    .crystal-button:hover {
+      box-shadow: 
+        0 0 30px rgba(205, 127, 50, 0.18), 
+        0 0 50px rgba(205, 127, 50, 0.12),
+        -6px 0 15px rgba(205, 127, 50, 0.08),
+        6px 0 15px rgba(205, 127, 50, 0.08);
+    }
   }
 
   @keyframes metallic-reflection {
@@ -217,7 +262,24 @@ All colors MUST be HSL.
 
   /* Page Entry Animation */
   .page-wrapper {
-    animation: page-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    position: relative;
+    z-index: 2;
+    animation: page-entry 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 1.4s;
+    opacity: 0;
+  }
+
+  @keyframes page-entry {
+    0% {
+      opacity: 0;
+      transform: scale(0.98);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
   }
 
   /* Professional Cinematic Image Animations - No Pixelation */
@@ -492,6 +554,82 @@ All colors MUST be HSL.
     animation: parallax-layer-4 4.5s ease-in-out infinite;
   }
   
+  /* Cinematic Loader */
+  .cinematic-loader {
+    animation: loader-fade-out 0.3s ease-out 1.1s forwards;
+  }
+
+  @keyframes loader-fade-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .cinematic-loader-line {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(205, 127, 50, 0.3) 20%,
+      rgba(205, 127, 50, 0.9) 50%,
+      rgba(205, 127, 50, 0.3) 80%,
+      transparent 100%
+    );
+    animation: loader-line-sweep 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.6);
+  }
+
+  @keyframes loader-line-sweep {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+  }
+
+  /* Tesla Metallic Shine Effect */
+  .tesla-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tesla-shine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 40%,
+      rgba(205, 127, 50, 0.25) 50%,
+      rgba(255, 255, 255, 0.15) 60%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    animation: tesla-shine-sweep 0.9s ease-out forwards;
+    pointer-events: none;
+  }
+
+  @keyframes tesla-shine-sweep {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
   /* Energy edge glow for images */
   .energy-edge {
     position: relative;
@@ -506,6 +644,68 @@ All colors MUST be HSL.
     opacity: 0;
     animation: energy-edge-sweep 0.6s ease-out forwards;
     pointer-events: none;
+  }
+
+  /* Image Grandeur Mode */
+  .image-grandeur {
+    filter: contrast(1.04) brightness(1.03);
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.3),
+      0 0 2px rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+  }
+
+  .image-grandeur::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      rgba(0, 0, 0, 0.02) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Micro Touch Reaction */
+  .touch-reactive {
+    transition: all 0.08s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .touch-reactive:active {
+    transform: scale(0.99);
+    box-shadow: 
+      0 5px 20px rgba(0, 0, 0, 0.15),
+      0 0 30px rgba(205, 127, 50, 0.08);
+  }
+
+  /* Section Glow Starter */
+  .section-glow-start {
+    position: relative;
+  }
+
+  .section-glow-start::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(205, 127, 50, 0.6) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    animation: section-glow-sweep 0.4s ease-out forwards;
+  }
+
+  @keyframes section-glow-sweep {
+    to {
+      transform: translateX(100%);
+    }
   }
 
   .cta-title {
@@ -681,28 +881,40 @@ All colors MUST be HSL.
   }
 }
 
-/* Enhanced CTA Floating Premium Animations */
-@keyframes cta-floating-premium {
+/* CTA HyperFloat 2.0 Animations */
+@keyframes cta-hyperfloat {
   0% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
+    transform: translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1); 
   }
-  25% { 
-    transform: translateY(-3px) translateX(2px) rotate(0.7deg) scale(1.01); 
+  20% { 
+    transform: translateY(-3px) translateX(2px) rotateX(0.5deg) rotateY(0.4deg) scale(1.005); 
   }
-  50% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
+  40% { 
+    transform: translateY(-1px) translateX(3px) rotateX(0.3deg) rotateY(0.7deg) scale(1.01); 
   }
-  75% { 
-    transform: translateY(3px) translateX(-2px) rotate(-0.7deg) scale(0.99); 
+  60% { 
+    transform: translateY(2px) translateX(-2px) rotateX(-0.4deg) rotateY(-0.5deg) scale(1.005); 
+  }
+  80% { 
+    transform: translateY(3px) translateX(-3px) rotateX(-0.7deg) rotateY(-0.3deg) scale(0.995); 
   }
   100% { 
-    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
+    transform: translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1); 
+  }
+}
+
+@keyframes cta-micro-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.02); 
   }
 }
 
 @keyframes cta-auto-shine {
   0% { background-position: -150% 0; }
-  100% { background-position: 150% 0; }
+  100% { background-position: 250% 0; }
 }
 
 @keyframes cta-glow-pulse {
