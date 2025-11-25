@@ -42,7 +42,7 @@ const FloatingCTA = () => {
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
             <Zap className="w-5 h-5" />
-            GARANTIR VAGA - R$ 67
+            GARANTIR VAGA - R$ 97
           </span>
         </Button>
         <p className="text-xs text-white/80 text-center">
