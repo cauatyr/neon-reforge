@@ -22,7 +22,7 @@ const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; id
   return (
       <div
         ref={ref}
-        className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${
+        className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic energy-edge ${
           isVisible ? 'visible' : ''
         } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
         style={{ transitionDelay: `${idx * 50}ms` }}
@@ -59,7 +59,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 benefits-section">
+    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
       {/* Animated background elements with system startup */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-zoom-pulse"></div>
@@ -76,11 +76,11 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 parallax-layer-3">
             <div className="inline-block">
-              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none text-auto-light-sweep">
-                <span className="text-automotive-bronze animate-power-pulse text-glow-bronze">PPF</span>
-                <span className="text-automotive-white"> ESSENCIAL</span>
+              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none text-auto-light-sweep relative">
+                <span className="text-automotive-bronze text-glow-bronze relative z-10">PPF</span>
+                <span className="text-automotive-white relative z-10"> ESSENCIAL</span>
               </h1>
             </div>
             
@@ -107,7 +107,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image Grid */}
-          <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-300 parallax-layer-2 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {heroImages.map((image, idx) => (
               <CinematicImageWrapper key={idx} image={image} idx={idx} />
             ))}
@@ -115,7 +115,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce parallax-layer-4">
           <ChevronDown className="w-8 h-8 text-automotive-bronze" />
         </div>
       </div>
