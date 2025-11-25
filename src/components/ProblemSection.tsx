@@ -53,11 +53,11 @@ const ProblemSection = () => {
               <div
                 key={idx}
                 ref={ref}
-                className={`glass-card p-8 rounded-xl group transition-all duration-700 border-l-4 border-l-automotive-red shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] animate-border-glow ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
+                className={`glass-card benefits-card p-8 rounded-xl group transition-all duration-700 border-l-4 border-l-automotive-red shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_40px_rgba(220,38,38,0.4)] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
                 style={{ transitionDelay: `${idx * 0.15}s` }}
               >
                 <div className="flex items-start gap-5">
-                  <div className="text-5xl animate-rev">{problem.emoji}</div>
+                  <div className="benefits-icon text-5xl">{problem.emoji}</div>
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-red transition-colors duration-300">
                       {problem.title}
@@ -67,8 +67,8 @@ const ProblemSection = () => {
                     </p>
                   </div>
                 </div>
-                {/* Animated scan line effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-light-run"></div>
+                {/* Animated tech line on bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {/* Side glow on hover */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-automotive-red opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(220,38,38,0.8)]"></div>
               </div>

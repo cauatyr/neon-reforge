@@ -245,6 +245,115 @@ export default {
             opacity: "0"
           }
         },
+        // Crystal Motion Tech Button
+        "crystal-breath": {
+          "0%, 100%": { 
+            transform: "translateY(0)",
+            boxShadow: "0 8px 25px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+          },
+          "50%": { 
+            transform: "translateY(-3px)",
+            boxShadow: "0 10px 35px rgba(220, 38, 38, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+          },
+        },
+        "crystal-entry": {
+          "0%": { 
+            opacity: "0",
+            transform: "scale(0.90)",
+            borderColor: "rgba(200, 200, 200, 0)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "scale(1)",
+            borderColor: "rgba(200, 200, 200, 0.6)"
+          },
+        },
+        "crystal-flash": {
+          "0%": { 
+            transform: "translateX(-100%) skewX(-15deg)",
+            opacity: "0"
+          },
+          "50%": {
+            opacity: "0.8"
+          },
+          "100%": { 
+            transform: "translateX(200%) skewX(-15deg)",
+            opacity: "0"
+          },
+        },
+        // Section-specific animations
+        "hero-title-slide": {
+          "0%": { 
+            opacity: "0",
+            transform: "translateY(30px)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+        },
+        "spotlight-reveal": {
+          "0%": { 
+            clipPath: "circle(0% at 50% 50%)",
+            transform: "scale(0.97)"
+          },
+          "100%": { 
+            clipPath: "circle(100% at 50% 50%)",
+            transform: "scale(1)"
+          },
+        },
+        "dual-axis-reveal": {
+          "0%": { 
+            opacity: "0",
+            transform: "translate(-6px, 8px)"
+          },
+          "70%": {
+            opacity: "1"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "translate(0, 0) rotate(0deg)"
+          },
+        },
+        "card-glow-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px rgba(220, 38, 38, 0.2), inset 0 0 15px rgba(220, 38, 38, 0.05)"
+          },
+          "50%": { 
+            boxShadow: "0 0 30px rgba(220, 38, 38, 0.4), inset 0 0 20px rgba(220, 38, 38, 0.1)"
+          },
+        },
+        "pendular-entry": {
+          "0%": { 
+            opacity: "0",
+            transform: "rotate(-2deg) translateY(20px)"
+          },
+          "60%": {
+            transform: "rotate(1deg) translateY(-5px)"
+          },
+          "100%": { 
+            opacity: "1",
+            transform: "rotate(0deg) translateY(0)"
+          },
+        },
+        "split-text": {
+          "0%": { 
+            clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+            opacity: "0"
+          },
+          "100%": { 
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            opacity: "1"
+          },
+        },
+        "led-border-run": {
+          "0%": { 
+            strokeDashoffset: "1000"
+          },
+          "100%": { 
+            strokeDashoffset: "0"
+          },
+        },
         "slide-power": {
           "0%": {
             opacity: "0",
@@ -269,6 +378,23 @@ export default {
             opacity: "1"
           },
         },
+        "laser-edge": {
+          "0%": { 
+            clipPath: "inset(0 100% 0 0)"
+          },
+          "25%": { 
+            clipPath: "inset(0 0 0 0)"
+          },
+          "50%": { 
+            clipPath: "inset(0 0 100% 0)"
+          },
+          "75%": { 
+            clipPath: "inset(0 0 0 100%)"
+          },
+          "100%": { 
+            clipPath: "inset(100% 0 0 0)"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -283,11 +409,20 @@ export default {
         "digital-flip": "digital-flip 0.6s ease-out forwards",
         "subtle-shine": "subtle-shine 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "edge-light-sweep": "edge-light-sweep 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        // New Premium Button Animations
-        "premium-breath": "premium-breath 5s ease-in-out infinite",
-        "button-press": "button-press 0.2s ease-out",
-        "button-entry": "button-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        // New Global Interactions
+        // Crystal Motion Tech Button
+        "crystal-breath": "crystal-breath 7s ease-in-out infinite",
+        "crystal-entry": "crystal-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "crystal-flash": "crystal-flash 0.6s ease-out",
+        // Section-specific animations
+        "hero-title-slide": "hero-title-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "spotlight-reveal": "spotlight-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "dual-axis-reveal": "dual-axis-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "card-glow-pulse": "card-glow-pulse 0.2s ease-out",
+        "pendular-entry": "pendular-entry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "split-text": "split-text 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "led-border-run": "led-border-run 1.5s ease-out forwards",
+        "laser-edge": "laser-edge 0.8s ease-out forwards",
+        // Global Interactions
         "scroll-glow": "scroll-glow 1.2s ease-out forwards",
         "section-slide": "section-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "card-tilt": "card-tilt 0.3s ease-out forwards",

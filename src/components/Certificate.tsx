@@ -10,16 +10,16 @@ const benefits = [
 ];
 
 const Certificate = () => {
-  const { ref: imgRef, isVisible } = useCinematicImage({ effect: 'edge-light' });
+  const { ref: imgRef, isVisible } = useCinematicImage({ effect: 'laser-edge' });
   
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl">
-        <div className="glass-card p-8 md:p-12 rounded-2xl animate-fade-in-up shadow-[0_0_50px_rgba(220,38,38,0.2)]">
+        <div className="glass-card social-card p-8 md:p-12 rounded-2xl shadow-[0_0_50px_rgba(220,38,38,0.2)]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-20 h-20 rounded-full bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red shadow-[0_0_25px_rgba(220,38,38,0.4)] animate-rev">
+                <div className="benefits-icon w-20 h-20 rounded-full bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red shadow-[0_0_25px_rgba(220,38,38,0.4)]">
                   <Award className="w-10 h-10 text-automotive-red" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">
@@ -45,7 +45,7 @@ const Certificate = () => {
 
             <div 
               ref={imgRef}
-              className={`relative img-cinematic img-edge-light ${
+              className={`relative img-cinematic img-laser-edge ${
                 isVisible ? 'visible' : ''
               } rounded-xl`}
             >

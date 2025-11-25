@@ -19,7 +19,7 @@ const WhatYouLearn = () => {
           Veja o que você vai <span className="text-automotive-bronze text-glow-bronze">aprender:</span>
         </h2>
 
-        <div className="glass-card p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(220,38,38,0.2)]">
+        <div className="glass-card benefits-card p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(220,38,38,0.2)]">
           <div className="grid gap-6">
             {topics.map((topic, idx) => (
               <div
@@ -27,7 +27,7 @@ const WhatYouLearn = () => {
                 className="flex items-start gap-4 group card-interactive animate-slide-power"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red group-hover:bg-automotive-red group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+                <div className="benefits-icon flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red group-hover:bg-automotive-red group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(220,38,38,0.3)]">
                   <Check className="w-5 h-5 text-automotive-red group-hover:text-white transition-colors" />
                 </div>
                 <p className="text-lg md:text-xl text-foreground group-hover:text-automotive-red transition-colors pt-2 font-medium">
