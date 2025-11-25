@@ -2,7 +2,7 @@ import { Award, CheckCircle } from "lucide-react";
 import { useCinematicImage } from "@/hooks/useCinematicImage";
 
 const benefits = [
-  "Certificado digital oficial da Wizoom Play",
+  "Certificado digital oficial da Hotmart",
   "Diferencial competitivo para atrair clientes mais exigentes",
   "Comprova sua atualização e compromisso com a excelência",
   "Mostre ao mercado que você investe em qualificação técnica.",

@@ -76,7 +76,7 @@ const Pricing = () => {
                 <span className="text-xl text-automotive-bronze font-semibold">por apenas</span>
               </div>
               <div className="text-7xl md:text-8xl font-bold text-automotive-bronze animate-power-pulse text-glow-bronze">
-                R$ 67
+                R$ 97
               </div>
             </div>
 
@@ -89,7 +89,7 @@ const Pricing = () => {
                 onClick={handleCTAClick}
                 className="crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto"
               >
-                <a href="https://go.wizoomplay.me/checkout/ppf-essencial-67" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.hotmart.com/I101700874W" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">
                     <Zap className="w-7 h-7" />
                     GARANTIR MINHA VAGA AGORA
