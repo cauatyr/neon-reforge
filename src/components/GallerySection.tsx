@@ -1,17 +1,18 @@
 import { useCinematicImage } from "@/hooks/useCinematicImage";
+import ppf1 from "@/assets/ppf-1.jpg";
+import ppf2 from "@/assets/ppf-2.jpg";
+import ppf3 from "@/assets/ppf-3.jpg";
+import ppf4 from "@/assets/ppf-4.jpg";
+import ppf5 from "@/assets/ppf-5.jpg";
+import ppf6 from "@/assets/ppf-6.jpg";
 
 const images = [
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png", alt: "Aplicação de PPF em detalhe" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png", alt: "Aplicação de PPF em concha de porta" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%203%20.png", alt: "Aplicação de PPF em multimídia" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%204.png", alt: "Aplicação de PPF em quina de porta" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%205%20.png", alt: "Aplicação de PPF em black piano" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%206.png", alt: "Kit de ferramentas para PPF" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%207.png", alt: "Aplicação de PPF em soleira" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%208.png", alt: "Detalhe de aplicação PPF" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%209.png", alt: "Aplicação de PPF em porta-malas" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%2011.png", alt: "Detalhe de proteção de quina" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%2012.png", alt: "Proteção de multimídia com PPF" },
+  { src: ppf1, alt: "Aplicação de PPF - proteção de maçaneta" },
+  { src: ppf2, alt: "Aplicação de PPF - técnica com espátula" },
+  { src: ppf3, alt: "Aplicação de PPF - uso de ferramentas profissionais" },
+  { src: ppf4, alt: "Aplicação de PPF - proteção de bordas" },
+  { src: ppf5, alt: "Aplicação de PPF - trabalho em superfície interior" },
+  { src: ppf6, alt: "Aplicação de PPF - detalhamento com espátula rosa" },
 ];
 
 const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {

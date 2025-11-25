@@ -2,17 +2,20 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCinematicImage } from "@/hooks/useCinematicImage";
+import ppf1 from "@/assets/ppf-1.jpg";
+import ppf2 from "@/assets/ppf-2.jpg";
+import ppf3 from "@/assets/ppf-3.jpg";
+import ppf4 from "@/assets/ppf-4.jpg";
+import ppf5 from "@/assets/ppf-5.jpg";
+import ppf6 from "@/assets/ppf-6.jpg";
 
 const heroImages = [
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png", alt: "Aplicação de PPF em detalhe" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png", alt: "Aplicação de PPF em concha de porta" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%203%20.png", alt: "Aplicação de PPF em multimídia" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%204.png", alt: "Aplicação de PPF em quina de porta" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%205%20.png", alt: "Aplicação de PPF em black piano" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%206.png", alt: "Kit de ferramentas para PPF" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%207.png", alt: "Aplicação de PPF em soleira" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%208.png", alt: "Detalhe de aplicação PPF" },
-  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%209.png", alt: "Aplicação de PPF em porta-malas" },
+  { src: ppf1, alt: "Aplicação de PPF - proteção de maçaneta" },
+  { src: ppf2, alt: "Aplicação de PPF - técnica com espátula" },
+  { src: ppf3, alt: "Aplicação de PPF - uso de ferramentas profissionais" },
+  { src: ppf4, alt: "Aplicação de PPF - proteção de bordas" },
+  { src: ppf5, alt: "Aplicação de PPF - trabalho em superfície interior" },
+  { src: ppf6, alt: "Aplicação de PPF - detalhamento com espátula rosa" },
 ];
 
 const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; idx: number }) => {
@@ -104,6 +107,10 @@ const Hero = () => {
                 QUERO APRENDER AGORA
               </span>
             </Button>
+            
+            <p className="text-lg text-automotive-bronze font-semibold animate-power-pulse">
+              ✓ Mesmo quem nunca aplicou consegue aprender rapidamente
+            </p>
           </div>
 
           {/* Right Content - Image Grid */}

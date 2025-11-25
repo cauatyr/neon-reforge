@@ -87,7 +87,7 @@ const Pricing = () => {
                 size="lg"
                 variant="crystal"
                 onClick={handleCTAClick}
-                className="crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto"
+                className="crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto shadow-[0_0_40px_rgba(168,116,55,0.4)] hover:shadow-[0_0_60px_rgba(168,116,55,0.7)]"
               >
                 <a href="https://pay.hotmart.com/I101700874W" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">
@@ -96,8 +96,8 @@ const Pricing = () => {
                   </span>
                 </a>
               </Button>
-              <p className="text-sm text-white/80 text-center">
-                Mesmo quem nunca aplicou antes consegue aprender rapidamente.
+              <p className="text-base text-automotive-bronze font-semibold text-center animate-power-pulse">
+                ✓ Mesmo quem nunca aplicou antes consegue aprender rapidamente
               </p>
             </div>
 
