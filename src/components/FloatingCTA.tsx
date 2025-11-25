@@ -19,6 +19,10 @@ const FloatingCTA = () => {
   }, []);
 
   const scrollToOffer = () => {
+    // Haptic feedback on mobile
+    if ('vibrate' in navigator) {
+      navigator.vibrate([50, 30, 50]);
+    }
     const offerSection = document.getElementById('oferta');
     offerSection?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -31,12 +35,14 @@ const FloatingCTA = () => {
     >
       <Button
         onClick={scrollToOffer}
-        className="w-full group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg py-7 h-auto shadow-[0_0_30px_rgba(220,38,38,0.6)] animate-energy-run"
+        className="touch-feedback w-full group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg py-7 h-auto shadow-[0_0_40px_rgba(220,38,38,0.7)] animate-light-run border-2 border-automotive-red/60 animate-border-glow"
       >
         <span className="relative z-10 flex items-center justify-center gap-2">
           <Zap className="w-5 h-5 animate-rev" />
           GARANTIR VAGA - R$ 67
         </span>
+        {/* Circulating light */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/30 to-transparent animate-light-run"></div>
       </Button>
     </div>
   );

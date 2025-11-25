@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Check, Lock, Zap } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Pricing = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
+  const handleCTAClick = () => {
+    // Strong haptic feedback for conversion action
+    if ('vibrate' in navigator) {
+      navigator.vibrate([100, 50, 100, 50, 100]);
+    }
+  };
+  
   return (
     <section id="oferta" className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
@@ -14,9 +24,12 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group hover:scale-105 transition-all duration-500 animate-fade-in-up shadow-[0_0_60px_rgba(220,38,38,0.3)] hover:shadow-[0_0_80px_rgba(220,38,38,0.5)]">
+        <div 
+          ref={ref}
+          className={`glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group transition-all duration-1000 shadow-[0_0_60px_rgba(220,38,38,0.3)] hover:shadow-[0_0_100px_rgba(220,38,38,0.6)] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        >
           {/* Animated border glow */}
-          <div className="absolute inset-0 border-2 border-automotive-red rounded-2xl opacity-50 animate-power-pulse"></div>
+          <div className="absolute inset-0 border-2 border-automotive-red rounded-2xl animate-border-glow"></div>
           
           {/* Energy lines background */}
           <div className="absolute inset-0 overflow-hidden">
@@ -56,18 +69,22 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button with ignition effect */}
             <div className="flex justify-center">
               <Button
                 asChild
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-xl px-14 py-9 h-auto hover:scale-110 transition-all duration-500 shadow-[0_0_40px_rgba(220,38,38,0.6)] hover:shadow-[0_0_60px_rgba(220,38,38,0.9)] animate-energy-run"
+                onClick={handleCTAClick}
+                className="touch-feedback group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-xl px-14 py-9 h-auto transition-all duration-300 shadow-[0_0_50px_rgba(220,38,38,0.7)] hover:shadow-[0_0_80px_rgba(220,38,38,1)] animate-light-run border-2 border-automotive-red/70 animate-border-glow"
               >
                 <a href="https://go.wizoomplay.me/checkout/ppf-essencial-67" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">
-                    <Zap className="w-7 h-7" />
+                    <Zap className="w-7 h-7 animate-rev" />
                     GARANTIR MINHA VAGA AGORA
                   </span>
+                  {/* Multiple circulating lights */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/40 to-transparent animate-light-run"></div>
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-automotive-bronze/30 to-transparent animate-light-run" style={{ animationDelay: '1.5s' }}></div>
                 </a>
               </Button>
             </div>

@@ -1,30 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Trigger haptic feedback on mobile
+    if ('vibrate' in navigator) {
+      setTimeout(() => navigator.vibrate(50), 500);
+    }
+    setIsLoaded(true);
+  }, []);
+
   const scrollToOffer = () => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate([30, 20, 30]);
+    }
     const offerSection = document.getElementById('oferta');
     offerSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
-      {/* Animated background elements */}
+      {/* Animated background elements with system startup */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-red/10 rounded-full blur-[120px] animate-rev"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-rev" style={{ animationDelay: '1s' }}></div>
-        {/* Scanning lines */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-scan"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-red/10 rounded-full blur-[120px] animate-zoom-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-zoom-pulse" style={{ animationDelay: '1s' }}></div>
+        {/* Vertical scanning lines - system startup effect */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-scan"></div>
+          <div className="absolute w-full h-1 bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-scan" style={{ animationDelay: '1.5s' }}></div>
         </div>
+        {/* Diagonal reflection sweep */}
+        <div className={`absolute inset-0 bg-gradient-to-br from-transparent via-automotive-white/5 to-transparent transition-opacity duration-1000 ${isLoaded ? 'opacity-100 animate-metal-shine' : 'opacity-0'}`}></div>
       </div>
 
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8 animate-fade-in-up">
+          <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="inline-block">
-              <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none">
+              <h1 className={`text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none ${isLoaded ? 'animate-ignition' : ''}`}>
                 <span className="text-automotive-red animate-power-pulse text-glow-red">PPF</span>
                 <span className="text-automotive-white"> ESSENCIAL</span>
               </h1>
@@ -42,17 +59,19 @@ const Hero = () => {
             <Button 
               onClick={scrollToOffer}
               size="lg"
-              className="group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg px-10 py-7 h-auto hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:shadow-[0_0_50px_rgba(220,38,38,0.8)] animate-energy-run"
+              className="touch-feedback group relative overflow-hidden bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red bg-[length:200%_100%] text-white font-bold text-lg px-10 py-7 h-auto transition-all duration-300 shadow-[0_0_30px_rgba(220,38,38,0.5)] hover:shadow-[0_0_50px_rgba(220,38,38,0.8)] animate-light-run border-2 border-automotive-red/50 animate-border-glow"
             >
               <span className="relative z-10 flex items-center gap-2">
-                <Zap className="w-5 h-5" />
+                <Zap className="w-5 h-5 animate-rev" />
                 QUERO APRENDER AGORA
               </span>
+              {/* Circulating light effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-automotive-white/30 to-transparent animate-light-run"></div>
             </Button>
           </div>
 
           {/* Right Content - Image Grid */}
-          <div className="grid grid-cols-3 gap-3 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {[
               "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png",
               "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png",
@@ -66,17 +85,19 @@ const Hero = () => {
             ].map((src, idx) => (
               <div 
                 key={idx} 
-                className="relative aspect-square overflow-hidden rounded-lg border-2 border-automotive-red/30 group hover:scale-110 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(220,38,38,0.3)]"
+                className="relative aspect-square overflow-hidden rounded-lg border-2 border-automotive-red/30 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] animate-border-glow"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <img 
                   src={src} 
                   alt={`PPF Application ${idx + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover animate-zoom-pulse"
                   loading="lazy"
                 />
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-automotive-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-metal-shine"></div>
+                {/* Continuous shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-automotive-white/15 to-transparent animate-metal-shine"></div>
+                {/* Pulsing border glow */}
+                <div className="absolute inset-0 border-2 border-automotive-red/0 group-hover:border-automotive-red/80 transition-all duration-500"></div>
               </div>
             ))}
           </div>
