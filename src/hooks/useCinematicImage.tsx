@@ -1,39 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface CinematicImageOptions {
-  enableParallax?: boolean;
-  enableExit?: boolean;
+  effect?: 'slide' | 'parallax' | 'edge-light' | 'none';
   threshold?: number;
 }
 
 export const useCinematicImage = (options: CinematicImageOptions = {}) => {
   const {
-    enableParallax = true,
-    enableExit = true,
+    effect = 'none',
     threshold = 0.2
   } = options;
 
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          setIsExiting(false);
-          // Haptic feedback when image appears
+          // Subtle haptic feedback
           if ('vibrate' in navigator) {
-            navigator.vibrate(15);
+            navigator.vibrate(10);
           }
-        } else if (enableExit && isVisible) {
-          setIsExiting(true);
+        } else {
+          setIsVisible(false);
         }
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: '0px 0px -30px 0px',
       }
     );
 
@@ -47,18 +43,18 @@ export const useCinematicImage = (options: CinematicImageOptions = {}) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold, enableExit, isVisible]);
+  }, [threshold]);
 
-  // Parallax scroll effect
+  // Clean parallax effect (only if enabled)
   useEffect(() => {
-    if (!enableParallax || !isVisible) return;
+    if (effect !== 'parallax' || !isVisible) return;
 
     const handleScroll = () => {
       if (!ref.current) return;
       
       const rect = ref.current.getBoundingClientRect();
       const scrollPercent = 1 - (rect.top + rect.height / 2) / window.innerHeight;
-      const translateY = Math.max(-4, Math.min(4, scrollPercent * 8 - 4));
+      const translateY = Math.max(-3, Math.min(3, scrollPercent * 6 - 3));
       
       if (ref.current.querySelector('img')) {
         const img = ref.current.querySelector('img') as HTMLElement;
@@ -68,7 +64,7 @@ export const useCinematicImage = (options: CinematicImageOptions = {}) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [enableParallax, isVisible]);
+  }, [effect, isVisible]);
 
-  return { ref, isVisible, isExiting };
+  return { ref, isVisible, effect };
 };

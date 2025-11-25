@@ -10,7 +10,7 @@ const benefits = [
 ];
 
 const Certificate = () => {
-  const { ref: imgRef, isVisible, isExiting } = useCinematicImage();
+  const { ref: imgRef, isVisible } = useCinematicImage({ effect: 'edge-light' });
   
   return (
     <section className="py-20 px-4 relative">
@@ -45,15 +45,15 @@ const Certificate = () => {
 
             <div 
               ref={imgRef}
-              className={`relative img-cinematic img-energy-border img-exit ${
+              className={`relative img-cinematic img-edge-light ${
                 isVisible ? 'visible' : ''
-              } ${isExiting ? 'exiting' : ''}`}
+              } rounded-xl`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-automotive-red to-automotive-bronze rounded-xl blur-2xl opacity-40 animate-rev"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-automotive-red to-automotive-bronze rounded-xl blur-2xl opacity-30"></div>
               <img
                 src="https://v0-ppf-essencial.vercel.app/images/design-mode/Certificado%20PPF.png"
                 alt="Certificado de Conclusão PPF"
-                className="relative rounded-xl border-2 border-automotive-bronze shadow-[0_0_40px_rgba(139,92,46,0.4)] hover:scale-105 hover:border-automotive-red transition-all duration-500"
+                className="relative rounded-xl border-2 border-automotive-bronze hover:scale-[1.02] hover:border-automotive-red transition-all duration-300"
                 loading="lazy"
               />
             </div>

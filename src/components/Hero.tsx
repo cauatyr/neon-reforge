@@ -3,18 +3,48 @@ import { ChevronDown, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCinematicImage } from "@/hooks/useCinematicImage";
 
-const CinematicImageWrapper = ({ children, delay }: { children: React.ReactNode; delay: number }) => {
-  const { ref, isVisible, isExiting } = useCinematicImage();
+const heroImages = [
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png", alt: "Aplicação de PPF em detalhe" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png", alt: "Aplicação de PPF em concha de porta" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%203%20.png", alt: "Aplicação de PPF em multimídia" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%204.png", alt: "Aplicação de PPF em quina de porta" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%205%20.png", alt: "Aplicação de PPF em black piano" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%206.png", alt: "Kit de ferramentas para PPF" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%207.png", alt: "Aplicação de PPF em soleira" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%208.png", alt: "Detalhe de aplicação PPF" },
+  { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%209.png", alt: "Aplicação de PPF em porta-malas" },
+];
+
+const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; idx: number }) => {
+  // Distribute effects evenly: slide, edge-light, parallax, none
+  const effects = ['slide', 'edge-light', 'parallax', 'none'] as const;
+  const effect = effects[idx % effects.length];
+  
+  const { ref, isVisible } = useCinematicImage({ effect });
+  
+  const effectClasses = {
+    slide: 'img-slide',
+    'edge-light': 'img-edge-light',
+    parallax: 'img-parallax',
+    none: ''
+  };
   
   return (
-    <div 
+    <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-energy-border img-exit ${
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${effectClasses[effect]} ${
         isVisible ? 'visible' : ''
-      } ${isExiting ? 'exiting' : ''} border-automotive-red/30 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)]`}
-      style={{ animationDelay: `${delay}s` }}
+      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
+      style={{ transitionDelay: `${idx * 50}ms` }}
     >
-      {children}
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+      {/* Subtle bottom glow on hover */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
@@ -89,25 +119,8 @@ const Hero = () => {
 
           {/* Right Content - Image Grid */}
           <div className={`grid grid-cols-3 gap-3 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {[
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%203%20.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%204.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%205%20.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%206.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%207.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%208.png",
-              "https://arquivos.wizoomplay.com/images/soltos/PPF%209.png",
-            ].map((src, idx) => (
-              <CinematicImageWrapper key={idx} delay={idx * 0.08}>
-                <img 
-                  src={src} 
-                  alt={`PPF Application ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-300"
-                  loading="lazy"
-                />
-              </CinematicImageWrapper>
+            {heroImages.map((image, idx) => (
+              <CinematicImageWrapper key={idx} image={image} idx={idx} />
             ))}
           </div>
         </div>
