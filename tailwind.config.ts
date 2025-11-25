@@ -72,13 +72,34 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        // CTA Floating Premium
-        "cta-floating-premium": {
-          "0%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" },
-          "25%": { transform: "translateY(-3px) translateX(2px) rotate(0.7deg) scale(1.01)" },
-          "50%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" },
-          "75%": { transform: "translateY(3px) translateX(-2px) rotate(-0.7deg) scale(0.99)" },
-          "100%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" }
+        // CTA HyperFloat 2.0
+        "cta-hyperfloat": {
+          "0%": { 
+            transform: "translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)" 
+          },
+          "20%": { 
+            transform: "translateY(-3px) translateX(2px) rotateX(0.5deg) rotateY(0.4deg) scale(1.005)" 
+          },
+          "40%": { 
+            transform: "translateY(-1px) translateX(3px) rotateX(0.3deg) rotateY(0.7deg) scale(1.01)" 
+          },
+          "60%": { 
+            transform: "translateY(2px) translateX(-2px) rotateX(-0.4deg) rotateY(-0.5deg) scale(1.005)" 
+          },
+          "80%": { 
+            transform: "translateY(3px) translateX(-3px) rotateX(-0.7deg) rotateY(-0.3deg) scale(0.995)" 
+          },
+          "100%": { 
+            transform: "translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)" 
+          }
+        },
+        "cta-micro-pulse": {
+          "0%, 100%": { 
+            transform: "scale(1)" 
+          },
+          "50%": { 
+            transform: "scale(1.02)" 
+          }
         },
         "cta-auto-shine": {
           "0%": { backgroundPosition: "-150% 0" },
@@ -268,8 +289,10 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         // CTA Animations
         "cta-floating-premium": "cta-floating-premium 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite",
-        "cta-auto-shine": "cta-auto-shine 4s linear infinite",
+        "cta-hyperfloat": "cta-hyperfloat 6s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "cta-auto-shine": "cta-auto-shine 5s linear infinite",
         "cta-glow-pulse": "cta-glow-pulse 3s ease-in-out infinite",
+        "cta-micro-pulse": "cta-micro-pulse 6s ease-out infinite",
         // Text Animations
         "auto-light-sweep": "auto-light-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "text-micro-shake": "text-micro-shake 0.9s ease-out forwards",
