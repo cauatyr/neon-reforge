@@ -94,10 +94,10 @@ export default {
         },
         "power-pulse": {
           "0%, 100%": {
-            textShadow: "0 0 20px hsla(0, 85%, 55%, 0.8), 0 0 40px hsla(0, 85%, 55%, 0.6)",
+            textShadow: "0 0 20px hsla(30, 45%, 50%, 0.8), 0 0 40px hsla(30, 45%, 50%, 0.6)",
           },
           "50%": {
-            textShadow: "0 0 40px hsla(0, 85%, 55%, 1), 0 0 60px hsla(0, 85%, 55%, 0.8)",
+            textShadow: "0 0 40px hsla(30, 45%, 50%, 1), 0 0 60px hsla(30, 45%, 50%, 0.8)",
           },
         },
         "energy-run": {
@@ -129,16 +129,16 @@ export default {
         },
         "border-glow": {
           "0%": { 
-            boxShadow: "0 0 10px rgba(220, 38, 38, 0.3)",
-            borderColor: "rgba(220, 38, 38, 0.3)"
+            boxShadow: "0 0 10px rgba(191, 139, 70, 0.3)",
+            borderColor: "rgba(191, 139, 70, 0.3)"
           },
           "50%": { 
-            boxShadow: "0 0 30px rgba(220, 38, 38, 0.8), 0 0 50px rgba(220, 38, 38, 0.4)",
-            borderColor: "rgba(220, 38, 38, 0.9)"
+            boxShadow: "0 0 30px rgba(191, 139, 70, 0.8), 0 0 50px rgba(191, 139, 70, 0.4)",
+            borderColor: "rgba(191, 139, 70, 0.9)"
           },
           "100%": { 
-            boxShadow: "0 0 10px rgba(220, 38, 38, 0.3)",
-            borderColor: "rgba(220, 38, 38, 0.3)"
+            boxShadow: "0 0 10px rgba(191, 139, 70, 0.3)",
+            borderColor: "rgba(191, 139, 70, 0.3)"
           },
         },
         "light-run": {
@@ -158,11 +158,11 @@ export default {
         "premium-breath": {
           "0%, 100%": { 
             transform: "translateY(0)",
-            boxShadow: "0 10px 40px rgba(220, 38, 38, 0.4)"
+            boxShadow: "0 10px 40px rgba(191, 139, 70, 0.4)"
           },
           "50%": { 
             transform: "translateY(-3px)",
-            boxShadow: "0 12px 45px rgba(220, 38, 38, 0.5)"
+            boxShadow: "0 12px 45px rgba(191, 139, 70, 0.5)"
           },
         },
         "button-press": {
@@ -174,12 +174,12 @@ export default {
           "0%": { 
             opacity: "0",
             transform: "scale(0.95)",
-            boxShadow: "0 0 0 rgba(220, 38, 38, 0)"
+            boxShadow: "0 0 0 rgba(191, 139, 70, 0)"
           },
           "100%": { 
             opacity: "1",
             transform: "scale(1)",
-            boxShadow: "0 10px 40px rgba(220, 38, 38, 0.4)"
+            boxShadow: "0 10px 40px rgba(191, 139, 70, 0.4)"
           },
         },
         // Global Interaction Animations
@@ -253,7 +253,7 @@ export default {
           },
           "50%": { 
             transform: "translateY(-3px)",
-            boxShadow: "0 10px 35px rgba(220, 38, 38, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
+            boxShadow: "0 10px 35px rgba(191, 139, 70, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
           },
         },
         "crystal-entry": {
@@ -317,10 +317,10 @@ export default {
         },
         "card-glow-pulse": {
           "0%, 100%": { 
-            boxShadow: "0 0 20px rgba(220, 38, 38, 0.2), inset 0 0 15px rgba(220, 38, 38, 0.05)"
+            boxShadow: "0 0 20px rgba(191, 139, 70, 0.2), inset 0 0 15px rgba(191, 139, 70, 0.05)"
           },
           "50%": { 
-            boxShadow: "0 0 30px rgba(220, 38, 38, 0.4), inset 0 0 20px rgba(220, 38, 38, 0.1)"
+            boxShadow: "0 0 30px rgba(191, 139, 70, 0.4), inset 0 0 20px rgba(191, 139, 70, 0.1)"
           },
         },
         "pendular-entry": {

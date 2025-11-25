@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Automotive Premium Theme - Ferrari Inspired */
+    /* Automotive Premium Theme - Bronze Metallic Primary */
     --background: 0 0% 6%;
     --foreground: 0 0% 98%;
 
@@ -18,10 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 85% 55%;
+    --primary: 30 45% 50%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 30 45% 50%;
+    --secondary: 30 45% 40%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 15%;
@@ -35,7 +35,7 @@ All colors MUST be HSL.
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 0 85% 55%;
+    --ring: 30 45% 50%;
 
     --radius: 0.5rem;
 
@@ -71,10 +71,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-body antialiased;
     background-image: 
-      radial-gradient(circle at 20% 50%, hsla(0, 85%, 55%, 0.03) 0%, transparent 60%),
+      radial-gradient(circle at 20% 50%, hsla(30, 45%, 50%, 0.03) 0%, transparent 60%),
       radial-gradient(circle at 80% 80%, hsla(30, 45%, 50%, 0.04) 0%, transparent 60%),
       repeating-linear-gradient(0deg, hsla(0, 0%, 100%, 0.02) 0px, transparent 1px, transparent 50px, hsla(0, 0%, 100%, 0.02) 51px),
-      repeating-linear-gradient(90deg, hsla(0, 85%, 55%, 0.02) 0px, transparent 1px, transparent 50px, hsla(0, 85%, 55%, 0.02) 51px),
+      repeating-linear-gradient(90deg, hsla(30, 45%, 50%, 0.02) 0px, transparent 1px, transparent 50px, hsla(30, 45%, 50%, 0.02) 51px),
       linear-gradient(180deg, hsl(0, 0%, 6%) 0%, hsl(0, 0%, 4%) 100%);
     background-attachment: fixed;
   }
@@ -109,7 +109,7 @@ All colors MUST be HSL.
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsla(0, 85%, 55%, 0.3), transparent, hsla(30, 45%, 50%, 0.2));
+    background: linear-gradient(135deg, hsla(30, 45%, 50%, 0.3), transparent, hsla(30, 45%, 50%, 0.2));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -119,13 +119,13 @@ All colors MUST be HSL.
   .metallic-border {
     @apply border-2;
     border-image: linear-gradient(135deg, 
-      hsla(0, 85%, 55%, 0.6), 
+      hsla(30, 45%, 50%, 0.6), 
       hsla(30, 45%, 50%, 0.4),
-      hsla(0, 85%, 55%, 0.6)
+      hsla(30, 45%, 50%, 0.6)
     ) 1;
     box-shadow: 
-      0 0 20px hsla(0, 85%, 55%, 0.4),
-      inset 0 0 20px hsla(0, 85%, 55%, 0.1);
+      0 0 20px hsla(30, 45%, 50%, 0.4),
+      inset 0 0 20px hsla(30, 45%, 50%, 0.1);
   }
 
   .carbon-texture {
@@ -247,7 +247,7 @@ All colors MUST be HSL.
       90deg, 
       transparent 0%, 
       hsla(0, 0%, 100%, 0.4) 30%,
-      hsla(0, 85%, 55%, 0.3) 50%,
+      hsla(30, 45%, 50%, 0.3) 50%,
       transparent 100%
     );
     border-radius: inherit;
@@ -337,8 +337,8 @@ All colors MUST be HSL.
     inset: -2px;
     background: linear-gradient(
       90deg,
-      hsla(0, 85%, 55%, 0.8),
-      hsla(0, 85%, 55%, 0)
+      hsla(30, 45%, 50%, 0.8),
+      hsla(30, 45%, 50%, 0)
     );
     border-radius: inherit;
     opacity: 0;
@@ -405,16 +405,16 @@ All colors MUST be HSL.
 @keyframes powerPulse {
   0%, 100% {
     text-shadow: 
-      0 0 10px hsla(0, 85%, 55%, 0.8),
-      0 0 20px hsla(0, 85%, 55%, 0.6),
-      0 0 40px hsla(0, 85%, 55%, 0.4);
+      0 0 10px hsla(30, 45%, 50%, 0.8),
+      0 0 20px hsla(30, 45%, 50%, 0.6),
+      0 0 40px hsla(30, 45%, 50%, 0.4);
   }
   50% {
     text-shadow: 
-      0 0 20px hsla(0, 85%, 55%, 1),
-      0 0 40px hsla(0, 85%, 55%, 0.8),
-      0 0 60px hsla(0, 85%, 55%, 0.6),
-      0 0 80px hsla(0, 85%, 55%, 0.4);
+      0 0 20px hsla(30, 45%, 50%, 1),
+      0 0 40px hsla(30, 45%, 50%, 0.8),
+      0 0 60px hsla(30, 45%, 50%, 0.6),
+      0 0 80px hsla(30, 45%, 50%, 0.4);
   }
 }
 
@@ -452,13 +452,13 @@ All colors MUST be HSL.
 
 @keyframes ignition {
   0% {
-    box-shadow: 0 0 0px hsla(0, 85%, 55%, 0);
+    box-shadow: 0 0 0px hsla(30, 45%, 50%, 0);
   }
   50% {
-    box-shadow: 0 0 30px hsla(0, 85%, 55%, 0.8), 0 0 60px hsla(0, 85%, 55%, 0.5);
+    box-shadow: 0 0 30px hsla(30, 45%, 50%, 0.8), 0 0 60px hsla(30, 45%, 50%, 0.5);
   }
   100% {
-    box-shadow: 0 0 0px hsla(0, 85%, 55%, 0);
+    box-shadow: 0 0 0px hsla(30, 45%, 50%, 0);
   }
 }
 
