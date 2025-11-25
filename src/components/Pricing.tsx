@@ -20,7 +20,7 @@ const Pricing = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-12 space-y-4">
           <h2 className="cta-title text-4xl md:text-5xl font-bold opacity-0">
-            Chegou a Hora de <span className="text-automotive-red text-glow-red">Evoluir</span> Seu Negócio
+            Chegou a Hora de <span className="text-automotive-bronze text-glow-bronze">Evoluir</span> Seu Negócio
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Quanto dinheiro você já perdeu por não saber fazer aplicação de PPF?
@@ -29,7 +29,7 @@ const Pricing = () => {
 
         <div 
           ref={ref}
-          className={`glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group transition-all duration-1000 shadow-[0_0_60px_rgba(220,38,38,0.3)] hover:shadow-[0_0_100px_rgba(220,38,38,0.6)] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`glass-card p-8 md:p-12 rounded-2xl relative overflow-hidden group transition-all duration-1000 shadow-[0_0_60px_rgba(168,116,55,0.3)] hover:shadow-[0_0_100px_rgba(168,116,55,0.6)] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         >
           {/* LED border animation */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: isVisible ? 1 : 0 }}>
@@ -40,7 +40,7 @@ const Pricing = () => {
               height="calc(100% - 4px)" 
               rx="16"
               fill="none" 
-              stroke="hsl(var(--automotive-red))" 
+              stroke="hsl(30 45% 50%)" 
               strokeWidth="2"
               strokeDasharray="1000"
               strokeDashoffset="1000"
@@ -51,22 +51,22 @@ const Pricing = () => {
           <div className="relative z-10 space-y-8">
             {/* Badge */}
             <div className="flex justify-center">
-              <div className="inline-flex items-center gap-3 bg-automotive-red/20 border-2 border-automotive-red px-8 py-4 rounded-full shadow-[0_0_30px_rgba(220,38,38,0.4)]">
-                <Zap className="w-6 h-6 text-automotive-red" />
-                <span className="text-xl font-bold text-automotive-red">OFERTA ESPECIAL</span>
+              <div className="inline-flex items-center gap-3 bg-automotive-bronze/20 border-2 border-automotive-bronze px-8 py-4 rounded-full shadow-[0_0_30px_rgba(168,116,55,0.4)]">
+                <Zap className="w-6 h-6 text-automotive-bronze" />
+                <span className="text-xl font-bold text-automotive-bronze">OFERTA ESPECIAL</span>
               </div>
             </div>
 
             {/* Discount Badge */}
             <div className="text-center">
-              <div className="inline-block bg-gradient-to-r from-automotive-red via-automotive-energy to-automotive-red text-white font-bold text-4xl px-12 py-4 rounded-xl transform hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(220,38,38,0.6)]" style={{ transform: 'rotate(-3deg)' }}>
+              <div className="inline-block bg-gradient-to-r from-automotive-bronze via-automotive-bronze/80 to-automotive-bronze text-white font-bold text-4xl px-12 py-4 rounded-xl transform hover:rotate-0 transition-transform duration-500 shadow-[0_0_40px_rgba(168,116,55,0.6)]" style={{ transform: 'rotate(-3deg)' }}>
                 87% OFF
               </div>
             </div>
 
             {/* Title */}
             <h3 className="text-3xl md:text-4xl font-bold text-center">
-              Garanta sua vaga <span className="text-automotive-red">hoje!</span>
+              Garanta sua vaga <span className="text-automotive-bronze">hoje!</span>
             </h3>
 
             {/* Price */}
@@ -75,7 +75,7 @@ const Pricing = () => {
                 <span className="text-2xl text-muted-foreground line-through">De R$ 497</span>
                 <span className="text-xl text-automotive-bronze font-semibold">por apenas</span>
               </div>
-              <div className="text-7xl md:text-8xl font-bold text-automotive-red animate-power-pulse text-glow-red">
+              <div className="text-7xl md:text-8xl font-bold text-automotive-bronze animate-power-pulse text-glow-bronze">
                 R$ 67
               </div>
             </div>
@@ -101,7 +101,7 @@ const Pricing = () => {
             {/* Security badges */}
             <div className="space-y-3 text-center">
               <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                <Lock className="w-5 h-5 text-automotive-red" />
+                <Lock className="w-5 h-5 text-automotive-bronze" />
                 <span>Compra 100% segura e protegida</span>
               </div>
               <div className="flex items-center justify-center gap-2 text-muted-foreground">

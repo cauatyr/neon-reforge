@@ -52,8 +52,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         automotive: {
-          red: "hsl(var(--ferrari-red))",
-          energy: "hsl(var(--energy-red))",
           bronze: "hsl(var(--bronze-metallic))",
           carbon: "hsl(var(--carbon-black))",
           steel: "hsl(var(--steel-gray))",

@@ -27,10 +27,10 @@ const WhatYouLearn = () => {
                 className="flex items-start gap-4 group card-interactive animate-slide-power"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="benefits-icon flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-red/20 flex items-center justify-center border-2 border-automotive-red group-hover:bg-automotive-red group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(220,38,38,0.3)]">
-                  <Check className="w-5 h-5 text-automotive-red group-hover:text-white transition-colors" />
+                <div className="benefits-icon flex-shrink-0 w-10 h-10 rounded-lg bg-automotive-bronze/20 flex items-center justify-center border-2 border-automotive-bronze group-hover:bg-automotive-bronze group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(168,116,55,0.3)]">
+                  <Check className="w-5 h-5 text-automotive-bronze group-hover:text-white transition-colors" />
                 </div>
-                <p className="text-lg md:text-xl text-foreground group-hover:text-automotive-red transition-colors pt-2 font-medium">
+                <p className="text-lg md:text-xl text-foreground group-hover:text-automotive-bronze transition-colors pt-2 font-medium">
                   {topic}
                 </p>
               </div>
