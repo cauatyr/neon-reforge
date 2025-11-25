@@ -1,3 +1,5 @@
+import { useCinematicImage } from "@/hooks/useCinematicImage";
+
 const images = [
   { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%201.png", alt: "Aplicação de PPF em detalhe" },
   { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%202.png", alt: "Aplicação de PPF em concha de porta" },
@@ -12,6 +14,29 @@ const images = [
   { src: "https://arquivos.wizoomplay.com/images/soltos/PPF%2012.png", alt: "Proteção de multimídia com PPF" },
 ];
 
+const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
+  const { ref, isVisible, isExiting } = useCinematicImage();
+  
+  return (
+    <div
+      ref={ref}
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-energy-border img-exit ${
+        isVisible ? 'visible' : ''
+      } ${isExiting ? 'exiting' : ''} border-automotive-bronze/40 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(139,92,46,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)]`}
+      style={{ animationDelay: `${idx * 0.05}s` }}
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full h-full object-cover transition-transform duration-300"
+        loading="lazy"
+      />
+      {/* Bottom glow effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-automotive-red/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    </div>
+  );
+};
+
 const GallerySection = () => {
   return (
     <section className="py-20 px-4 relative">
@@ -22,24 +47,7 @@ const GallerySection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {images.map((image, idx) => (
-            <div
-              key={idx}
-              className="relative aspect-square overflow-hidden rounded-lg border-2 border-automotive-bronze/40 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(139,92,46,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] animate-border-glow"
-              style={{ animationDelay: `${idx * 0.05}s` }}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover animate-zoom-pulse"
-                loading="lazy"
-              />
-              {/* Continuous metallic shine */}
-              <div className="absolute inset-0 bg-gradient-to-br from-automotive-white/0 via-automotive-white/15 to-automotive-white/0 animate-metal-shine"></div>
-              {/* Pulsing red border on hover */}
-              <div className="absolute inset-0 border-2 border-automotive-red/0 group-hover:border-automotive-red/70 transition-all duration-500"></div>
-              {/* Bottom glow effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-automotive-red/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+            <CinematicGalleryImage key={idx} image={image} idx={idx} />
           ))}
         </div>
       </div>
