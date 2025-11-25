@@ -149,8 +149,10 @@ All colors MUST be HSL.
   .crystal-button {
     position: relative;
     will-change: transform, box-shadow;
-    animation: cta-floating-move 4s ease-in-out infinite, cta-side-shift 6.5s ease-in-out infinite;
+    animation: cta-floating-move 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite, 
+               cta-side-shift 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     overflow: hidden;
+    box-shadow: 0 0 15px hsla(30, 45%, 50%, 0.12);
   }
 
   .crystal-button::before {
@@ -160,15 +162,35 @@ All colors MUST be HSL.
     background: linear-gradient(
       120deg,
       transparent 0%,
-      hsla(0, 0%, 100%, 0.3) 50%,
+      hsla(30, 45%, 50%, 0.25) 50%,
       transparent 100%
     );
-    transform: translateX(-100%) skewX(-15deg);
+    background-size: 200% 100%;
+    animation: metallic-reflection 4s linear infinite;
     pointer-events: none;
   }
 
-  .crystal-button:active::before {
-    animation: crystal-flash 0.6s ease-out;
+  .crystal-button:active {
+    transform: scale(0.96);
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes metallic-reflection {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes crystal-flash {
+    0% {
+      transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+      transform: translateX(100%) skewX(-15deg);
+    }
   }
 
   .crystal-button-entry {
@@ -356,41 +378,93 @@ All colors MUST be HSL.
   /* Section-specific styles */
   .hero-section {
     position: relative;
+    animation: ignition-flash 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .hero-title {
-    animation: hero-title-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    position: relative;
+    animation: automotive-energy-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(30, 45%, 50%), transparent);
+    animation: energy-line-sweep 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .hero-subtitle {
-    animation: hero-title-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+    animation: automotive-energy-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
     opacity: 0;
   }
 
-  .benefits-card {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  .benefits-section {
+    position: relative;
   }
 
-  .benefits-card:hover {
-    transform: translateY(-8px);
-    animation: card-glow-pulse 0.2s ease-out;
+  .benefits-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(30, 45%, 50%), transparent);
+    animation: section-light-run 2s ease-out forwards;
+  }
+
+  .benefits-card {
+    animation: premium-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
   }
 
   .benefits-icon {
     transition: transform 0.3s ease-out;
   }
 
-  .benefits-card:hover .benefits-icon {
-    transform: rotate(1deg);
-  }
-
   .social-card {
-    animation: pendular-entry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation: parallax-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 
+  .modules-section {
+    animation: premium-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .offer-section {
+    animation: energy-darken 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   .cta-title {
-    animation: split-text 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    position: relative;
+    animation: automotive-energy-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .cta-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(30, 45%, 50%), transparent);
+    animation: energy-line-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .img-cinematic {
+    animation: cinematic-image-entry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .img-metal-slide {
+    animation: metal-slide-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .img-border-glow {
+    animation: image-border-glow 2s ease-in-out infinite;
   }
 }
 
@@ -499,6 +573,145 @@ All colors MUST be HSL.
   }
   100% {
     text-shadow: 0px 0px 18px rgba(255, 255, 255, 0.35);
+  }
+}
+
+@keyframes automotive-energy-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-1px);
+  }
+  30% {
+    opacity: 0.6;
+    filter: blur(2px);
+    transform: translateX(1px);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(0px);
+    transform: translateX(-0.5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0px);
+    text-shadow: 0px 0px 12px rgba(205, 127, 50, 0.3);
+  }
+}
+
+@keyframes energy-line-sweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes cinematic-image-entry {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes metal-slide-reveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes image-border-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(205, 127, 50, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.4);
+  }
+}
+
+@keyframes ignition-flash {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes section-light-run {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes premium-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes parallax-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes energy-darken {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.85);
+  }
+  100% {
+    filter: brightness(1);
   }
 }
 
