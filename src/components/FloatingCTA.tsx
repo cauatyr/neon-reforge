@@ -33,17 +33,22 @@ const FloatingCTA = () => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
     >
-      <Button
-        onClick={scrollToOffer}
-        size="lg"
-        variant="crystal"
-        className="crystal-button w-full rounded-xl font-bold text-lg py-7 h-auto"
-      >
-        <span className="relative z-10 flex items-center justify-center gap-2">
-          <Zap className="w-5 h-5" />
-          GARANTIR VAGA - R$ 67
-        </span>
-      </Button>
+      <div className="flex flex-col items-center gap-2">
+        <Button
+          onClick={scrollToOffer}
+          size="lg"
+          variant="crystal"
+          className="crystal-button w-full rounded-xl font-bold text-lg py-7 h-auto"
+        >
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            <Zap className="w-5 h-5" />
+            GARANTIR VAGA - R$ 67
+          </span>
+        </Button>
+        <p className="text-xs text-white/80 text-center">
+          Mesmo quem nunca aplicou antes consegue aprender rapidamente.
+        </p>
+      </div>
     </div>
   );
 };
