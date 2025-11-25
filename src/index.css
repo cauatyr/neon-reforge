@@ -125,6 +125,13 @@
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-border/50 relative;
     background: linear-gradient(135deg, hsla(0, 0%, 7%, 0.9), hsla(0, 0%, 5%, 0.95));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: hsla(30, 45%, 50%, 0.4);
+    box-shadow: 0 0 40px hsla(30, 45%, 50%, 0.2);
+    transform: translateY(-2px);
   }
 
   .glass-card::before {
@@ -198,17 +205,33 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, hsl(var(--carbon-deep)), hsl(var(--carbon-black)));
-  border: 2px solid hsla(30, 45%, 50%, 0.5);
+  border: 2px solid hsla(30, 45%, 50%, 0.6);
   box-shadow: 
-    0 0 20px hsla(30, 45%, 50%, 0.15), 
-    0 4px 25px rgba(0, 0, 0, 0.6),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    0 0 25px hsla(30, 45%, 50%, 0.2), 
+    0 6px 30px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
   transition: var(--transition-smooth);
   will-change: transform, box-shadow;
   animation: 
     engine-pulse-drift 2.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite,
     engine-pulse-scale 2.2s ease-in-out infinite,
     engine-border-glow 4s ease-in-out infinite;
+}
+
+.crystal-button:hover {
+  border-color: hsla(30, 45%, 50%, 0.9);
+  box-shadow: 
+    0 0 40px hsla(30, 45%, 50%, 0.4), 
+    0 8px 40px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+.crystal-button:active {
+  transform: scale(0.98) translateY(1px);
+  box-shadow: 
+    0 0 30px hsla(30, 45%, 50%, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Metal Wave - Diagonal shine sweeping across button */

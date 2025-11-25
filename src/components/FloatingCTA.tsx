@@ -38,15 +38,15 @@ const FloatingCTA = () => {
           onClick={scrollToOffer}
           size="lg"
           variant="crystal"
-          className="crystal-button w-full rounded-xl font-bold text-lg py-7 h-auto"
+          className="crystal-button w-full rounded-xl font-bold text-lg py-7 h-auto shadow-[0_0_30px_rgba(168,116,55,0.3)]"
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
             <Zap className="w-5 h-5" />
             GARANTIR VAGA - R$ 97
           </span>
         </Button>
-        <p className="text-xs text-white/80 text-center">
-          Mesmo quem nunca aplicou antes consegue aprender rapidamente.
+        <p className="text-xs text-automotive-bronze font-semibold text-center animate-power-pulse">
+          ✓ Perfeito para iniciantes - aprenda do zero
         </p>
       </div>
     </div>

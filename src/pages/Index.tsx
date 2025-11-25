@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
+import BeginnerFriendly from "@/components/BeginnerFriendly";
 import GallerySection from "@/components/GallerySection";
 import WhatYouLearn from "@/components/WhatYouLearn";
 import WhyDifferent from "@/components/WhyDifferent";
@@ -14,9 +15,11 @@ const Index = () => {
   return (
     <main className="relative page-wrapper">
       <Hero />
+      <BeginnerFriendly />
       <ProblemSection />
       <GallerySection />
       <WhatYouLearn />
+      <BeginnerFriendly />
       <WhyDifferent />
       <WhoIsFor />
       <Certificate />
