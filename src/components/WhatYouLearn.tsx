@@ -13,13 +13,13 @@ const topics = [
 
 const WhatYouLearn = () => {
   return (
-    <section className="py-20 px-4 relative">
+    <section className="py-20 px-4 relative modules-section">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-auto-light-sweep text-with-underline">
           Veja o que você vai <span className="text-automotive-bronze text-glow-bronze">aprender:</span>
         </h2>
 
-        <div className="glass-card benefits-card p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(220,38,38,0.2)]">
+        <div className="glass-card benefits-card p-8 md:p-12 rounded-2xl shadow-[0_0_40px_rgba(168,116,55,0.2)]">
           <div className="grid gap-6">
             {topics.map((topic, idx) => (
               <div

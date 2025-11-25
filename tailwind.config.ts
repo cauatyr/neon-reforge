@@ -442,15 +442,15 @@ export default {
         },
         // Real Movement Animations for CTAs
         "cta-floating-move": {
-          "0%": { transform: "translateY(0px) scale(1)" },
-          "25%": { transform: "translateY(-6px) scale(1.01)" },
-          "50%": { transform: "translateY(0px) scale(1)" },
-          "75%": { transform: "translateY(6px) scale(0.99)" },
-          "100%": { transform: "translateY(0px) scale(1)" }
+          "0%": { transform: "translateY(0px) rotate(0deg)" },
+          "25%": { transform: "translateY(-3px) rotate(0.3deg)" },
+          "50%": { transform: "translateY(0px) rotate(0.6deg)" },
+          "75%": { transform: "translateY(2px) rotate(0.3deg)" },
+          "100%": { transform: "translateY(0px) rotate(0deg)" }
         },
         "cta-side-shift": {
           "0%": { transform: "translateX(0px)" },
-          "50%": { transform: "translateX(4px)" },
+          "50%": { transform: "translateX(2px)" },
           "100%": { transform: "translateX(0px)" }
         },
         "cta-auto-shine": {
@@ -522,6 +522,134 @@ export default {
             opacity: "1"
           }
         },
+        // Premium Section & Image Animations
+        "automotive-energy-reveal": {
+          "0%": {
+            opacity: "0",
+            filter: "blur(4px)",
+            transform: "translateX(-1px)"
+          },
+          "30%": {
+            opacity: "0.6",
+            filter: "blur(2px)",
+            transform: "translateX(1px)"
+          },
+          "60%": {
+            opacity: "0.9",
+            filter: "blur(0px)",
+            transform: "translateX(-0.5px)"
+          },
+          "100%": {
+            opacity: "1",
+            filter: "blur(0px)",
+            transform: "translateX(0px)"
+          }
+        },
+        "energy-line-sweep": {
+          "0%": {
+            left: "-100%",
+            opacity: "0"
+          },
+          "50%": {
+            opacity: "1"
+          },
+          "100%": {
+            left: "100%",
+            opacity: "0"
+          }
+        },
+        "cinematic-image-entry": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.92)",
+            filter: "blur(6px)"
+          },
+          "60%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "blur(0px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "blur(0px)"
+          }
+        },
+        "metal-slide-reveal": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-20px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          }
+        },
+        "image-border-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 rgba(205, 127, 50, 0)"
+          },
+          "50%": {
+            boxShadow: "0 0 20px rgba(205, 127, 50, 0.4)"
+          }
+        },
+        "ignition-flash": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) scale(0.95)"
+          },
+          "40%": {
+            opacity: "1"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)"
+          }
+        },
+        "section-light-run": {
+          "0%": {
+            transform: "translateX(-100%)",
+            opacity: "0"
+          },
+          "50%": {
+            opacity: "1"
+          },
+          "100%": {
+            transform: "translateX(100%)",
+            opacity: "0"
+          }
+        },
+        "premium-slide-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "parallax-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(1.5px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "energy-darken": {
+          "0%": {
+            filter: "brightness(1)"
+          },
+          "50%": {
+            filter: "brightness(0.85)"
+          },
+          "100%": {
+            filter: "brightness(1)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -561,8 +689,8 @@ export default {
         "metallic-glow": "metallic-glow 3s ease-in-out infinite",
         "button-press": "button-press 0.2s ease-out",
         // Real Movement CTA Animations
-        "cta-floating-move": "cta-floating-move 4s ease-in-out infinite",
-        "cta-side-shift": "cta-side-shift 6.5s ease-in-out infinite",
+        "cta-floating-move": "cta-floating-move 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "cta-side-shift": "cta-side-shift 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite",
         "cta-auto-shine": "cta-auto-shine 5s linear infinite",
         // Automotive Text Animations
         "auto-light-sweep": "auto-light-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
@@ -570,6 +698,17 @@ export default {
         "hud-drift": "hud-drift 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards",
         "digital-flick-reveal": "digital-flick-reveal 0.65s ease-out forwards",
         "carbon-scan": "carbon-scan 1s ease-out forwards",
+        // Premium Section & Image Animations
+        "automotive-energy-reveal": "automotive-energy-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "energy-line-sweep": "energy-line-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "cinematic-image-entry": "cinematic-image-entry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "metal-slide-reveal": "metal-slide-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "image-border-glow": "image-border-glow 2s ease-in-out infinite",
+        "ignition-flash": "ignition-flash 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "section-light-run": "section-light-run 2s ease-out forwards",
+        "premium-slide-up": "premium-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "parallax-fade": "parallax-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "energy-darken": "energy-darken 3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

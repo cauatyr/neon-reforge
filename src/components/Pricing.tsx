@@ -13,7 +13,7 @@ const Pricing = () => {
   };
   
   return (
-    <section id="oferta" className="py-20 px-4 relative overflow-hidden">
+    <section id="oferta" className="py-20 px-4 relative overflow-hidden offer-section">
       {/* Darkening gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none"></div>
       

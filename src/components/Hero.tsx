@@ -20,13 +20,13 @@ const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; id
   const { ref, isVisible } = useCinematicImage({ effect: 'dual-axis' });
   
   return (
-    <div
-      ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-dual-axis ${
-        isVisible ? 'visible' : ''
-      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
-      style={{ transitionDelay: `${idx * 50}ms` }}
-    >
+      <div
+        ref={ref}
+        className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic ${
+          isVisible ? 'visible' : ''
+        } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
+        style={{ transitionDelay: `${idx * 50}ms` }}
+      >
       <img
         src={image.src}
         alt={image.alt}
@@ -59,14 +59,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
+    <section className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 benefits-section">
       {/* Animated background elements with system startup */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-red/10 rounded-full blur-[120px] animate-zoom-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-zoom-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-automotive-bronze/10 rounded-full blur-[120px] animate-zoom-pulse" style={{ animationDelay: '1s' }}></div>
         {/* Motion blur horizontal effect */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-full h-1 top-1/3 bg-gradient-to-r from-transparent via-automotive-red to-transparent animate-scan"></div>
+          <div className="absolute w-full h-1 top-1/3 bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-scan"></div>
           <div className="absolute w-full h-1 top-2/3 bg-gradient-to-r from-transparent via-automotive-bronze to-transparent animate-scan" style={{ animationDelay: '1.5s' }}></div>
         </div>
         {/* Spotlight reveal effect */}
@@ -79,14 +79,14 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="inline-block">
               <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none text-auto-light-sweep">
-                <span className="text-automotive-red animate-power-pulse text-glow-red">PPF</span>
+                <span className="text-automotive-bronze animate-power-pulse text-glow-bronze">PPF</span>
                 <span className="text-automotive-white"> ESSENCIAL</span>
               </h1>
             </div>
             
             <div className="hero-subtitle space-y-4">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white text-hud-drift">
-                Aprenda fazer <span className="text-automotive-red font-bold">aplicações de PPF</span> e proteger as partes <span className="text-automotive-bronze font-bold">essenciais</span> do carro.
+                Aprenda fazer <span className="text-automotive-bronze font-bold">aplicações de PPF</span> e proteger as partes <span className="text-automotive-bronze font-bold">essenciais</span> do carro.
               </h2>
               <p className="text-xl md:text-2xl italic text-muted-foreground leading-relaxed text-digital-flick">
                 <span className="text-automotive-bronze font-semibold">Sem risco, sem retrabalho</span> e com resultado que impressiona o cliente.
@@ -116,7 +116,7 @@ const Hero = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-automotive-red" />
+          <ChevronDown className="w-8 h-8 text-automotive-bronze" />
         </div>
       </div>
     </section>
