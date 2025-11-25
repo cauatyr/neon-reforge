@@ -158,9 +158,83 @@ export default {
           "0%, 100%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.1)" },
         },
-        "zoom-pulse": {
-          "0%, 100%": { transform: "scale(1)" },
-          "50%": { transform: "scale(1.05)" },
+        // Cinematic Image Animations
+        "cinematic-entry": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.92)",
+            filter: "blur(8px) contrast(0.8)"
+          },
+          "60%": {
+            filter: "blur(0px) contrast(1.1)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "blur(0px) contrast(1)"
+          }
+        },
+        "metal-slide": {
+          "0%": {
+            transform: "translateX(-8px)",
+            opacity: "0.7"
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1"
+          }
+        },
+        "dual-shine": {
+          "0%": { backgroundPosition: "-200% center" },
+          "40%": { backgroundPosition: "0% center" },
+          "60%": { backgroundPosition: "0% center" },
+          "100%": { backgroundPosition: "200% center" }
+        },
+        "energy-border": {
+          "0%": {
+            clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)"
+          },
+          "25%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"
+          },
+          "50%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 100% 100%)"
+          },
+          "75%": {
+            clipPath: "polygon(100% 100%, 100% 100%, 0 100%, 0 100%)"
+          },
+          "100%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }
+        },
+        "focus-shift": {
+          "0%": {
+            filter: "blur(4px) brightness(0.9)",
+            transform: "scale(0.98)"
+          },
+          "100%": {
+            filter: "blur(0px) brightness(1)",
+            transform: "scale(1)"
+          }
+        },
+        "panel-split": {
+          "0%": {
+            clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)"
+          },
+          "50%": {
+            clipPath: "polygon(0 0, 50% 0, 50% 100%, 0 100%)"
+          },
+          "100%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }
+        },
+        "depth-float": {
+          "0%, 100%": {
+            transform: "translateZ(0) translateY(0)"
+          },
+          "50%": {
+            transform: "translateZ(4px) translateY(-2px)"
+          }
         },
         "slide-power": {
           "0%": {
@@ -199,9 +273,15 @@ export default {
         "border-glow": "border-glow 2s ease-in-out infinite",
         "light-run": "light-run 3s linear infinite",
         "rev": "rev 1s ease-in-out infinite",
-        "zoom-pulse": "zoom-pulse 4s ease-in-out infinite",
         "slide-power": "slide-power 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "digital-flip": "digital-flip 0.6s ease-out forwards",
+        "cinematic-entry": "cinematic-entry 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "metal-slide": "metal-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "dual-shine": "dual-shine 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "energy-border": "energy-border 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "focus-shift": "focus-shift 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "panel-split": "panel-split 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "depth-float": "depth-float 3s ease-in-out infinite",
       },
     },
   },

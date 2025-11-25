@@ -1,6 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useCinematicImage } from "@/hooks/useCinematicImage";
+
+const CinematicImageWrapper = ({ children, delay }: { children: React.ReactNode; delay: number }) => {
+  const { ref, isVisible, isExiting } = useCinematicImage();
+  
+  return (
+    <div 
+      ref={ref}
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-energy-border img-exit ${
+        isVisible ? 'visible' : ''
+      } ${isExiting ? 'exiting' : ''} border-automotive-red/30 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)]`}
+      style={{ animationDelay: `${delay}s` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -83,22 +100,14 @@ const Hero = () => {
               "https://arquivos.wizoomplay.com/images/soltos/PPF%208.png",
               "https://arquivos.wizoomplay.com/images/soltos/PPF%209.png",
             ].map((src, idx) => (
-              <div 
-                key={idx} 
-                className="relative aspect-square overflow-hidden rounded-lg border-2 border-automotive-red/30 group hover:scale-105 hover:border-automotive-red transition-all duration-500 shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] animate-border-glow"
-                style={{ animationDelay: `${idx * 0.1}s` }}
-              >
+              <CinematicImageWrapper key={idx} delay={idx * 0.08}>
                 <img 
                   src={src} 
                   alt={`PPF Application ${idx + 1}`}
-                  className="w-full h-full object-cover animate-zoom-pulse"
+                  className="w-full h-full object-cover transition-transform duration-300"
                   loading="lazy"
                 />
-                {/* Continuous shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-automotive-white/15 to-transparent animate-metal-shine"></div>
-                {/* Pulsing border glow */}
-                <div className="absolute inset-0 border-2 border-automotive-red/0 group-hover:border-automotive-red/80 transition-all duration-500"></div>
-              </div>
+              </CinematicImageWrapper>
             ))}
           </div>
         </div>

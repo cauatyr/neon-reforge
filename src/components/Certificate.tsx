@@ -1,4 +1,5 @@
 import { Award, CheckCircle } from "lucide-react";
+import { useCinematicImage } from "@/hooks/useCinematicImage";
 
 const benefits = [
   "Certificado digital oficial da Wizoom Play",
@@ -9,6 +10,8 @@ const benefits = [
 ];
 
 const Certificate = () => {
+  const { ref: imgRef, isVisible, isExiting } = useCinematicImage();
+  
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-6xl">
@@ -40,7 +43,12 @@ const Certificate = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div 
+              ref={imgRef}
+              className={`relative img-cinematic img-energy-border img-exit ${
+                isVisible ? 'visible' : ''
+              } ${isExiting ? 'exiting' : ''}`}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-automotive-red to-automotive-bronze rounded-xl blur-2xl opacity-40 animate-rev"></div>
               <img
                 src="https://v0-ppf-essencial.vercel.app/images/design-mode/Certificado%20PPF.png"
