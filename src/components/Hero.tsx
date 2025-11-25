@@ -97,7 +97,7 @@ const Hero = () => {
               onClick={scrollToOffer}
               size="lg"
               variant="crystal"
-              className="crystal-button crystal-button-entry rounded-xl font-bold text-lg px-10 py-7 h-auto"
+              className="crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Zap className="w-5 h-5" />
