@@ -15,13 +15,13 @@ const images = [
 ];
 
 const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
-  // Use spotlight for gallery images (GRUPO B)
+  // Use gallery-specific cinematic animation (BLOCK 2)
   const { ref, isVisible } = useCinematicImage({ effect: 'spotlight' });
   
   return (
     <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-spotlight ${
+      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic-gallery ${
         isVisible ? 'visible' : ''
       } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
       style={{ transitionDelay: `${idx * 40}ms` }}
