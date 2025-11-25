@@ -72,25 +72,23 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        // CTA HyperFloat 2.0
-        "cta-hyperfloat": {
-          "0%": { 
-            transform: "translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)" 
+        // ENGINE PULSE - V8 Motor Breathing
+        "engine-pulse": {
+          "0%, 100%": {
+            transform: "scale(1) translateY(0)",
+            boxShadow: "0 0 20px rgba(205, 127, 50, 0.12), 0 0 40px rgba(205, 127, 50, 0.08), -4px 0 12px rgba(205, 127, 50, 0.06), 4px 0 12px rgba(205, 127, 50, 0.06)"
           },
-          "20%": { 
-            transform: "translateY(-3px) translateX(2px) rotateX(0.5deg) rotateY(0.4deg) scale(1.005)" 
+          "25%": {
+            transform: "scale(1.012) translateY(-1px)",
+            boxShadow: "0 0 28px rgba(205, 127, 50, 0.18), 0 0 48px rgba(205, 127, 50, 0.12), 0 0 0 2px rgba(205, 127, 50, 0.2), -5px 0 15px rgba(205, 127, 50, 0.08), 5px 0 15px rgba(205, 127, 50, 0.08)"
           },
-          "40%": { 
-            transform: "translateY(-1px) translateX(3px) rotateX(0.3deg) rotateY(0.7deg) scale(1.01)" 
+          "50%": {
+            transform: "scale(1.018) translateY(-2px)",
+            boxShadow: "0 0 36px rgba(205, 127, 50, 0.25), 0 0 56px rgba(205, 127, 50, 0.18), 0 0 0 3px rgba(205, 127, 50, 0.3), -6px 0 18px rgba(205, 127, 50, 0.12), 6px 0 18px rgba(205, 127, 50, 0.12)"
           },
-          "60%": { 
-            transform: "translateY(2px) translateX(-2px) rotateX(-0.4deg) rotateY(-0.5deg) scale(1.005)" 
-          },
-          "80%": { 
-            transform: "translateY(3px) translateX(-3px) rotateX(-0.7deg) rotateY(-0.3deg) scale(0.995)" 
-          },
-          "100%": { 
-            transform: "translateY(0px) translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)" 
+          "75%": {
+            transform: "scale(1.012) translateY(-1px)",
+            boxShadow: "0 0 28px rgba(205, 127, 50, 0.18), 0 0 48px rgba(205, 127, 50, 0.12), 0 0 0 2px rgba(205, 127, 50, 0.2), -5px 0 15px rgba(205, 127, 50, 0.08), 5px 0 15px rgba(205, 127, 50, 0.08)"
           }
         },
         "cta-micro-pulse": {
@@ -288,11 +286,9 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         // CTA Animations
-        "cta-floating-premium": "cta-floating-premium 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite",
-        "cta-hyperfloat": "cta-hyperfloat 6s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "engine-pulse": "engine-pulse 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite",
         "cta-auto-shine": "cta-auto-shine 5s linear infinite",
         "cta-glow-pulse": "cta-glow-pulse 3s ease-in-out infinite",
-        "cta-micro-pulse": "cta-micro-pulse 6s ease-out infinite",
         // Text Animations
         "auto-light-sweep": "auto-light-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "text-micro-shake": "text-micro-shake 0.9s ease-out forwards",
