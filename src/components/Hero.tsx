@@ -24,7 +24,7 @@ const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; id
       ref={ref}
       className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-dual-axis ${
         isVisible ? 'visible' : ''
-      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
+      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
       style={{ transitionDelay: `${idx * 50}ms` }}
     >
       <img
@@ -34,7 +34,7 @@ const CinematicImageWrapper = ({ image, idx }: { image: typeof heroImages[0]; id
         loading="lazy"
       />
       {/* Subtle bottom glow on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-bronze/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };

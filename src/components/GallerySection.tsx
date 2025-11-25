@@ -23,7 +23,7 @@ const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: n
       ref={ref}
       className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic img-spotlight ${
         isVisible ? 'visible' : ''
-      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-red transition-all duration-300`}
+      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
       style={{ transitionDelay: `${idx * 40}ms` }}
     >
       <img
@@ -33,7 +33,7 @@ const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: n
         loading="lazy"
       />
       {/* Subtle bottom glow on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-red/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-bronze/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
@@ -43,7 +43,7 @@ const GallerySection = () => {
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-ignition">
-          Veja na Prática o Que Você Vai <span className="text-automotive-red text-glow-red animate-power-pulse">Dominar</span>
+          Veja na Prática o Que Você Vai <span className="text-automotive-bronze text-glow-bronze animate-power-pulse">Dominar</span>
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

@@ -40,16 +40,15 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     /* Automotive Colors */
-    --ferrari-red: 0 85% 55%;
-    --energy-red: 5 90% 60%;
     --bronze-metallic: 30 45% 50%;
+    --bronze-light: 35 50% 58%;
     --carbon-black: 0 0% 8%;
     --steel-gray: 200 10% 50%;
     --polished-white: 0 0% 98%;
     
     /* Metallic Glow effects */
-    --glow-red: 0 0 30px hsla(0, 85%, 55%, 0.6), 0 0 60px hsla(0, 85%, 55%, 0.4), 0 0 90px hsla(0, 85%, 55%, 0.2);
-    --glow-bronze: 0 0 20px hsla(30, 45%, 50%, 0.5), 0 0 40px hsla(30, 45%, 50%, 0.3);
+    --glow-bronze: 0 0 30px hsla(30, 45%, 50%, 0.6), 0 0 60px hsla(30, 45%, 50%, 0.4), 0 0 90px hsla(30, 45%, 50%, 0.2);
+    --glow-bronze-intense: 0 0 20px hsla(30, 45%, 50%, 0.5), 0 0 40px hsla(30, 45%, 50%, 0.3);
     --glow-white: 0 0 15px hsla(0, 0%, 98%, 0.8), 0 0 30px hsla(0, 0%, 98%, 0.5);
     
     /* Transitions */
@@ -86,12 +85,12 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .text-glow-red {
-    text-shadow: var(--glow-red);
-  }
-  
   .text-glow-bronze {
     text-shadow: var(--glow-bronze);
+  }
+  
+  .text-glow-bronze-intense {
+    text-shadow: var(--glow-bronze-intense);
   }
   
   .text-glow-white {
