@@ -65,426 +65,63 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
-        "fade-in-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(30px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "power-pulse": {
-          "0%, 100%": {
-            textShadow: "0 0 20px hsla(30, 45%, 50%, 0.8), 0 0 40px hsla(30, 45%, 50%, 0.6)",
-          },
-          "50%": {
-            textShadow: "0 0 40px hsla(30, 45%, 50%, 1), 0 0 60px hsla(30, 45%, 50%, 0.8)",
-          },
-        },
-        "energy-run": {
-          "0%": { backgroundPosition: "0% 50%" },
-          "100%": { backgroundPosition: "200% 50%" },
-        },
-        "metal-shine": {
-          "0%": { backgroundPosition: "-200% center" },
-          "100%": { backgroundPosition: "200% center" },
-        },
-        "scan": {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100vh)" },
-        },
-        "ignition": {
-          "0%": { 
-            opacity: "0",
-            transform: "scale(0.8)",
-            filter: "brightness(0.5)"
-          },
-          "50%": {
-            filter: "brightness(2)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "scale(1)",
-            filter: "brightness(1)"
-          },
-        },
-        "border-glow": {
-          "0%": { 
-            boxShadow: "0 0 10px rgba(191, 139, 70, 0.3)",
-            borderColor: "rgba(191, 139, 70, 0.3)"
-          },
-          "50%": { 
-            boxShadow: "0 0 30px rgba(191, 139, 70, 0.8), 0 0 50px rgba(191, 139, 70, 0.4)",
-            borderColor: "rgba(191, 139, 70, 0.9)"
-          },
-          "100%": { 
-            boxShadow: "0 0 10px rgba(191, 139, 70, 0.3)",
-            borderColor: "rgba(191, 139, 70, 0.3)"
-          },
-        },
-        "light-run": {
-          "0%": { 
-            backgroundPosition: "-200% center",
-            opacity: "0.5"
-          },
-          "50%": {
-            opacity: "1"
-          },
-          "100%": { 
-            backgroundPosition: "200% center",
-            opacity: "0.5"
-          },
-        },
-        // Premium Button Animations - Professional & Mobile-First
-        "premium-breath": {
-          "0%, 100%": { 
-            transform: "translateY(0)",
-            boxShadow: "0 10px 40px rgba(191, 139, 70, 0.4)"
-          },
-          "50%": { 
-            transform: "translateY(-3px)",
-            boxShadow: "0 12px 45px rgba(191, 139, 70, 0.5)"
-          },
-        },
-        "button-press": {
-          "0%": { transform: "scale(1) translateY(0)" },
-          "50%": { transform: "scale(0.98) translateY(2px)" },
-          "100%": { transform: "scale(1) translateY(0)" },
-        },
-        "button-entry": {
-          "0%": { 
-            opacity: "0",
-            transform: "scale(0.95)",
-            boxShadow: "0 0 0 rgba(191, 139, 70, 0)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "scale(1)",
-            boxShadow: "0 10px 40px rgba(191, 139, 70, 0.4)"
-          },
-        },
-        // Global Interaction Animations
-        "scroll-glow": {
-          "0%": { 
-            opacity: "0",
-            transform: "scaleX(0)"
-          },
-          "50%": { 
-            opacity: "0.3"
-          },
-          "100%": { 
-            opacity: "0",
-            transform: "scaleX(1)"
-          },
-        },
-        "section-slide": {
-          "0%": { 
-            transform: "translateY(8px)",
-            opacity: "0"
-          },
-          "100%": { 
-            transform: "translateY(0)",
-            opacity: "1"
-          },
-        },
-        "card-tilt": {
-          "0%": { transform: "perspective(1000px) rotateX(0deg)" },
-          "50%": { transform: "perspective(1000px) rotateX(1deg)" },
-          "100%": { transform: "perspective(1000px) rotateX(0deg)" },
-        },
-        "page-entry": {
-          "0%": { 
-            opacity: "0",
-            transform: "translateY(10px)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "translateY(0)"
-          },
-        },
-        // Professional Cinematic Animations - No Pixelation
-        "subtle-shine": {
-          "0%": {
-            backgroundPosition: "-200% center",
-            opacity: "0"
-          },
-          "50%": {
-            opacity: "1"
-          },
-          "100%": {
-            backgroundPosition: "200% center",
-            opacity: "0"
-          }
-        },
-        "edge-light-sweep": {
-          "0%": {
-            clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-            opacity: "1"
-          },
-          "100%": {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            opacity: "0"
-          }
-        },
-        // Crystal Motion Tech Button
-        "crystal-breath": {
-          "0%, 100%": { 
-            transform: "translateY(0)",
-            boxShadow: "0 8px 25px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-          },
-          "50%": { 
-            transform: "translateY(-3px)",
-            boxShadow: "0 10px 35px rgba(191, 139, 70, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
-          },
-        },
-        "crystal-entry": {
-          "0%": { 
-            opacity: "0",
-            transform: "scale(0.90)",
-            borderColor: "rgba(200, 200, 200, 0)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "scale(1)",
-            borderColor: "rgba(200, 200, 200, 0.6)"
-          },
-        },
-        "crystal-flash": {
-          "0%": { 
-            transform: "translateX(-100%) skewX(-15deg)",
-            opacity: "0"
-          },
-          "50%": {
-            opacity: "0.8"
-          },
-          "100%": { 
-            transform: "translateX(200%) skewX(-15deg)",
-            opacity: "0"
-          },
-        },
-        // Section-specific animations
-        "hero-title-slide": {
-          "0%": { 
-            opacity: "0",
-            transform: "translateY(30px)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "translateY(0)"
-          },
-        },
-        "spotlight-reveal": {
-          "0%": { 
-            clipPath: "circle(0% at 50% 50%)",
-            transform: "scale(0.97)"
-          },
-          "100%": { 
-            clipPath: "circle(100% at 50% 50%)",
-            transform: "scale(1)"
-          },
-        },
-        "dual-axis-reveal": {
-          "0%": { 
-            opacity: "0",
-            transform: "translate(-6px, 8px)"
-          },
-          "70%": {
-            opacity: "1"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "translate(0, 0) rotate(0deg)"
-          },
-        },
-        "card-glow-pulse": {
-          "0%, 100%": { 
-            boxShadow: "0 0 20px rgba(191, 139, 70, 0.2), inset 0 0 15px rgba(191, 139, 70, 0.05)"
-          },
-          "50%": { 
-            boxShadow: "0 0 30px rgba(191, 139, 70, 0.4), inset 0 0 20px rgba(191, 139, 70, 0.1)"
-          },
-        },
-        "pendular-entry": {
-          "0%": { 
-            opacity: "0",
-            transform: "rotate(-2deg) translateY(20px)"
-          },
-          "60%": {
-            transform: "rotate(1deg) translateY(-5px)"
-          },
-          "100%": { 
-            opacity: "1",
-            transform: "rotate(0deg) translateY(0)"
-          },
-        },
-        "split-text": {
-          "0%": { 
-            clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
-            opacity: "0"
-          },
-          "100%": { 
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            opacity: "1"
-          },
-        },
-        "led-border-run": {
-          "0%": { 
-            strokeDashoffset: "1000"
-          },
-          "100%": { 
-            strokeDashoffset: "0"
-          },
-        },
-        "slide-power": {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(-50px) rotateY(-15deg)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0) rotateY(0)"
-          },
-        },
-        "digital-flip": {
-          "0%": { 
-            transform: "rotateX(0deg)",
-            opacity: "0"
-          },
-          "50%": {
-            transform: "rotateX(90deg)",
-            opacity: "0.5"
-          },
-          "100%": {
-            transform: "rotateX(0deg)",
-            opacity: "1"
-          },
-        },
-        "laser-edge": {
-          "0%": { 
-            clipPath: "inset(0 100% 0 0)"
-          },
-          "25%": { 
-            clipPath: "inset(0 0 0 0)"
-          },
-          "50%": { 
-            clipPath: "inset(0 0 100% 0)"
-          },
-          "75%": { 
-            clipPath: "inset(0 0 0 100%)"
-          },
-          "100%": { 
-            clipPath: "inset(100% 0 0 0)"
-          },
-        },
-        // Premium Button Animations - Continuous Motion
-        "depth-pulse": {
-          "0%, 100%": {
-            transform: "scale(1)"
-          },
-          "50%": {
-            transform: "scale(1.02)"
-          }
-        },
-        "horizontal-oscillation": {
-          "0%, 100%": {
-            transform: "translateX(0)"
-          },
-          "25%": {
-            transform: "translateX(1.5px)"
-          },
-          "75%": {
-            transform: "translateX(-1.5px)"
-          }
-        },
-        "automotive-reflection": {
-          "0%": {
-            backgroundPosition: "-200% center"
-          },
-          "100%": {
-            backgroundPosition: "200% center"
-          }
-        },
-        "metallic-glow": {
-          "0%, 100%": {
-            boxShadow: "0 8px 25px rgba(168, 116, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
-          },
-          "50%": {
-            boxShadow: "0 10px 35px rgba(168, 116, 55, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15)"
-          }
-        },
-        "button-press": {
-          "0%": {
-            transform: "scale(1)"
-          },
-          "50%": {
-            transform: "scale(0.95)"
-          },
-          "100%": {
-            transform: "scale(1)"
-          }
-        },
-        // Real Movement Animations for CTAs
-        "cta-floating-move": {
-          "0%": { transform: "translateY(0px) rotate(0deg)" },
-          "25%": { transform: "translateY(-3px) rotate(0.3deg)" },
-          "50%": { transform: "translateY(0px) rotate(0.6deg)" },
-          "75%": { transform: "translateY(2px) rotate(0.3deg)" },
-          "100%": { transform: "translateY(0px) rotate(0deg)" }
-        },
-        "cta-side-shift": {
-          "0%": { transform: "translateX(0px)" },
-          "50%": { transform: "translateX(2px)" },
-          "100%": { transform: "translateX(0px)" }
+        // CTA Floating Premium
+        "cta-floating-premium": {
+          "0%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" },
+          "25%": { transform: "translateY(-3px) translateX(2px) rotate(0.7deg) scale(1.01)" },
+          "50%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" },
+          "75%": { transform: "translateY(3px) translateX(-2px) rotate(-0.7deg) scale(0.99)" },
+          "100%": { transform: "translateY(0px) translateX(0px) rotate(0deg) scale(1)" }
         },
         "cta-auto-shine": {
           "0%": { backgroundPosition: "-150% 0" },
           "100%": { backgroundPosition: "150% 0" }
         },
-        // Automotive Text Animations
+        "cta-glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(205, 127, 50, 0.15), 0 0 40px rgba(205, 127, 50, 0.1)" },
+          "50%": { boxShadow: "0 0 30px rgba(205, 127, 50, 0.25), 0 0 60px rgba(205, 127, 50, 0.15)" }
+        },
+        // Text Energy Animations
         "auto-light-sweep": {
           "0%": {
             opacity: "0",
-            transform: "translateY(30px) skewX(-8deg)",
+            transform: "translateY(30px) skewX(-8deg) scale(0.96)",
             filter: "blur(8px)"
           },
           "40%": {
             opacity: "1",
-            transform: "translateY(0px) skewX(0deg)",
+            transform: "translateY(0px) skewX(0deg) scale(1)",
             filter: "blur(0px)"
           },
           "100%": {
             textShadow: "0px 0px 18px rgba(255, 255, 255, 0.35)"
           }
         },
+        "energy-line-sweep": {
+          "0%": { left: "-100%", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { left: "100%", opacity: "0" }
+        },
+        "text-micro-shake": {
+          "0%, 100%": { transform: "translateX(0px)" },
+          "25%": { transform: "translateX(1px)" },
+          "75%": { transform: "translateX(-1px)" }
+        },
+        "diagonal-flash": {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "0.3" }
+        },
         "autospeed-underline": {
-          "0%": { 
-            width: "0%", 
-            opacity: "0" 
-          },
-          "30%": { 
-            opacity: "1" 
-          },
-          "100%": { 
-            width: "100%", 
-            opacity: "1" 
-          }
+          "0%": { width: "0%", opacity: "0" },
+          "30%": { opacity: "1" },
+          "100%": { width: "100%", opacity: "1" }
         },
         "hud-drift": {
           "0%": {
@@ -497,32 +134,104 @@ export default {
           }
         },
         "digital-flick-reveal": {
-          "0%": { 
-            opacity: "0", 
-            letterSpacing: "-2px" 
-          },
-          "40%": { 
-            opacity: "0.4", 
-            letterSpacing: "0px" 
-          },
-          "60%": { 
-            opacity: "0.7" 
-          },
-          "100%": { 
-            opacity: "1" 
-          }
+          "0%": { opacity: "0", letterSpacing: "-2px" },
+          "40%": { opacity: "0.4", letterSpacing: "0px" },
+          "60%": { opacity: "0.7" },
+          "100%": { opacity: "1" }
         },
-        "carbon-scan": {
+        // Section Animations
+        "ignition-flash": {
           "0%": {
-            backgroundPosition: "-120% 0",
-            opacity: "0"
+            opacity: "0",
+            transform: "scale(0.95)",
+            filter: "brightness(0.7) contrast(1.2)"
+          },
+          "30%": {
+            opacity: "1",
+            filter: "brightness(1.3) contrast(1.1)"
           },
           "100%": {
-            backgroundPosition: "120% 0",
-            opacity: "1"
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "brightness(1) contrast(1)"
           }
         },
-        // Premium Section & Image Animations
+        "section-light-run": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { transform: "translateX(100%)", opacity: "0" }
+        },
+        "premium-slide-up": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "energy-darken": {
+          "0%, 100%": { filter: "brightness(1)" },
+          "50%": { filter: "brightness(0.85)" }
+        },
+        "energy-build-up": {
+          "0%": { opacity: "0", transform: "scale(0.8)" },
+          "100%": { opacity: "0.3", transform: "scale(1.2)" }
+        },
+        // Holographic and HUD
+        "holographic-float": {
+          "0%, 100%": {
+            transform: "translateY(0px) translateX(0px)",
+            opacity: "0.1"
+          },
+          "50%": {
+            transform: "translateY(-15px) translateX(10px)",
+            opacity: "0.2"
+          }
+        },
+        "hud-grid-pulse": {
+          "0%, 100%": { opacity: "0.05" },
+          "50%": { opacity: "0.15" }
+        },
+        // Parallax Layers
+        "parallax-layer-1": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(1px)" }
+        },
+        "parallax-layer-2": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(2.5px)" }
+        },
+        "parallax-layer-3": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(1.5px)" }
+        },
+        "parallax-layer-4": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-3px)" }
+        },
+        // Image Animations
+        "cinematic-image-entry": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.92)",
+            filter: "blur(4px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "blur(0px)"
+          }
+        },
+        "energy-edge-sweep": {
+          "0%": { strokeDashoffset: "1000", opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { strokeDashoffset: "0", opacity: "0" }
+        },
+        // Legacy animations
+        "power-pulse": {
+          "0%, 100%": {
+            textShadow: "0 0 20px hsla(30, 45%, 50%, 0.8), 0 0 40px hsla(30, 45%, 50%, 0.6)"
+          },
+          "50%": {
+            textShadow: "0 0 40px hsla(30, 45%, 50%, 1), 0 0 60px hsla(30, 45%, 50%, 0.8)"
+          }
+        },
         "automotive-energy-reveal": {
           "0%": {
             opacity: "0",
@@ -545,170 +254,52 @@ export default {
             transform: "translateX(0px)"
           }
         },
-        "energy-line-sweep": {
-          "0%": {
-            left: "-100%",
-            opacity: "0"
-          },
-          "50%": {
-            opacity: "1"
-          },
-          "100%": {
-            left: "100%",
-            opacity: "0"
-          }
-        },
-        "cinematic-image-entry": {
-          "0%": {
-            opacity: "0",
-            transform: "scale(0.92)",
-            filter: "blur(6px)"
-          },
-          "60%": {
-            opacity: "1",
-            transform: "scale(1)",
-            filter: "blur(0px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "scale(1)",
-            filter: "blur(0px)"
-          }
-        },
-        "metal-slide-reveal": {
-          "0%": {
-            opacity: "0",
-            transform: "translateX(-20px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateX(0)"
-          }
-        },
-        "image-border-glow": {
-          "0%, 100%": {
-            boxShadow: "0 0 0 rgba(205, 127, 50, 0)"
-          },
-          "50%": {
-            boxShadow: "0 0 20px rgba(205, 127, 50, 0.4)"
-          }
-        },
-        "ignition-flash": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(20px) scale(0.95)"
-          },
-          "40%": {
-            opacity: "1"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0) scale(1)"
-          }
-        },
-        "section-light-run": {
-          "0%": {
-            transform: "translateX(-100%)",
-            opacity: "0"
-          },
-          "50%": {
-            opacity: "1"
-          },
-          "100%": {
-            transform: "translateX(100%)",
-            opacity: "0"
-          }
-        },
-        "premium-slide-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(10px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          }
+        "led-border-run": {
+          "0%": { strokeDashoffset: "1000" },
+          "100%": { strokeDashoffset: "0" }
         },
         "parallax-fade": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(1.5px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          }
-        },
-        "energy-darken": {
-          "0%": {
-            filter: "brightness(1)"
-          },
-          "50%": {
-            filter: "brightness(0.85)"
-          },
-          "100%": {
-            filter: "brightness(1)"
-          }
-        },
+          "0%": { opacity: "0", transform: "translateY(1.5px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "power-pulse": "power-pulse 2s ease-in-out infinite",
-        "energy-run": "energy-run 2s linear infinite",
-        "metal-shine": "metal-shine 3s linear infinite",
-        "scan": "scan 3s ease-in-out infinite",
-        "ignition": "ignition 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "slide-power": "slide-power 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "digital-flip": "digital-flip 0.6s ease-out forwards",
-        "subtle-shine": "subtle-shine 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        "edge-light-sweep": "edge-light-sweep 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        // Crystal Motion Tech Button
-        "crystal-breath": "crystal-breath 7s ease-in-out infinite",
-        "crystal-entry": "crystal-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "crystal-flash": "crystal-flash 0.6s ease-out",
-        // Section-specific animations
-        "hero-title-slide": "hero-title-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "spotlight-reveal": "spotlight-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "dual-axis-reveal": "dual-axis-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "card-glow-pulse": "card-glow-pulse 0.2s ease-out",
-        "pendular-entry": "pendular-entry 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
-        "split-text": "split-text 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "led-border-run": "led-border-run 1.5s ease-out forwards",
-        "laser-edge": "laser-edge 0.8s ease-out forwards",
-        // Global Interactions
-        "scroll-glow": "scroll-glow 1.2s ease-out forwards",
-        "section-slide": "section-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "card-tilt": "card-tilt 0.3s ease-out forwards",
-        "page-entry": "page-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        // Premium Button Continuous Animations
-        "depth-pulse": "depth-pulse 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite",
-        "horizontal-oscillation": "horizontal-oscillation 4s ease-in-out infinite",
-        "automotive-reflection": "automotive-reflection 3s linear infinite",
-        "metallic-glow": "metallic-glow 3s ease-in-out infinite",
-        "button-press": "button-press 0.2s ease-out",
-        // Real Movement CTA Animations
-        "cta-floating-move": "cta-floating-move 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite",
-        "cta-side-shift": "cta-side-shift 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite",
-        "cta-auto-shine": "cta-auto-shine 5s linear infinite",
-        // Automotive Text Animations
-        "auto-light-sweep": "auto-light-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        // CTA Animations
+        "cta-floating-premium": "cta-floating-premium 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite",
+        "cta-auto-shine": "cta-auto-shine 4s linear infinite",
+        "cta-glow-pulse": "cta-glow-pulse 3s ease-in-out infinite",
+        // Text Animations
+        "auto-light-sweep": "auto-light-sweep 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "text-micro-shake": "text-micro-shake 0.9s ease-out forwards",
+        "energy-line-sweep": "energy-line-sweep 0.9s ease-out forwards",
+        "diagonal-flash": "diagonal-flash 0.9s ease-out forwards",
         "autospeed-underline": "autospeed-underline 0.9s ease-out forwards",
         "hud-drift": "hud-drift 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards",
         "digital-flick-reveal": "digital-flick-reveal 0.65s ease-out forwards",
-        "carbon-scan": "carbon-scan 1s ease-out forwards",
-        // Premium Section & Image Animations
+        // Section Animations
+        "ignition-flash": "ignition-flash 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+        "section-light-run": "section-light-run 1.5s ease-out forwards",
+        "premium-slide-up": "premium-slide-up 0.8s ease-out forwards",
+        "energy-darken": "energy-darken 2s ease-in-out",
+        "energy-build-up": "energy-build-up 1.5s ease-out forwards",
+        // Holographic and HUD
+        "holographic-float": "holographic-float 8s ease-in-out infinite",
+        "hud-grid-pulse": "hud-grid-pulse 4s ease-in-out infinite",
+        // Parallax
+        "parallax-layer-1": "parallax-layer-1 6s ease-in-out infinite",
+        "parallax-layer-2": "parallax-layer-2 5s ease-in-out infinite",
+        "parallax-layer-3": "parallax-layer-3 5.5s ease-in-out infinite",
+        "parallax-layer-4": "parallax-layer-4 4.5s ease-in-out infinite",
+        // Images
+        "cinematic-image-entry": "cinematic-image-entry 0.8s ease-out forwards",
+        "energy-edge-sweep": "energy-edge-sweep 0.6s ease-out forwards",
+        // Legacy
+        "power-pulse": "power-pulse 2s ease-in-out infinite",
         "automotive-energy-reveal": "automotive-energy-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "energy-line-sweep": "energy-line-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "cinematic-image-entry": "cinematic-image-entry 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "metal-slide-reveal": "metal-slide-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "image-border-glow": "image-border-glow 2s ease-in-out infinite",
-        "ignition-flash": "ignition-flash 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "section-light-run": "section-light-run 2s ease-out forwards",
-        "premium-slide-up": "premium-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "parallax-fade": "parallax-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "energy-darken": "energy-darken 3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "led-border-run": "led-border-run 2s ease-out forwards",
+        "parallax-fade": "parallax-fade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards"
       },
     },
   },
