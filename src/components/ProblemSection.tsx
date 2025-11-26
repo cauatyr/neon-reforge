@@ -38,7 +38,7 @@ const ProblemSection = () => {
           ref={titleRef}
           className={`text-center mb-16 space-y-6 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-automotive-bronze animate-power-pulse text-glow-bronze text-auto-light-sweep text-with-underline">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-automotive-bronze premium-automotive-title">
             Você Está Perdendo Dinheiro TODOS OS DIAS...
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-hud-drift">
