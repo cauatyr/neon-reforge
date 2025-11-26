@@ -75,10 +75,15 @@
     @apply bg-background text-foreground font-body antialiased;
     /* Carbon fiber background with subtle bronze accents */
     background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(168, 116, 55, 0.03) 2px,
+        rgba(168, 116, 55, 0.03) 4px
+      ),
       radial-gradient(circle at 20% 20%, hsla(30, 45%, 50%, 0.04) 0%, transparent 50%),
       radial-gradient(circle at 80% 80%, hsla(30, 45%, 50%, 0.03) 0%, transparent 50%),
-      repeating-linear-gradient(0deg, hsla(0, 0%, 100%, 0.01) 0px, transparent 1px, transparent 80px, hsla(0, 0%, 100%, 0.01) 81px),
-      repeating-linear-gradient(90deg, hsla(30, 45%, 50%, 0.01) 0px, transparent 1px, transparent 80px, hsla(30, 45%, 50%, 0.01) 81px),
       linear-gradient(180deg, hsl(0, 0%, 5%) 0%, hsl(0, 0%, 3%) 100%);
     background-attachment: fixed;
     scroll-behavior: smooth;
@@ -603,67 +608,62 @@
   position: relative;
   opacity: 0;
   animation: 
-    lambo-ignition-entry 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-    lambo-heartbeat 7s ease-in-out 2s infinite;
-  text-shadow: 
-    0 1px 0 rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(212, 160, 86, 0.3);
+    lambo-main-title-entry 0.6s ease-out forwards,
+    lambo-title-idle-pulse 7s ease-in-out 1.5s infinite;
+  text-shadow: 0 0 12px rgba(168, 116, 55, 0.3);
   letter-spacing: 0.02em;
   filter: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Y-Shape Light Streak (Lamborghini signature) */
+/* Light sweep - faixa de luz passando no texto */
 .premium-automotive-title::before {
   content: '';
   position: absolute;
-  top: -20%;
-  left: -120%;
-  width: 150%;
-  height: 140%;
-  background: 
-    linear-gradient(
-      120deg,
-      transparent 0%,
-      transparent 30%,
-      rgba(255, 220, 150, 0.4) 45%,
-      rgba(212, 160, 86, 0.6) 50%,
-      rgba(255, 220, 150, 0.4) 55%,
-      transparent 70%,
-      transparent 100%
-    );
-  clip-path: polygon(40% 0%, 50% 0%, 60% 100%, 50% 100%);
-  animation: lambo-y-streak 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(168, 116, 55, 0.5) 50%, 
+    transparent 100%
+  );
+  animation: lambo-light-sweep 0.8s ease-out 0.6s forwards;
   pointer-events: none;
-  z-index: 2;
-  filter: blur(1px);
+  z-index: 1;
 }
 
 /* ═══ 2. TÍTULOS SECUNDÁRIOS - LAMBO SECTION HEADERS ═══ */
 .lambo-section-title {
   position: relative;
   opacity: 0;
-  animation: lambo-slide-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: lambo-title-entry 0.5s ease-out forwards;
+  text-shadow: 0 0 8px rgba(168, 116, 55, 0.2);
 }
 
-.lambo-section-title::after {
+/* Highlight lateral - linha de luz deslizando */
+.lambo-section-title::before {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, hsl(var(--automotive-bronze)), transparent);
-  opacity: 0;
-  animation: lambo-edge-highlight 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(168, 116, 55, 0.6) 50%, 
+    transparent 100%
+  );
+  animation: lambo-highlight-lateral 0.5s ease-out 0.5s forwards;
+  pointer-events: none;
 }
 
 /* ═══ 3. PARÁGRAFOS E TEXTOS - LAMBO TEXT CASCADE ═══ */
 .lambo-text-cascade {
   opacity: 0;
-  animation: lambo-text-entry 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: lambo-text-cascade 0.5s ease-out forwards;
 }
 
 .lambo-text-cascade:nth-child(1) { animation-delay: 0ms; }
@@ -676,66 +676,61 @@
 /* ═══ 4. CARDS E BLOCOS - LAMBO BLOCK REVEAL ═══ */
 .lambo-block {
   opacity: 0;
-  animation: lambo-block-entry 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: lambo-section-entry 0.4s ease-out forwards;
   position: relative;
-  overflow: hidden;
 }
 
 .lambo-block::before {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(90deg, transparent, rgba(212, 160, 86, 0.6), transparent);
+  background: transparent;
   opacity: 0;
-  animation: lambo-border-glow 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  animation: lambo-border-glow 1s ease-out 0.4s;
   border-radius: inherit;
   z-index: -1;
+  box-shadow: 0 0 20px rgba(168, 116, 55, 0.4);
 }
 
 /* ═══ 5. BOTÕES - LAMBO SUPER PREMIUM BUTTON ═══ */
 .lambo-button {
   position: relative;
   overflow: hidden;
-  animation: lambo-button-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Idle micro-vibration (engine running) */
-.lambo-button {
   animation: 
-    lambo-button-entry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-    lambo-button-idle 3s ease-in-out 1s infinite;
+    lambo-button-entry 0.3s ease-out forwards,
+    lambo-button-contour-light 0.35s ease-out forwards;
+  transition: filter 0.1s ease;
 }
 
-/* Y-Shape hover effect */
+/* Hover sweep effect - luz atravessando */
 .lambo-button::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -150%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    transparent 40%,
-    rgba(255, 255, 255, 0.3) 48%,
-    rgba(212, 160, 86, 0.5) 50%,
-    rgba(255, 255, 255, 0.3) 52%,
-    transparent 60%,
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(168, 116, 55, 0.3) 50%, 
     transparent 100%
   );
-  clip-path: polygon(40% 0%, 50% 0%, 60% 100%, 50% 100%);
-  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  z-index: 1;
 }
 
 .lambo-button:hover::before {
-  left: 150%;
+  animation: lambo-button-hover-sweep 0.6s ease-out;
+}
+
+.lambo-button:hover {
+  animation: lambo-button-motor-vibration 0.15s ease-out;
+  filter: brightness(1.1);
 }
 
 /* Click flash */
 .lambo-button:active {
-  animation: lambo-button-click 0.06s ease-out;
+  animation: lambo-button-click-flash 0.05s ease-out;
 }
 
 /* ═══ 6. EFEITOS GLOBAIS ═══ */
@@ -775,15 +770,14 @@
 
 /* Metallic Separation Lines */
 .lambo-separator {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(212, 160, 86, 0.3) 20%,
-    rgba(212, 160, 86, 0.8) 50%,
-    rgba(212, 160, 86, 0.3) 80%,
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(168, 116, 55, 0.4) 50%, 
     transparent 100%
   );
+  margin: 4rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -797,6 +791,11 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
   animation: lambo-separator-shine 3s ease-in-out infinite;
+}
+
+/* Glow âmbar global para elementos decorativos */
+.lambo-glow {
+  box-shadow: 0 0 30px rgba(168, 116, 55, 0.3);
 }
 
 .text-with-underline {
@@ -1535,4 +1534,123 @@
   100% {
     left: 200%;
   }
+}
+
+/* Novos keyframes para animações específicas Lamborghini */
+
+@keyframes lambo-main-title-entry {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lambo-light-sweep {
+  0% { 
+    left: -100%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% { 
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes lambo-title-idle-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 12px rgba(168, 116, 55, 0.3);
+    filter: brightness(1);
+  }
+  50% { 
+    text-shadow: 0 0 16px rgba(168, 116, 55, 0.5);
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes lambo-title-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lambo-highlight-lateral {
+  0% { 
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% { 
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes lambo-text-cascade {
+  0% {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lambo-section-entry {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lambo-button-contour-light {
+  0% { 
+    box-shadow: 0 0 0 rgba(168, 116, 55, 0);
+  }
+  100% { 
+    box-shadow: 0 0 20px rgba(168, 116, 55, 0.6);
+  }
+}
+
+@keyframes lambo-button-hover-sweep {
+  0% { 
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% { 
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes lambo-button-motor-vibration {
+  0%, 100% { transform: scale(1); }
+  33% { transform: scale(1.01); }
+  66% { transform: scale(1); }
+}
+
+@keyframes lambo-button-click-flash {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
 }
