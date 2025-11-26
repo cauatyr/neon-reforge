@@ -54,7 +54,7 @@ const VSLSection = () => {
             <div className="relative aspect-video bg-black/50 backdrop-blur-sm">
               <video
                 ref={videoRef}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 controls={isPlaying}
                 playsInline
                 preload="metadata"
