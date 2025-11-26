@@ -5,7 +5,7 @@ import GallerySection from "@/components/GallerySection";
 import WhatYouLearn from "@/components/WhatYouLearn";
 import WhyDifferent from "@/components/WhyDifferent";
 import WhoIsFor from "@/components/WhoIsFor";
-import Certificate from "@/components/Certificate";
+import VSLSection from "@/components/VSLSection";
 import Pricing from "@/components/Pricing";
 import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
@@ -22,7 +22,7 @@ const Index = () => {
       <BeginnerFriendly />
       <WhyDifferent />
       <WhoIsFor />
-      <Certificate />
+      <VSLSection />
       <Pricing />
       <Guarantee />
       <FAQ />
