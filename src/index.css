@@ -858,6 +858,112 @@
   box-shadow: 0 0 30px rgba(168, 116, 55, 0.3);
 }
 
+/* ═══ 8. LEARN SECTION - PREMIUM AUTOMOTIVE ANIMATIONS ═══ */
+
+/* Title Animation */
+.learn-section-title {
+  animation: learn-title-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.learn-section-subtitle {
+  animation: learn-subtitle-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
+  opacity: 0;
+}
+
+/* Cards */
+.learn-card {
+  animation: learn-card-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  opacity: 0;
+  background: #0D0D0D;
+  border: 2px solid rgba(216, 155, 76, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
+  transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle automotive texture */
+.learn-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(216, 155, 76, 0.03), transparent 70%);
+  pointer-events: none;
+}
+
+/* Hover effect */
+@media (hover: hover) {
+  .learn-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216, 155, 76, 0.4);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.25);
+  }
+
+  .learn-card:hover .learn-icon-wrapper {
+    background: rgba(216, 155, 76, 0.4);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.5);
+    transform: scale(1.05);
+  }
+
+  .learn-card:hover .learn-icon-wrapper svg {
+    color: #0D0D0D;
+  }
+}
+
+/* Cascade delays */
+.learn-card:nth-child(1) { animation-delay: 0s; }
+.learn-card:nth-child(2) { animation-delay: 0.12s; }
+.learn-card:nth-child(3) { animation-delay: 0.24s; }
+.learn-card:nth-child(4) { animation-delay: 0.36s; }
+.learn-card:nth-child(5) { animation-delay: 0.48s; }
+
+/* Icon wrapper transition */
+.learn-icon-wrapper {
+  transition: all 0.25s ease;
+}
+
+/* Keyframes */
+@keyframes learn-title-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 20px rgba(216, 155, 76, 0.3);
+  }
+}
+
+@keyframes learn-subtitle-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes learn-card-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.94);
+    box-shadow: 0 0 0 rgba(216, 155, 76, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
+  }
+}
+
 .text-with-underline {
   position: relative;
   display: inline-block;
