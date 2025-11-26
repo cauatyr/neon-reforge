@@ -205,105 +205,90 @@
    BUTTON: CRYSTAL MOTION TECH
    ENGINE PULSE + METAL WAVE + IGNITION SPARK
    Premium automotive button with real movement
+   ZERO BLUR - 100% SHARP
    ======================================== */
 .crystal-button {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, hsl(var(--carbon-deep)), hsl(var(--carbon-black)));
-  border: 2px solid hsla(30, 45%, 50%, 0.6);
+  background: linear-gradient(135deg, #0A0A0A, #0D0D0D);
+  border: 2px solid #d89b4c;
+  color: #ffffff;
   box-shadow: 
-    0 0 25px hsla(30, 45%, 50%, 0.2), 
-    0 6px 30px rgba(0, 0, 0, 0.7),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  transition: var(--transition-smooth);
-  will-change: transform, box-shadow;
-  animation: 
-    engine-pulse-drift 2.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite,
-    engine-pulse-scale 2.2s ease-in-out infinite,
-    engine-border-glow 4s ease-in-out infinite;
+    0 0 15px rgba(216, 155, 76, 0.3),
+    inset 0 0 8px rgba(216, 155, 76, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow, border-color;
+  animation: premium-button-border-pulse 3s ease-in-out infinite;
 }
 
 .crystal-button:hover {
-  border-color: hsla(30, 45%, 50%, 0.9);
+  border-color: #f0b15c;
   box-shadow: 
-    0 0 40px hsla(30, 45%, 50%, 0.4), 
-    0 8px 40px rgba(0, 0, 0, 0.8),
-    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    0 0 25px rgba(216, 155, 76, 0.5),
+    inset 0 0 12px rgba(216, 155, 76, 0.35);
   transform: scale(1.02);
 }
 
 .crystal-button:active {
-  transform: scale(0.98) translateY(1px);
-  box-shadow: 
-    0 0 30px hsla(30, 45%, 50%, 0.3),
-    inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  transform: scale(1.02);
+  transition: opacity 0.05s ease-out;
 }
 
-/* Metal Wave - Diagonal shine sweeping across button */
+/* Light Sweep Effect - crosses button left to right on hover */
 .crystal-button::before {
   content: '';
   position: absolute;
-  top: -50%;
+  top: 0;
   left: -100%;
-  width: 80%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
-    120deg,
+    90deg,
     transparent,
-    hsla(30, 45%, 50%, 0.4),
-    hsla(30, 45%, 50%, 0.2),
+    rgba(216, 155, 76, 0.4),
     transparent
   );
-  transform: skewX(-25deg);
-  animation: metal-wave-sweep 6s ease-in-out infinite;
+  transition: left 0.5s ease-out;
   pointer-events: none;
 }
 
-/* Ignition Spark - Edge flash */
-.crystal-button::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 3px;
-  height: 40%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    hsl(var(--bronze-metallic)),
-    transparent
-  );
-  transform: translateY(-50%) scaleY(0);
-  animation: ignition-spark-left 10s ease-in-out infinite;
-  filter: blur(2px);
-  pointer-events: none;
+.crystal-button:hover::before {
+  left: 100%;
 }
 
-.crystal-button:active {
-  transform: scale(0.96) translateY(1px);
-  box-shadow: 
-    0 0 15px hsla(30, 45%, 50%, 0.2), 
-    0 2px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.08s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (hover: hover) {
-  .crystal-button:hover {
-    transform: translateY(-2px);
+/* Idle border pulse animation */
+@keyframes premium-button-border-pulse {
+  0%, 100% {
+    border-color: #d89b4c;
     box-shadow: 
-      0 0 35px hsla(30, 45%, 50%, 0.35), 
-      0 8px 35px rgba(0, 0, 0, 0.7),
-      inset 0 1px 1px rgba(255, 255, 255, 0.12);
-    border-color: hsla(30, 45%, 50%, 0.8);
+      0 0 15px rgba(216, 155, 76, 0.3),
+      inset 0 0 8px rgba(216, 155, 76, 0.25);
+  }
+  50% {
+    border-color: #e0a556;
+    box-shadow: 
+      0 0 18px rgba(216, 155, 76, 0.35),
+      inset 0 0 10px rgba(216, 155, 76, 0.28);
   }
 }
 
-/* Button entry animation - Focus Boost */
+/* Button entry animation - NO BLUR */
 .crystal-button-entry {
   opacity: 0;
   transform: scale(0.97);
-  filter: blur(4px);
-  animation: button-focus-boost 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s forwards;
+  animation: button-sharp-entry 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s forwards;
+}
+
+@keyframes button-sharp-entry {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ========================================
@@ -936,18 +921,7 @@
   }
 }
 
-@keyframes button-focus-boost {
-  0% {
-    opacity: 0;
-    transform: scale(0.97);
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
+/* Removed - button-focus-boost had blur */
 
 /* ========================================
    KEYFRAMES - Section Animations
