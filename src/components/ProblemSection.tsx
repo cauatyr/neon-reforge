@@ -47,32 +47,28 @@ const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {problems.map((problem, idx) => {
-            const { ref, isVisible } = useScrollAnimation();
-            return (
-          <div 
-            ref={ref}
-            className={`lambo-block glass-card benefits-card p-8 rounded-xl group transition-all duration-700 border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(168,116,55,0.2)] hover:shadow-[0_0_40px_rgba(168,116,55,0.4)] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}
-            style={{ transitionDelay: `${idx * 0.15}s` }}
-          >
-                  <div className="flex items-start gap-5">
-                    <div className="benefits-icon text-5xl">{problem.emoji}</div>
-                    <div className="flex-1">
-                      <h3 className="lambo-text-cascade text-xl md:text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
-                        {problem.title}
-                      </h3>
-                      <p className="lambo-text-cascade text-muted-foreground leading-relaxed">
-                        {problem.description}
-                      </p>
-                    </div>
-                  </div>
-                {/* Animated tech line on bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-bronze to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {/* Side glow on hover */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-automotive-bronze opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,116,55,0.8)]"></div>
+          {problems.map((problem, idx) => (
+            <div 
+              key={idx}
+              className="problem-card-premium p-8 group"
+            >
+              <div className="flex items-start gap-5">
+                <div className="problem-card-icon text-5xl">{problem.emoji}</div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground group-hover:text-automotive-bronze transition-colors duration-300">
+                    {problem.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {problem.description}
+                  </p>
+                </div>
               </div>
-            );
-          })}
+              {/* Animated tech line on bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-automotive-bronze to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Side glow on hover */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-automotive-bronze opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,116,55,0.8)]"></div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
