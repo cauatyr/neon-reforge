@@ -27,7 +27,7 @@ const WhoIsFor = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-auto-light-sweep text-with-underline">
+        <h2 className="lambo-section-title text-4xl md:text-5xl font-bold text-center mb-16">
           Para Quem é <span className="text-automotive-bronze text-glow-bronze">Este Curso</span>
         </h2>
 
@@ -35,7 +35,7 @@ const WhoIsFor = () => {
           {audience.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group card-interactive animate-slide-power border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
+              className="lambo-block glass-card p-8 rounded-xl group card-interactive border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
               style={{ animationDelay: `${idx * 0.15}s` }}
             >
               <div className="flex items-start gap-5">
@@ -43,10 +43,10 @@ const WhoIsFor = () => {
                   <item.icon className="w-8 h-8 text-automotive-bronze" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300 text-hud-drift">
+                  <h3 className="lambo-text-cascade text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-digital-flick">
+                  <p className="lambo-text-cascade text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>

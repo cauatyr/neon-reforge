@@ -21,34 +21,34 @@ const BeginnerFriendly = () => {
           </div>
 
           {/* Main Title */}
-          <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 text-automotive-white text-auto-light-sweep">
+          <h3 className="lambo-section-title text-3xl md:text-4xl font-bold text-center mb-8 text-automotive-white">
             Mesmo Quem <span className="text-automotive-bronze text-glow-bronze">Nunca Aplicou</span> Vai Aprender de Forma Extremamente Fácil
           </h3>
 
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105">
+            <div className="lambo-block text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-automotive-bronze/20 mb-2">
                 <Check className="w-6 h-6 text-automotive-bronze" />
               </div>
-              <h4 className="font-bold text-lg text-automotive-white">Ideal para Iniciantes</h4>
-              <p className="text-sm text-muted-foreground">Zero experiência necessária</p>
+              <h4 className="lambo-text-cascade font-bold text-lg text-automotive-white">Ideal para Iniciantes</h4>
+              <p className="lambo-text-cascade text-sm text-muted-foreground">Zero experiência necessária</p>
             </div>
 
-            <div className="text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105">
+            <div className="lambo-block text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105" style={{ animationDelay: '0.1s' }}>
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-automotive-bronze/20 mb-2">
                 <Check className="w-6 h-6 text-automotive-bronze" />
               </div>
-              <h4 className="font-bold text-lg text-automotive-white">Passo a Passo Detalhado</h4>
-              <p className="text-sm text-muted-foreground">Explicado sem segredos</p>
+              <h4 className="lambo-text-cascade font-bold text-lg text-automotive-white">Passo a Passo Detalhado</h4>
+              <p className="lambo-text-cascade text-sm text-muted-foreground">Explicado sem segredos</p>
             </div>
 
-            <div className="text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105">
+            <div className="lambo-block text-center space-y-3 p-6 rounded-xl bg-background/50 border border-automotive-bronze/20 hover:border-automotive-bronze/60 transition-all duration-300 hover:scale-105" style={{ animationDelay: '0.2s' }}>
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-automotive-bronze/20 mb-2">
                 <Check className="w-6 h-6 text-automotive-bronze" />
               </div>
-              <h4 className="font-bold text-lg text-automotive-white">Resultados Imediatos</h4>
-              <p className="text-sm text-muted-foreground">Aplique logo após o curso</p>
+              <h4 className="lambo-text-cascade font-bold text-lg text-automotive-white">Resultados Imediatos</h4>
+              <p className="lambo-text-cascade text-sm text-muted-foreground">Aplique logo após o curso</p>
             </div>
           </div>
 

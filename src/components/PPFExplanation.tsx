@@ -19,40 +19,40 @@ const PPFExplanation = () => {
         >
           {/* Title Section */}
           <div className="text-center mb-12 space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-auto-light-sweep bg-gradient-to-r from-foreground via-automotive-bronze to-foreground bg-clip-text text-transparent">
+            <h2 className="lambo-section-title text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-automotive-bronze to-foreground bg-clip-text text-transparent">
               O Que É PPF – E Por Que Ele É Tão Indispensável Para Quem Ama Carros
             </h2>
-            <p className="text-xl md:text-2xl text-automotive-bronze font-semibold text-hud-drift">
+            <p className="lambo-text-cascade text-xl md:text-2xl text-automotive-bronze font-semibold">
               A proteção que mantém a pintura impecável e valoriza qualquer veículo.
             </p>
           </div>
 
           {/* Description Text */}
           <div className="max-w-4xl mx-auto space-y-6 mb-12">
-            <p className="text-lg text-foreground/90 leading-relaxed text-center">
+            <p className="lambo-text-cascade text-lg text-foreground/90 leading-relaxed text-center">
               A Película de Proteção de Pintura (PPF – Paint Protection Film) é um filme transparente e brilhante desenvolvido para proteger a pintura contra riscos, arranhões, impactos, desgaste e pequenas batidas do dia a dia.
             </p>
             
-            <p className="text-lg text-foreground/90 leading-relaxed text-center">
+            <p className="lambo-text-cascade text-lg text-foreground/90 leading-relaxed text-center">
               Ela possui <span className="text-automotive-bronze font-semibold">tecnologia auto-regenerativa (self-healing)</span>, ou seja, pequenos riscos desaparecem com o calor. O PPF preserva o brilho original, protege áreas de alto desgaste e mantém o carro com aparência de novo por muito mais tempo.
             </p>
           </div>
 
           {/* Indispensável Para */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-automotive-bronze text-center mb-8 text-hud-drift">
+            <h3 className="lambo-section-title text-2xl md:text-3xl font-bold text-automotive-bronze text-center mb-8">
               Por Isso É Indispensável Para:
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Card 1 */}
-              <div className="benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300">
+              <div className="lambo-block benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-automotive-bronze/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-6 h-6 text-automotive-bronze" />
                   </div>
                   <div>
-                    <p className="text-foreground font-medium">
+                    <p className="lambo-text-cascade text-foreground font-medium">
                       Quem quer <span className="text-automotive-bronze font-semibold">proteger o veículo próprio</span>
                     </p>
                   </div>
@@ -60,13 +60,13 @@ const PPFExplanation = () => {
               </div>
 
               {/* Card 2 */}
-              <div className="benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300">
+              <div className="lambo-block benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300" style={{ animationDelay: '0.1s' }}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-automotive-bronze/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <Wrench className="w-6 h-6 text-automotive-bronze" />
                   </div>
                   <div>
-                    <p className="text-foreground font-medium">
+                    <p className="lambo-text-cascade text-foreground font-medium">
                       Quem presta serviços de <span className="text-automotive-bronze font-semibold">estética automotiva</span>
                     </p>
                   </div>
@@ -74,13 +74,13 @@ const PPFExplanation = () => {
               </div>
 
               {/* Card 3 */}
-              <div className="benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300">
+              <div className="lambo-block benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300" style={{ animationDelay: '0.2s' }}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-automotive-bronze/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <TrendingUp className="w-6 h-6 text-automotive-bronze" />
                   </div>
                   <div>
-                    <p className="text-foreground font-medium">
+                    <p className="lambo-text-cascade text-foreground font-medium">
                       Quem busca <span className="text-automotive-bronze font-semibold">valorizar o carro antes de vender</span>
                     </p>
                   </div>
@@ -88,13 +88,13 @@ const PPFExplanation = () => {
               </div>
 
               {/* Card 4 */}
-              <div className="benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300">
+              <div className="lambo-block benefits-card group p-6 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300" style={{ animationDelay: '0.3s' }}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-automotive-bronze/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <Zap className="w-6 h-6 text-automotive-bronze" />
                   </div>
                   <div>
-                    <p className="text-foreground font-medium">
+                    <p className="lambo-text-cascade text-foreground font-medium">
                       Quem quer <span className="text-automotive-bronze font-semibold">evitar manutenção cara de pintura</span>
                     </p>
                   </div>

@@ -43,7 +43,7 @@ const WhyDifferent = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-auto-light-sweep text-with-underline">
+        <h2 className="lambo-section-title text-4xl md:text-5xl font-bold text-center mb-16">
           Por Que Este Curso é <span className="text-automotive-bronze text-glow-bronze">Diferente</span>
         </h2>
 
@@ -51,14 +51,14 @@ const WhyDifferent = () => {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-xl group card-interactive hover:border-automotive-bronze animate-slide-power shadow-[0_0_20px_rgba(168,116,55,0.15)] hover:shadow-[0_0_40px_rgba(168,116,55,0.4)]"
+              className="lambo-block glass-card p-8 rounded-xl group card-interactive hover:border-automotive-bronze shadow-[0_0_20px_rgba(168,116,55,0.15)] hover:shadow-[0_0_40px_rgba(168,116,55,0.4)]"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               <div className="text-5xl mb-5">{feature.emoji}</div>
-              <h3 className="text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300 text-hud-drift">
+              <h3 className="lambo-text-cascade text-2xl font-bold mb-3 text-automotive-white group-hover:text-automotive-bronze transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed text-digital-flick">
+              <p className="lambo-text-cascade text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
               {/* Animated underline */}
