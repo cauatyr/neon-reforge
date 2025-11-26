@@ -858,25 +858,74 @@
   box-shadow: 0 0 30px rgba(168, 116, 55, 0.3);
 }
 
-/* ═══ 8. LEARN SECTION - PREMIUM AUTOMOTIVE ANIMATIONS ═══ */
+/* ═══ 8. LEARN SECTION - SCROLL REVEAL ANIMATIONS (MOBILE FIRST) ═══ */
 
-/* Title Animation */
-.learn-section-title {
-  animation: learn-title-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  opacity: 0;
+/* Title Scroll Reveal Animation */
+.learn-title-scroll-reveal {
+  animation: learn-title-scroll-entry 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  position: relative;
 }
 
-.learn-section-subtitle {
-  animation: learn-subtitle-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.15s forwards;
-  opacity: 0;
+@keyframes learn-title-scroll-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Cards */
-.learn-card {
-  animation: learn-card-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  opacity: 0;
+/* Metallic shine passing through title - triggers once on entry */
+.learn-title-scroll-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(216, 155, 76, 0.4), transparent);
+  animation: learn-title-sweep-once 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s forwards;
+  pointer-events: none;
+}
+
+@keyframes learn-title-sweep-once {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Subtitle Scroll Reveal Animation */
+.learn-subtitle-scroll-reveal {
+  animation: learn-subtitle-scroll-entry 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s backwards;
+}
+
+@keyframes learn-subtitle-scroll-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards Base Styling */
+.learn-card-scroll {
   background: #0D0D0D;
-  border: 2px solid rgba(216, 155, 76, 0.25);
+  background-image: repeating-linear-gradient(
+    45deg, 
+    transparent, 
+    transparent 2px, 
+    rgba(216, 155, 76, 0.02) 2px, 
+    rgba(216, 155, 76, 0.02) 4px
+  );
+  border: 2px solid rgba(216, 155, 76, 0.35);
   border-radius: 14px;
   box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
   transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -884,84 +933,97 @@
   overflow: hidden;
 }
 
-/* Subtle automotive texture */
-.learn-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(216, 155, 76, 0.03), transparent 70%);
-  pointer-events: none;
+/* Cards Scroll Reveal Animation */
+.learn-card-scroll-reveal {
+  animation: learn-card-scroll-entry 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
-/* Hover effect */
-@media (hover: hover) {
-  .learn-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(216, 155, 76, 0.4);
+@keyframes learn-card-scroll-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(55px) scale(0.92);
     box-shadow: 0 0 20px rgba(216, 155, 76, 0.25);
-  }
-
-  .learn-card:hover .learn-icon-wrapper {
-    background: rgba(216, 155, 76, 0.4);
-    box-shadow: 0 0 20px rgba(216, 155, 76, 0.5);
-    transform: scale(1.05);
-  }
-
-  .learn-card:hover .learn-icon-wrapper svg {
-    color: #0D0D0D;
-  }
-}
-
-/* Cascade delays */
-.learn-card:nth-child(1) { animation-delay: 0s; }
-.learn-card:nth-child(2) { animation-delay: 0.12s; }
-.learn-card:nth-child(3) { animation-delay: 0.24s; }
-.learn-card:nth-child(4) { animation-delay: 0.36s; }
-.learn-card:nth-child(5) { animation-delay: 0.48s; }
-
-/* Icon wrapper transition */
-.learn-icon-wrapper {
-  transition: all 0.25s ease;
-}
-
-/* Keyframes */
-@keyframes learn-title-entry {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    text-shadow: 0 0 20px rgba(216, 155, 76, 0.3);
-  }
-}
-
-@keyframes learn-subtitle-entry {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes learn-card-entry {
-  0% {
-    opacity: 0;
-    transform: translateY(35px) scale(0.94);
-    box-shadow: 0 0 0 rgba(216, 155, 76, 0);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
     box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
   }
+}
+
+/* Icon Scroll Reveal Animation */
+.learn-icon-scroll {
+  transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.learn-icon-scroll-reveal {
+  animation: learn-icon-scroll-entry 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes learn-icon-scroll-entry {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.35);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(216, 155, 76, 0);
+  }
+}
+
+/* Hover Effects - Desktop Only */
+@media (hover: hover) {
+  .learn-card-scroll:hover {
+    transform: translateY(-5px);
+    border-color: rgba(216, 155, 76, 0.5);
+    box-shadow: 
+      0 8px 24px rgba(216, 155, 76, 0.2),
+      0 0 16px rgba(216, 155, 76, 0.15);
+  }
+
+  .learn-card-scroll:hover .learn-icon-scroll {
+    box-shadow: 0 0 16px rgba(216, 155, 76, 0.4);
+    border-color: rgba(216, 155, 76, 0.6);
+  }
+}
+
+/* Utility Classes for Initial States */
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-10 {
+  transform: translateY(2.5rem);
+}
+
+.translate-y-14 {
+  transform: translateY(3.5rem);
+}
+
+.scale-92 {
+  transform: scale(0.92);
+}
+
+.scale-120 {
+  transform: scale(1.2);
+}
+
+.duration-600 {
+  transition-duration: 600ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+.duration-800 {
+  transition-duration: 800ms;
+}
+
+.duration-450 {
+  transition-duration: 450ms;
 }
 
 .text-with-underline {
