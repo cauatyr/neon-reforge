@@ -586,19 +586,20 @@
   animation: carbon-scan 0.8s ease-out forwards;
 }
 
-/* ═══ PREMIUM AUTOMOTIVE TITLE ═══ */
+/* ═══ PREMIUM AUTOMOTIVE TITLE - 100% NÍTIDO ═══ */
 .premium-automotive-title {
   position: relative;
   opacity: 0;
   animation: 
-    premium-title-entry 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards,
-    premium-title-pulse 6s cubic-bezier(0.45, 0, 0.55, 1) 1.5s infinite;
+    premium-title-entry 1s cubic-bezier(0.19, 1, 0.22, 1) forwards,
+    premium-title-pulse 6s ease-in-out 1.2s infinite;
   text-shadow: 
-    0 0 20px rgba(212, 160, 86, 0.3),
-    0 2px 8px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(212, 160, 86, 0.15);
+    0 2px 0 rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(212, 160, 86, 0.2);
   letter-spacing: 0.02em;
   filter: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .premium-automotive-title::before {
@@ -607,37 +608,19 @@
   top: 50%;
   left: -100%;
   width: 200%;
-  height: 150%;
+  height: 120%;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(212, 160, 86, 0.15) 25%,
-    rgba(255, 220, 150, 0.25) 50%,
-    rgba(212, 160, 86, 0.15) 75%,
+    rgba(212, 160, 86, 0.1) 30%,
+    rgba(255, 220, 150, 0.18) 50%,
+    rgba(212, 160, 86, 0.1) 70%,
     transparent 100%
   );
-  transform: translateY(-50%) skewX(-15deg);
-  animation: premium-light-sweep 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  transform: translateY(-50%) skewX(-12deg);
+  animation: premium-light-sweep 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
   pointer-events: none;
   z-index: 1;
-}
-
-.premium-automotive-title::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: 
-    repeating-linear-gradient(
-      45deg,
-      rgba(13, 13, 13, 0.03) 0px,
-      rgba(13, 13, 13, 0.03) 2px,
-      transparent 2px,
-      transparent 4px
-    );
-  opacity: 0;
-  animation: carbon-texture-drift 8s linear 1.5s infinite;
-  pointer-events: none;
-  z-index: -1;
 }
 
 .text-with-underline {
@@ -1193,29 +1176,28 @@
   }
 }
 
-/* ═══ PREMIUM AUTOMOTIVE TITLE KEYFRAMES ═══ */
+/* ═══ PREMIUM AUTOMOTIVE TITLE KEYFRAMES - 100% NÍTIDO ═══ */
 
 @keyframes premium-title-entry {
   0% {
     opacity: 0;
-    transform: translateY(8px);
-    letter-spacing: 0.15em;
+    transform: translateY(6px);
+    letter-spacing: 0.12em;
     text-shadow: 
-      0 0 0px rgba(212, 160, 86, 0),
-      0 0 0px rgba(0, 0, 0, 0);
+      0 2px 0 rgba(0, 0, 0, 0),
+      0 0 0 rgba(212, 160, 86, 0);
   }
-  50% {
-    opacity: 0.7;
-    letter-spacing: 0.05em;
+  60% {
+    opacity: 1;
+    letter-spacing: 0.04em;
   }
   100% {
     opacity: 1;
     transform: translateY(0);
     letter-spacing: 0.02em;
     text-shadow: 
-      0 0 20px rgba(212, 160, 86, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.6),
-      0 0 40px rgba(212, 160, 86, 0.15);
+      0 2px 0 rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(212, 160, 86, 0.2);
   }
 }
 
@@ -1224,10 +1206,10 @@
     left: -100%;
     opacity: 0;
   }
-  20% {
+  30% {
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 1;
   }
   100% {
@@ -1240,29 +1222,13 @@
   0%, 100% {
     transform: scale(1);
     text-shadow: 
-      0 0 20px rgba(212, 160, 86, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.6),
-      0 0 40px rgba(212, 160, 86, 0.15);
+      0 2px 0 rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(212, 160, 86, 0.2);
   }
   50% {
-    transform: scale(1.015);
+    transform: scale(1.01);
     text-shadow: 
-      0 0 25px rgba(212, 160, 86, 0.4),
-      0 2px 10px rgba(0, 0, 0, 0.7),
-      0 0 50px rgba(212, 160, 86, 0.2);
-  }
-}
-
-@keyframes carbon-texture-drift {
-  0% {
-    opacity: 0.4;
-    background-position: 0 0;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0.4;
-    background-position: 8px 8px;
+      0 2px 0 rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(212, 160, 86, 0.25);
   }
 }
