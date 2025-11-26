@@ -1059,3 +1059,82 @@
     background-position: 200% center;
   }
 }
+
+/* ========================================
+   FAQ AUTOMOTIVE PANEL ANIMATIONS
+   ======================================== */
+
+/* FAQ Panel Item - Automotive HUD Entry */
+.faq-panel-item {
+  position: relative;
+  opacity: 0;
+  animation: faq-panel-entry 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes faq-panel-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* FAQ Trigger - Arrow Animation (Automotive Gauge Style) */
+.faq-trigger svg {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-trigger[data-state="open"] svg {
+  transform: rotate(90deg);
+}
+
+/* FAQ Content - Fade In Animation */
+.faq-content {
+  animation: faq-content-reveal 0.3s ease-out;
+}
+
+@keyframes faq-content-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FAQ Panel Hover Glow Effect */
+.faq-panel-item:hover {
+  transform: scale(1.005);
+}
+
+/* FAQ Section Background Pulse */
+.faq-automotive-panel {
+  position: relative;
+}
+
+.faq-automotive-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    hsla(30, 45%, 50%, 0.03) 0%,
+    transparent 70%
+  );
+  animation: faq-ambient-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes faq-ambient-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
