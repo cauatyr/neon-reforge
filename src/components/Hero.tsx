@@ -81,17 +81,17 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 parallax-layer-3">
             <div className="inline-block">
-              <h1 className="hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none text-auto-light-sweep relative">
+              <h1 className="lambo-section-title hero-title text-5xl md:text-6xl lg:text-8xl font-bold mb-2 leading-none relative">
                 <span className="text-automotive-bronze text-glow-bronze relative z-10">PPF</span>
                 <span className="text-automotive-white relative z-10"> ESSENCIAL</span>
               </h1>
             </div>
             
             <div className="hero-subtitle space-y-4">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white text-hud-drift">
+              <h2 className="lambo-text-cascade text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight text-automotive-white">
                 Aprenda fazer <span className="text-automotive-bronze font-bold">aplicações de PPF</span> e proteger as partes <span className="text-automotive-bronze font-bold">essenciais</span> do carro.
               </h2>
-              <p className="text-xl md:text-2xl italic text-muted-foreground leading-relaxed text-digital-flick">
+              <p className="lambo-text-cascade text-xl md:text-2xl italic text-muted-foreground leading-relaxed">
                 <span className="text-automotive-bronze font-semibold">Sem risco, sem retrabalho</span> e com resultado que impressiona o cliente.
               </p>
             </div>
@@ -100,7 +100,7 @@ const Hero = () => {
               onClick={scrollToOffer}
               size="lg"
               variant="crystal"
-              className="crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
+              className="lambo-button crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <Zap className="w-5 h-5" />

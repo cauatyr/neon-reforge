@@ -40,10 +40,10 @@ const WhatYouLearn = () => {
       <div className="container mx-auto max-w-5xl relative z-10">
         {/* Title Section */}
         <div className="text-center mb-12 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-auto-light-sweep bg-gradient-to-r from-foreground via-automotive-bronze to-foreground bg-clip-text text-transparent">
+          <h2 className="lambo-section-title text-3xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-automotive-bronze to-foreground bg-clip-text text-transparent">
             O Que Você Vai Aprender Dentro do Curso
           </h2>
-          <p className="text-xl md:text-2xl text-automotive-bronze font-semibold text-hud-drift">
+          <p className="lambo-text-cascade text-xl md:text-2xl text-automotive-bronze font-semibold">
             Domine a aplicação profissional do PPF mesmo sendo iniciante.
           </p>
         </div>
@@ -58,7 +58,7 @@ const WhatYouLearn = () => {
             return (
               <div
                 key={idx}
-                className="benefits-card group p-8 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300 shadow-[0_0_20px_rgba(168,116,55,0.15)]"
+                className="lambo-block benefits-card group p-8 rounded-xl border-2 border-automotive-bronze/20 bg-automotive-bronze/5 hover:border-automotive-bronze/40 hover:bg-automotive-bronze/10 transition-all duration-300 shadow-[0_0_20px_rgba(168,116,55,0.15)]"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className="flex items-start gap-4">

@@ -50,7 +50,7 @@ const FAQ = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* HUD Style Title */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-auto-light-sweep relative inline-block">
+          <h2 className="lambo-section-title text-4xl md:text-5xl font-bold relative inline-block">
             <span className="relative z-10">
               Perguntas <span className="text-automotive-bronze text-glow-bronze-intense">Frequentes</span>
             </span>

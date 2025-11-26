@@ -19,10 +19,10 @@ const Pricing = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-12 space-y-4">
-          <h2 className="cta-title text-4xl md:text-5xl font-bold opacity-0 text-auto-light-sweep text-with-underline">
+          <h2 className="lambo-section-title cta-title text-4xl md:text-5xl font-bold">
             Chegou a Hora de <span className="text-automotive-bronze text-glow-bronze">Evoluir</span> Seu Negócio
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground text-hud-drift" style={{ animationDelay: '0.2s' }}>
+          <p className="lambo-text-cascade text-xl md:text-2xl text-muted-foreground" style={{ animationDelay: '0.2s' }}>
             Quanto dinheiro você já perdeu por não saber fazer aplicação de PPF?
           </p>
         </div>
@@ -87,7 +87,7 @@ const Pricing = () => {
                 size="lg"
                 variant="crystal"
                 onClick={handleCTAClick}
-                className="crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto shadow-[0_0_40px_rgba(168,116,55,0.4)] hover:shadow-[0_0_60px_rgba(168,116,55,0.7)]"
+                className="lambo-button crystal-button crystal-button-entry rounded-xl font-bold text-xl px-14 py-9 h-auto shadow-[0_0_40px_rgba(168,116,55,0.4)] hover:shadow-[0_0_60px_rgba(168,116,55,0.7)]"
               >
                 <a href="https://pay.hotmart.com/I101700874W" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center gap-3">
