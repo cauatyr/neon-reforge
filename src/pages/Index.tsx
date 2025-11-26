@@ -6,6 +6,7 @@ import WhatYouLearn from "@/components/WhatYouLearn";
 import WhyDifferent from "@/components/WhyDifferent";
 import WhoIsFor from "@/components/WhoIsFor";
 import VSLSection from "@/components/VSLSection";
+import PPFExplanation from "@/components/PPFExplanation";
 import Pricing from "@/components/Pricing";
 import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
@@ -23,6 +24,8 @@ const Index = () => {
       <WhyDifferent />
       <WhoIsFor />
       <VSLSection />
+      <WhatYouLearn />
+      <PPFExplanation />
       <Pricing />
       <Guarantee />
       <FAQ />
