@@ -24,7 +24,6 @@ const Index = () => {
       <WhyDifferent />
       <WhoIsFor />
       <VSLSection />
-      <WhatYouLearn />
       <PPFExplanation />
       <Pricing />
       <Guarantee />
