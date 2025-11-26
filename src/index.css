@@ -725,6 +725,81 @@
 .lambo-parallax-2 { transform: translateZ(20px); }
 .lambo-parallax-3 { transform: translateZ(40px); }
 
+/* ═══ 7. PREMIUM PROBLEM CARDS - AUTOMOTIVE LUXURY ═══ */
+.problem-card-premium {
+  position: relative;
+  opacity: 0;
+  background: #0A0A0A;
+  border: 1px solid rgba(216, 155, 76, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Entry animation - cascade effect */
+.problem-card-premium:nth-child(1) {
+  animation: problem-card-entry 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0s forwards;
+}
+
+.problem-card-premium:nth-child(2) {
+  animation: problem-card-entry 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s forwards;
+}
+
+.problem-card-premium:nth-child(3) {
+  animation: problem-card-entry 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.24s forwards;
+}
+
+.problem-card-premium:nth-child(4) {
+  animation: problem-card-entry 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) 0.36s forwards;
+}
+
+/* Hover effect - desktop */
+@media (hover: hover) {
+  .problem-card-premium:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216, 155, 76, 0.55);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.25);
+  }
+
+  .problem-card-premium:hover .problem-card-icon {
+    filter: brightness(1.3);
+    transition: filter 0.22s ease-out;
+  }
+}
+
+/* Metallic border light sweep on hover */
+.problem-card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(216, 155, 76, 0.6);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+@media (hover: hover) {
+  .problem-card-premium:hover::before {
+    animation: problem-border-sweep 0.6s ease-out;
+  }
+}
+
+/* Mobile touch feedback */
+.problem-card-premium:active {
+  animation: problem-card-tap 0.18s ease-out;
+}
+
+/* Icon glow on hover */
+.problem-card-icon {
+  transition: filter 0.22s ease-out;
+}
+
 /* Carbon Fiber Texture */
 .lambo-carbon-texture {
   position: relative;
@@ -1627,4 +1702,51 @@
 @keyframes lambo-button-click-flash {
   0%, 100% { filter: brightness(1); }
   50% { filter: brightness(1.3); }
+}
+
+/* ═══ PROBLEM CARDS KEYFRAMES ═══ */
+
+/* Entry animation */
+@keyframes problem-card-entry {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    box-shadow: 0 0 0 rgba(216, 155, 76, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 16px rgba(216, 155, 76, 0.25);
+  }
+}
+
+/* Border sweep effect */
+@keyframes problem-border-sweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Mobile tap feedback */
+@keyframes problem-card-tap {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
+  }
+  50% {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
+  }
 }
