@@ -486,29 +486,91 @@
 }
 
 /* ========================================
-   IMAGE ANIMATIONS - BLOCK 2: Panel Split Reveal
-   For Gallery/mid-page images
+   GALLERY SECTION - MOBILE FIRST SCROLL ANIMATIONS
+   "Veja na Prática o Que Você Vai Dominar"
    ======================================== */
-.img-cinematic-gallery {
+
+/* Gallery Grid - Responsive */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Gallery Image Container */
+.gallery-image-container {
   position: relative;
+  aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(216, 155, 76, 0.4);
   opacity: 0;
-  clip-path: inset(0 50% 0 50%);
-  transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform: translateY(40px) scale(0.92);
+  transition: all 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  background: #0A0A0A;
+  width: 100%;
 }
 
-.img-cinematic-gallery.visible {
+/* Visible State - Scroll Reveal */
+.gallery-image-visible {
   opacity: 1;
-  clip-path: inset(0 0% 0 0%);
-  box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.4),
-    0 0 20px hsla(30, 45%, 50%, 0.12);
+  transform: translateY(0) scale(1);
+  box-shadow: 0 0 12px rgba(216, 155, 76, 0.15);
 }
 
-/* Depth parallax effect - controlled via JS */
-.img-cinematic-gallery.visible img {
-  transition: transform 0.1s ease-out;
-  will-change: transform;
+/* Gallery Images - Mobile First */
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Hover Effect - Desktop Only */
+@media (hover: hover) {
+  .gallery-image-container:hover {
+    transform: translateY(0) scale(1.02);
+    border-color: rgba(216, 155, 76, 0.6);
+    box-shadow: 0 0 20px rgba(216, 155, 76, 0.25);
+  }
+
+  .gallery-image-container:hover .gallery-image {
+    transform: scale(1.05);
+  }
+}
+
+/* Bottom Glow Effect on Hover */
+.gallery-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: linear-gradient(to top, rgba(216, 155, 76, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .gallery-image-container:hover::after {
+    opacity: 1;
+  }
 }
 
 /* ========================================
