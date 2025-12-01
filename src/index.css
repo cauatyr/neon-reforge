@@ -2016,3 +2016,60 @@
     box-shadow: 0 0 12px rgba(216, 155, 76, 0.12);
   }
 }
+
+/* ========================================
+   LOVABLE BADGE REMOVAL
+   Oculta a badge injetada automaticamente
+   ======================================== */
+
+/* Oculta badge por atributo data-component do lovable-tagger */
+[data-component*="lovable"],
+[data-component*="Lovable"],
+/* Oculta por classes comuns de badge */
+.lovable-badge,
+.LovableBadge,
+/* Oculta por ID caso exista */
+#lovable-badge,
+#LovableBadge,
+/* Oculta elementos com texto específico do Lovable */
+a[href*="lovable.dev"][href*="edit"],
+a[href*="lovable.app"][href*="edit"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+/* Garante que nenhum espaço vazio seja deixado */
+[data-component*="lovable"]::before,
+[data-component*="lovable"]::after,
+[data-component*="Lovable"]::before,
+[data-component*="Lovable"]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Responsividade - Badge oculta em todos os breakpoints */
+@media (max-width: 375px),
+       (min-width: 376px) and (max-width: 640px),
+       (min-width: 641px) and (max-width: 768px),
+       (min-width: 769px) and (max-width: 1024px),
+       (min-width: 1025px) {
+  [data-component*="lovable"],
+  [data-component*="Lovable"],
+  .lovable-badge,
+  .LovableBadge,
+  #lovable-badge,
+  #LovableBadge,
+  a[href*="lovable.dev"][href*="edit"],
+  a[href*="lovable.app"][href*="edit"] {
+    display: none !important;
+  }
+}
