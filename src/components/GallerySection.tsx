@@ -1,4 +1,4 @@
-import { useCinematicImage } from "@/hooks/useCinematicImage";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ppf1 from "@/assets/ppf-1.jpg";
 import ppf2 from "@/assets/ppf-2.jpg";
 import ppf3 from "@/assets/ppf-3.jpg";
@@ -15,26 +15,21 @@ const images = [
   { src: ppf6, alt: "Aplicação de PPF - detalhamento com espátula rosa" },
 ];
 
-const CinematicGalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
-  // Use gallery-specific cinematic animation (BLOCK 2)
-  const { ref, isVisible } = useCinematicImage({ effect: 'spotlight' });
+const GalleryImage = ({ image, idx }: { image: typeof images[0]; idx: number }) => {
+  const { ref, isVisible } = useScrollAnimation(0.1);
   
   return (
     <div
       ref={ref}
-      className={`relative aspect-square overflow-hidden rounded-lg border-2 img-cinematic-gallery ${
-        isVisible ? 'visible' : ''
-      } border-automotive-bronze/40 group hover:scale-[1.02] hover:border-automotive-bronze transition-all duration-300`}
-      style={{ transitionDelay: `${idx * 40}ms` }}
+      className={`gallery-image-container ${isVisible ? 'gallery-image-visible' : ''}`}
+      style={{ transitionDelay: `${idx * 50}ms` }}
     >
       <img
         src={image.src}
         alt={image.alt}
-        className="w-full h-full object-cover"
+        className="gallery-image"
         loading="lazy"
       />
-      {/* Subtle bottom glow on hover */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-automotive-bronze/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
@@ -47,9 +42,9 @@ const GallerySection = () => {
           Veja na Prática o Que Você Vai <span className="text-automotive-bronze text-glow-bronze animate-power-pulse">Dominar</span>
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="gallery-grid">
           {images.map((image, idx) => (
-            <CinematicGalleryImage key={idx} image={image} idx={idx} />
+            <GalleryImage key={idx} image={image} idx={idx} />
           ))}
         </div>
       </div>
