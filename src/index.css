@@ -574,6 +574,42 @@
 }
 
 /* ========================================
+   GUARANTEE SECTION - MOBILE FIX
+   "Garantia Incondicional de 30 Dias"
+   ======================================== */
+
+/* Guarantee Card - Mobile First */
+.guarantee-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .guarantee-card {
+    padding: 1.25rem !important;
+  }
+}
+
+/* Guarantee Button - Mobile Responsive */
+.guarantee-button {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 1.25rem auto 0 auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .guarantee-button {
+    width: auto;
+    max-width: none;
+    display: inline-block;
+  }
+}
+
+/* ========================================
    IMAGE ANIMATIONS - BLOCK 3: Focus Shift + Parallax
    For Certificate/CTA area images
    ======================================== */

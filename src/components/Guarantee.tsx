@@ -10,7 +10,7 @@ const Guarantee = () => {
   return (
     <section className="py-20 px-4 relative">
       <div className="container mx-auto max-w-4xl">
-        <div className="glass-card p-8 md:p-12 rounded-2xl text-center space-y-8 animate-fade-in-up border-2 border-automotive-bronze shadow-[0_0_40px_rgba(139,92,46,0.3)]">
+        <div className="guarantee-card glass-card p-8 md:p-12 rounded-2xl text-center space-y-8 animate-fade-in-up border-2 border-automotive-bronze shadow-[0_0_40px_rgba(139,92,46,0.3)]">
           <div className="flex justify-center">
             <div className="w-24 h-24 rounded-full bg-automotive-bronze/20 flex items-center justify-center border-2 border-automotive-bronze shadow-[0_0_30px_rgba(139,92,46,0.4)] animate-rev">
               <Shield className="w-12 h-12 text-automotive-bronze" />
@@ -37,7 +37,7 @@ const Guarantee = () => {
             onClick={scrollToOffer}
             size="lg"
             variant="crystal"
-            className="lambo-button crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
+            className="guarantee-button lambo-button crystal-button rounded-xl font-bold text-lg px-10 py-7 h-auto"
           >
             <span className="relative z-10">QUERO MINHA VAGA AGORA</span>
           </Button>
