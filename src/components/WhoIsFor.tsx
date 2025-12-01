@@ -26,16 +26,16 @@ const audience = [
 const WhoIsFor = () => {
   return (
     <section className="py-20 px-4 relative">
-      <div className="container mx-auto">
+      <div className="container mx-auto who-is-for-container">
         <h2 className="lambo-section-title text-4xl md:text-5xl font-bold text-center mb-16">
           Para Quem é <span className="text-automotive-bronze text-glow-bronze">Este Curso</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto who-is-for-grid">
           {audience.map((item, idx) => (
             <div
               key={idx}
-              className="lambo-block glass-card p-8 rounded-xl group card-interactive border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)]"
+              className="lambo-block glass-card p-8 rounded-xl group card-interactive border-l-4 border-l-automotive-bronze shadow-[0_0_20px_rgba(139,92,46,0.2)] hover:shadow-[0_0_40px_rgba(139,92,46,0.4)] who-is-for-card"
               style={{ animationDelay: `${idx * 0.15}s` }}
             >
               <div className="flex items-start gap-5">
