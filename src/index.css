@@ -589,6 +589,8 @@
 @media (max-width: 768px) {
   .guarantee-card {
     padding: 1.25rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -599,6 +601,8 @@
   display: block;
   margin: 1.25rem auto 0 auto;
   box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 769px) {
@@ -606,6 +610,53 @@
     width: auto;
     max-width: none;
     display: inline-block;
+  }
+}
+
+/* ========================================
+   WHO IS FOR SECTION - Mobile Responsive
+   ======================================== */
+
+/* Container da seção */
+.who-is-for-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid de cards */
+.who-is-for-grid {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cards individuais */
+.who-is-for-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustes específicos para mobile */
+@media (max-width: 768px) {
+  .who-is-for-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .who-is-for-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .who-is-for-card {
+    padding: 1.5rem !important;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }
 
