@@ -11,7 +11,7 @@ const features = [
     icon: DollarSign,
     emoji: "💰",
     title: "Baixo Investimento",
-    description: "Por apenas R$ 67 você aprende o que cursos presenciais de R$ 1.500+ ensinam sobre peças essenciais.",
+    description: "Por apenas R$ 97 você aprende o que cursos presenciais de R$ 1.500+ ensinam sobre peças essenciais.",
   },
   {
     icon: Clock,
