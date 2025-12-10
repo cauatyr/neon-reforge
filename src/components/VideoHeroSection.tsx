@@ -1,40 +1,54 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 const VideoHeroSection = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [hasInteracted, setHasInteracted] = useState(false);
+  const hasUnmutedRef = useRef(false);
 
   const scrollToOffer = () => {
     document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Unmute video after user interaction
+  // Function to unmute video via Vimeo postMessage API
+  const unmuteVideo = useCallback(() => {
+    if (hasUnmutedRef.current) return;
+    
+    hasUnmutedRef.current = true;
+    
+    if (iframeRef.current?.contentWindow) {
+      // Vimeo Player API - unmute and set volume
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'setMuted', value: false }),
+        '*'
+      );
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'setVolume', value: 1 }),
+        '*'
+      );
+      console.log('[VideoHeroSection] Video unmuted after user interaction');
+    }
+  }, []);
+
   useEffect(() => {
     const handleInteraction = () => {
-      if (!hasInteracted) {
-        setHasInteracted(true);
-        // Send message to Vimeo player to unmute
-        if (iframeRef.current?.contentWindow) {
-          iframeRef.current.contentWindow.postMessage(
-            JSON.stringify({ method: 'setVolume', value: 1 }),
-            '*'
-          );
-        }
-      }
+      unmuteVideo();
+      // Remove all listeners after first interaction
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
     };
 
-    // Listen for any user interaction
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('touchstart', handleInteraction);
-    document.addEventListener('scroll', handleInteraction);
+    // Add listeners for user interaction
+    document.addEventListener('click', handleInteraction, { passive: true });
+    document.addEventListener('touchstart', handleInteraction, { passive: true });
+    document.addEventListener('scroll', handleInteraction, { passive: true, once: true });
 
     return () => {
       document.removeEventListener('click', handleInteraction);
       document.removeEventListener('touchstart', handleInteraction);
       document.removeEventListener('scroll', handleInteraction);
     };
-  }, [hasInteracted]);
+  }, [unmuteVideo]);
 
   return (
     <>
