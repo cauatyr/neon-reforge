@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Volume2 } from "lucide-react";
 
 const VideoHeroSection = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const hasUnmutedRef = useRef(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showSoundButton, setShowSoundButton] = useState(false);
 
   const scrollToOffer = () => {
     document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
@@ -23,28 +26,17 @@ const VideoHeroSection = () => {
         '*'
       );
     }
+    setShowSoundButton(false);
   }, []);
 
   useEffect(() => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    setIsMobile(mobile);
 
-    if (isMobile) {
-      const handleInteraction = () => {
-        unmuteVideo();
-        document.removeEventListener('click', handleInteraction);
-        document.removeEventListener('touchstart', handleInteraction);
-        document.removeEventListener('scroll', handleInteraction);
-      };
-
-      document.addEventListener('click', handleInteraction, { passive: true });
-      document.addEventListener('touchstart', handleInteraction, { passive: true });
-      document.addEventListener('scroll', handleInteraction, { passive: true, once: true });
-
-      return () => {
-        document.removeEventListener('click', handleInteraction);
-        document.removeEventListener('touchstart', handleInteraction);
-        document.removeEventListener('scroll', handleInteraction);
-      };
+    if (mobile) {
+      // Show sound button on mobile after a short delay
+      const timer = setTimeout(() => setShowSoundButton(true), 1500);
+      return () => clearTimeout(timer);
     } else {
       // Desktop: unmute after short delay
       const timer = setTimeout(() => unmuteVideo(), 1000);
@@ -64,6 +56,24 @@ const VideoHeroSection = () => {
           allowFullScreen
           title="PPF Video"
         />
+        
+        {/* Mobile Sound Button */}
+        {isMobile && showSoundButton && (
+          <button
+            onClick={unmuteVideo}
+            className="absolute bottom-6 right-6 flex items-center gap-2 px-4 py-2.5 
+                       bg-[#0D0D0D]/70 backdrop-blur-sm border border-[#D4A056]/40 
+                       rounded-lg text-white text-sm font-medium
+                       animate-fade-in transition-all duration-300 hover:bg-[#0D0D0D]/90 
+                       hover:border-[#D4A056]/70 z-10"
+            style={{
+              animation: 'fade-in 0.5s ease-out, slideUp 0.5s ease-out',
+            }}
+          >
+            <Volume2 className="w-4 h-4 text-[#D4A056]" />
+            Ativar Som
+          </button>
+        )}
       </section>
       
       <section className="bg-background py-12 md:py-16">
