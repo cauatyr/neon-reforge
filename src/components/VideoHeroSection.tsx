@@ -56,7 +56,8 @@ const VideoHeroSection = () => {
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden bg-background">
+      {/* Desktop: full screen | Mobile: 60vh height */}
+      <section className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-background">
         <iframe
           ref={iframeRef}
           src="https://player.vimeo.com/video/1145348414?autoplay=1&loop=1&muted=1&controls=0&playsinline=1&quality=auto&transparent=0"
@@ -64,9 +65,10 @@ const VideoHeroSection = () => {
           style={{
             border: 'none',
             width: '177.78vh',
-            height: '100vh',
+            height: '100%',
             minWidth: '100%',
-            minHeight: '56.25vw',
+            minHeight: '177.78%',
+            objectFit: 'cover',
           }}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
