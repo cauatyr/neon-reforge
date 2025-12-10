@@ -12,11 +12,9 @@ const VideoHeroSection = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Detect mobile
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      // Mobile: start muted for autoplay compliance
       video.muted = true;
       video.play().catch(() => {});
 
@@ -24,7 +22,6 @@ const VideoHeroSection = () => {
         video.muted = false;
         video.volume = 1.0;
         video.play().catch(() => {});
-
         window.removeEventListener("touchstart", unmute);
         window.removeEventListener("scroll", unmute);
         window.removeEventListener("click", unmute);
@@ -40,11 +37,9 @@ const VideoHeroSection = () => {
         window.removeEventListener("click", unmute);
       };
     } else {
-      // Desktop: play with sound
       video.muted = false;
       video.volume = 1.0;
       video.play().catch(() => {
-        // If autoplay with sound blocked, try muted
         video.muted = true;
         video.play().catch(() => {});
       });
@@ -56,13 +51,15 @@ const VideoHeroSection = () => {
       <section className="relative w-full aspect-video overflow-hidden bg-background">
         <video
           ref={videoRef}
-          src="/videos/ppf-demonstration.mp4"
-          className="absolute inset-0 w-full h-full object-cover"
+          id="video-ppf"
           autoPlay
-          loop
           playsInline
+          loop
           muted
-        />
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        >
+          <source src="https://vimeo.com/1145348414?fl=ip&fe=ec" type="video/mp4" />
+        </video>
       </section>
       
       <section className="bg-background py-12 md:py-16">
