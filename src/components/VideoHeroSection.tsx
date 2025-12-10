@@ -1,65 +1,69 @@
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 const VideoHeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const hasUnmutedRef = useRef(false);
 
   const scrollToOffer = () => {
     document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+  const unmuteVideo = useCallback(() => {
+    if (hasUnmutedRef.current) return;
+    hasUnmutedRef.current = true;
+    
+    if (iframeRef.current?.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'setMuted', value: false }),
+        '*'
+      );
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'setVolume', value: 1 }),
+        '*'
+      );
+    }
+  }, []);
 
+  useEffect(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     if (isMobile) {
-      video.muted = true;
-      video.play().catch(() => {});
-
-      const unmute = () => {
-        video.muted = false;
-        video.volume = 1.0;
-        video.play().catch(() => {});
-        window.removeEventListener("touchstart", unmute);
-        window.removeEventListener("scroll", unmute);
-        window.removeEventListener("click", unmute);
+      const handleInteraction = () => {
+        unmuteVideo();
+        document.removeEventListener('click', handleInteraction);
+        document.removeEventListener('touchstart', handleInteraction);
+        document.removeEventListener('scroll', handleInteraction);
       };
 
-      window.addEventListener("touchstart", unmute, { once: true });
-      window.addEventListener("scroll", unmute, { once: true });
-      window.addEventListener("click", unmute, { once: true });
+      document.addEventListener('click', handleInteraction, { passive: true });
+      document.addEventListener('touchstart', handleInteraction, { passive: true });
+      document.addEventListener('scroll', handleInteraction, { passive: true, once: true });
 
       return () => {
-        window.removeEventListener("touchstart", unmute);
-        window.removeEventListener("scroll", unmute);
-        window.removeEventListener("click", unmute);
+        document.removeEventListener('click', handleInteraction);
+        document.removeEventListener('touchstart', handleInteraction);
+        document.removeEventListener('scroll', handleInteraction);
       };
     } else {
-      video.muted = false;
-      video.volume = 1.0;
-      video.play().catch(() => {
-        video.muted = true;
-        video.play().catch(() => {});
-      });
+      // Desktop: unmute after short delay
+      const timer = setTimeout(() => unmuteVideo(), 1000);
+      return () => clearTimeout(timer);
     }
-  }, []);
+  }, [unmuteVideo]);
 
   return (
     <>
       <section className="relative w-full aspect-video overflow-hidden bg-background">
-        <video
-          ref={videoRef}
-          id="video-ppf"
-          autoPlay
-          playsInline
-          loop
-          muted
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        >
-          <source src="https://vimeo.com/1145348414?fl=ip&fe=ec" type="video/mp4" />
-        </video>
+        <iframe
+          ref={iframeRef}
+          src="https://player.vimeo.com/video/1145348414?autoplay=1&loop=1&muted=1&controls=0&playsinline=1&quality=auto"
+          className="absolute inset-0 w-full h-full"
+          style={{ border: 'none' }}
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title="PPF Video"
+        />
       </section>
       
       <section className="bg-background py-12 md:py-16">
