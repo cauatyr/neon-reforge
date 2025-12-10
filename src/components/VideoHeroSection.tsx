@@ -25,6 +25,10 @@ const VideoHeroSection = () => {
         JSON.stringify({ method: 'setVolume', value: 1 }),
         '*'
       );
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'play' }),
+        '*'
+      );
       console.log('[VideoHeroSection] Video unmuted after user interaction');
     }
   }, []);
@@ -55,13 +59,14 @@ const VideoHeroSection = () => {
       <section className="relative w-full h-screen overflow-hidden bg-background">
         <iframe
           ref={iframeRef}
-          src="https://player.vimeo.com/video/1145348414?autoplay=1&loop=1&muted=1&controls=0&background=1&playsinline=1&quality=auto"
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
+          src="https://player.vimeo.com/video/1145348414?autoplay=1&loop=1&muted=1&controls=0&playsinline=1&quality=auto&transparent=0"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           style={{
             border: 'none',
-            width: '100vw',
+            width: '177.78vh',
             height: '100vh',
-            objectFit: 'cover',
+            minWidth: '100%',
+            minHeight: '56.25vw',
           }}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
