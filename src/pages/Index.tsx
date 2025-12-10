@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import VideoHeroSection from "@/components/VideoHeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import BeginnerFriendly from "@/components/BeginnerFriendly";
 import GallerySection from "@/components/GallerySection";
@@ -16,6 +17,7 @@ const Index = () => {
   return (
     <main className="relative page-wrapper">
       <Hero />
+      <VideoHeroSection />
       <BeginnerFriendly />
       <ProblemSection />
       <GallerySection />
